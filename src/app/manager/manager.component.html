@@ -1,7 +1,12 @@
-<nav>
-  <a routerLink="/gestiondesagents" routerLinkActive="active">Crisis Center</a>
-  <a routerLink="/agent-profile" routerLinkActive="active">Heroes</a>
-  <a routerLink="/affectation" routerLinkActive="active">Crisis Center</a>
-  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+
+<nav class="menu">
+  <ol>
+    <li class="menu-item"><a routerLink="/gestiondesagents" routerLinkActive="active">gestiondesagents</a></li>
+    <li class="menu-item"><a routerLink="/agent-profile" routerLinkActive="active">agent-profile</a></li>
+    <li class="menu-item"><a routerLink="/affectation" routerLinkActive="active">affectation</a></li>
+    <li class="menu-item"> <a routerLink="/deconnecter" routerLinkActive="active">deconnecter</a></li>
+
+  </ol>
 </nav>
+
 <router-outlet></router-outlet>
