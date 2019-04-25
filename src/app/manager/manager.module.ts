@@ -6,12 +6,12 @@ import { AgentProfileComponent } from './agent-profile/agent-profile.component';
 import { GestiondesagentsComponent } from './gestiondesagents/gestiondesagents.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [
+const managerRoutes: Routes = [
+  {path: '**', component: ManagerComponent,},
   { path: 'gestiondesagents', component: GestiondesagentsComponent },
   { path: 'agent-profile', component: AgentProfileComponent },
   { path: 'affectation', component: AffectationComponent  },
-  {
-    path: 'deconnecter',  redirectTo: '', }
+  {path: 'deconnecter',  redirectTo: '', }
 
 ];
 
@@ -20,10 +20,10 @@ const appRoutes: Routes = [
   declarations: [ManagerComponent, AffectationComponent, AgentProfileComponent, GestiondesagentsComponent],
   imports: [
     CommonModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forChild(managerRoutes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class ManagerModule { }
