@@ -10,7 +10,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', component: ClientComponent,}
+  {path: '**', component: ClientComponent,}
 ]  
 
 @NgModule({
