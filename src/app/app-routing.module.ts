@@ -10,7 +10,7 @@ const routes: Routes = [
 children: [
   {
     path:'',
-    loadChildren: 'client/client.module#ClientModule'
+    loadChildren: './client/client.module#ClientModule'
   }
 ]},
   {path: 'conseiller', component: ConseillerComponent},
