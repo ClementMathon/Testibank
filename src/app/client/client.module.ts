@@ -7,16 +7,28 @@ import { ProfilComponent } from './profil/profil.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { CommandesComponent } from './commandes/commandes.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
+const clientRoutes: Routes = [
   {path: '**', component: ClientComponent,}
 ]  
 
 @NgModule({
-  declarations: [ClientComponent, ComptesComponent, VirementComponent, ProfilComponent, HistoriqueComponent, CommandesComponent, NotificationsComponent],
+  declarations: [
+    ClientComponent, 
+    ComptesComponent, 
+    VirementComponent, 
+    ProfilComponent, 
+    HistoriqueComponent, 
+    CommandesComponent, 
+    NotificationsComponent
+  ],
   imports: [
+    RouterModule.forChild(clientRoutes),
     CommonModule
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class ClientModule { }
