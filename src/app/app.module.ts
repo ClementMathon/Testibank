@@ -12,14 +12,14 @@ import { ConseillerModule } from './conseiller/conseiller.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ClientComponent,
-    ManagerComponent,
-    ConseillerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ClientModule,
+    ManagerModule,
+    ConseillerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
