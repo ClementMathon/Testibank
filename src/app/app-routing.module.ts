@@ -4,13 +4,15 @@ import { ClientComponent } from './client/client.component';
 import { ConseillerComponent } from './conseiller/conseiller.component';
 import { ManagerComponent } from './manager/manager.component';
 import { ClientModule } from './client/client.module';
+import { ConseillerModule } from './conseiller/conseiller.module';
+import { ManagerModule } from './manager/manager.module';
 //import {ClientModule} from './client/client.module';
 
 
 const routes: Routes = [
   {path: 'client', loadChildren: () => ClientModule},
-  {path: 'conseiller', component: ConseillerComponent},
-  {path: 'manager', component: ManagerComponent}
+  {path: 'conseiller', loadChildren: () => ConseillerModule},
+  {path: 'manager', loadChildren: () => ManagerModule}
 
 
 ];
