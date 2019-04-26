@@ -1,16 +1,30 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!-- List group -->
-<div class="list-group" id="myList" role="tablist">
-  <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
-  <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
-  <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
-  <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
-</div>
+<div class="alert alert-primary" role="alert">
+  <h4>Gestion des Agents</h4>
 
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="home" role="tabpanel">...</div>
-  <div class="tab-pane" id="profile" role="tabpanel">...</div>
-  <div class="tab-pane" id="messages" role="tabpanel">...</div>
-  <div class="tab-pane" id="settings" role="tabpanel">...</div>
+</div>
+<div class="row" style="height:20%;width:50%;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+  <div class="col-4">
+<div ng-app="myApp" ng-controller="charactersCtrl" class="list-group" >
+  <input [(ngModel)]="searchText" placeholder="search text goes here"class="form-control" >
+<div>
+  <ul >
+    <li *ngFor="let c of characters | filter : searchText" (click)="searchText=c" class="list-group-item d-flex justify-content-between align-items-center">
+      {{c}}
+    </li>
+  </ul>
+</div>
+</div>
+    </div>
+
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">{{searchText}}</div>
+         </div>
+  </div>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Ajouter un agent</button>
+  <button type="button" class="btn btn-success">Modifier</button>btn btn-success
+  <button type="button" class="btn btn-danger">Virer</button>
 </div>
