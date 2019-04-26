@@ -9,8 +9,6 @@ export class Compte{
 	 * on a obligatoirement besoin d'un client pour creer un compte <3
 	 */
 
-	
-
 	public constructor (numeroCompte: Number ,idClient :Number, typeCompte: Number,  decouverAutorise: Number, plafondAutorise: Number){
 		this.idClient = idClient;
 		this.numeroCompte = numeroCompte;

@@ -5,8 +5,6 @@ import { Notif } from 'src/model/notif';
   selector: 'app-guest',
   templateUrl: './guest.component.html',
   styleUrls: ['./guest.component.css'],
-  template:
-    '<img alt="" height="250" width="250" src={{imageSource}}>'
   
 })
 export class GuestComponent implements OnInit {
