@@ -12,6 +12,7 @@ export class Client{
 	nombreEnfant: Number;
 	conseiller : Number;
 
+	
 	constructor ( id, motDePasse, nom, prenom, email, telephone, adresse, codePostale, ville, situation, nombreEnfant, conseiller){
 		this.id = id;
 		this.motDePasse = motDePasse;

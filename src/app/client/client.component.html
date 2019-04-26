@@ -1,16 +1,9 @@
-<!-- The sidebar -->
-<div class="sidebar">
-  <a class="active" href="#home">Home</a>
-  <a routerLink="/comptes">Comptes</a>
-  <a routerLink="/virement">Virement</a>
-  <a routerLink="/profil">Profil</a>
-  <a routerLink="/historique">Historique</a>
-  <a routerLink="/commandes">Commandes</a>
-  <a routerLink="/notifications">Notifications</a>
-</div>
+<app-sidebar-client></app-sidebar-client>
+
 
 <!-- Page content -->
 <div class="content">
+  Bonjour {{client}}
   <router-outlet></router-outlet>
 </div>
 
