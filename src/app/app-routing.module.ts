@@ -6,13 +6,15 @@ import { ManagerComponent } from './manager/manager.component';
 import { ClientModule } from './client/client.module';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { ManagerModule } from './manager/manager.module';
+import { GuestComponent } from './guest/guest.component';
 //import {ClientModule} from './client/client.module';
 
 
 const routes: Routes = [
   { path: 'client', loadChildren: () => ClientModule },
   { path: 'conseiller', loadChildren: () => ConseillerModule },
-  { path: 'manager', loadChildren: () => ManagerModule }
+  { path: 'manager', loadChildren: () => ManagerModule },
+  { path: 'invite', component: GuestComponent}
 
 
 ];
