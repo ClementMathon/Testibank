@@ -8,12 +8,12 @@ export class FakeServiceCompteService {
 
   constructor() { }
 
-  getAll(){
+  getAll() {
     const fakeComptes = [
       new Compte(),
       new Compte(),
       new Compte()
-    ]
+    ];
 
     return fakeComptes;
   }
