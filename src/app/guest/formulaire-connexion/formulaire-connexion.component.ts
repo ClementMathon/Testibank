@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from './FakeUser';
   import { from } from 'rxjs';
+import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
 
 @Component({
   selector: 'app-formulaire-connexion',
@@ -17,10 +18,7 @@ export class FormulaireConnexionComponent implements OnInit {
 
   onsubmit(){
     this.submited = true;
-  }
-
-  newFakeUser(){
-    this.model = new User();
+    this.model.isClient;
   }
 
   ngOnInit() {
