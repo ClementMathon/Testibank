@@ -1,8 +1,10 @@
 <h2>Mes comptes</h2>
-<ul class="heroes">
+<ul class="comptes">
     <li *ngFor="let compte of comptes" [class.selected]="compte === selectedCompte" (click)="onSelect(compte)">
-    <span class="badge">Compte N° {{compte.numeroCompte}}</span> Solde : {{compte.solde}} euros
-  </li>
+      <div>
+          <span class="badge">Compte N° {{compte.numeroCompte}}</span> Solde : {{compte.solde}} 
+      </div>
+    </li>
 </ul>
 
 <div *ngIf="selectedCompte">
