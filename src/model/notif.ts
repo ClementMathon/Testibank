@@ -5,7 +5,7 @@ export class Notif{
     contenu : string;
 
 	constructor (  ){
-        
+        this.simArticle;
     }
     
     private simArticle() {
