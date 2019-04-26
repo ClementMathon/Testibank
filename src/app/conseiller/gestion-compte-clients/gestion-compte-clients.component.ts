@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MOCKCLIENTS} from '../gestion-compte-clients/mock-clients';
+import { Client2 } from 'src/model/client2';
+import {MockclientService} from '../gestion-compte-clients/mockclient.service';
 
 
 @Component({
@@ -8,10 +10,17 @@ import {MOCKCLIENTS} from '../gestion-compte-clients/mock-clients';
   styleUrls: ['./gestion-compte-clients.component.css']
 })
 export class GestionCompteClientsComponent implements OnInit {
- mockClients = MOCKCLIENTS;
-  constructor() { }
+ 
+  mockClients : Client2[];
+
+  constructor( private mockclientService: MockclientService) { }
+
+  getClients(): void {
+    this.mockClients = this.mockclientService.getClients();
+  }
 
   ngOnInit() {
+    this.getClients();
   }
 
 }
