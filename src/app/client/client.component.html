@@ -1,16 +1,16 @@
 <!-- The sidebar -->
 <div class="sidebar">
   <a class="active" href="#home">Home</a>
-  <a href="#news">Comptes</a>
-  <a href="#contact">Virement</a>
-  <a href="#about">Profil</a>
-  <a href="#about">Historique</a>
-  <a href="#about">Commandes</a>
-  <a href="#about">Notifications</a>
+  <a routerLink="/comptes">Comptes</a>
+  <a routerLink="/virement">Virement</a>
+  <a routerLink="/profil">Profil</a>
+  <a routerLink="/historique">Historique</a>
+  <a routerLink="/commandes">Commandes</a>
+  <a routerLink="/notifications">Notifications</a>
 </div>
 
 <!-- Page content -->
 <div class="content">
-  ..
+  <router-outlet></router-outlet>
 </div>
 
