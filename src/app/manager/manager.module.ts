@@ -9,12 +9,13 @@ import { FilterPipe } from './gestiondesagents/filter.pipe';
 import { AffectationPipe1 } from './affectation/affectationliste2.pipe';
 import { AffectationPipe } from './affectation/affectation.pipe';
 import { FormsModule } from '@angular/forms';
+import { GuestComponent } from '../guest/guest.component';
 const managerRoutes: Routes = [
 
   /*{ path: 'gestiondesagents', component: GestiondesagentsComponent },
   { path: 'agent-profile', component: AgentProfileComponent },
-  { path: 'affectation', component: AffectationComponent  },
-  {path: 'deconnecter',  redirectTo: '' },*/
+  { path: 'affectation', component: AffectationComponent  }
+  {path: 'deconnecter',  component: GuestComponent },*/
   { path: '**', component: ManagerComponent }
 ];
 
