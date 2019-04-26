@@ -10,6 +10,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { Routes, RouterModule } from '@angular/router';
 import { SidebarClientComponent } from './sidebar-client/sidebar-client.component';
 import { FormsModule } from '@angular/forms';
+import { CompteDetailComponent } from './compte-detail/compte-detail.component';
 
 const clientRoutes: Routes = [
   {path: '', component: ClientComponent, children: 
@@ -32,7 +33,7 @@ const clientRoutes: Routes = [
     ProfilComponent, 
     HistoriqueComponent, 
     CommandesComponent, 
-    NotificationsComponent, SidebarClientComponent
+    NotificationsComponent, SidebarClientComponent, CompteDetailComponent
   ],
   imports: [
     RouterModule.forChild(clientRoutes),
