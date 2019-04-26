@@ -1,3 +1,18 @@
-<p>
-  <img class="conng serve -OseillerBGImg" src="/assets/img/accueilConseiller.jpg" alt="accueil espace conseiller">
-</p>
+<nav class="menu">
+    <ol ng-init="value=0">
+      <li class="menu-item" ><a (click)="value = O">Conseiller Home</a></li>
+      <li class="menu-item"><a (click)="value = 1">Validation Nouveau Comptes</a></li>
+      <li class="menu-item"><a (click)="value = 2">Gestion Compte Clients</a></li>
+
+  
+    </ol>
+  </nav>
+  
+  <div [ngSwitch]="value">
+      <app-conseiller-home *ngSwitchCase=0></app-conseiller-home>
+
+      <app-valide-nouveau-compte *ngSwitchCase=1></app-valide-nouveau-compte>
+      <app-gestion-compte-clients *ngSwitchCase=2></app-gestion-compte-clients>
+
+  </div>
+
