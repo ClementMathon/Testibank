@@ -1,12 +1,20 @@
 
 <nav class="menu">
-  <ol>
-    <li class="menu-item"><a routerLink="/gestiondesagents" routerLinkActive="active">gestiondesagents</a></li>
-    <li class="menu-item"><a routerLink="/agent-profile" routerLinkActive="active">agent-profile</a></li>
-    <li class="menu-item"><a routerLink="/affectation" routerLinkActive="active">affectation</a></li>
-    <li class="menu-item"> <a routerLink="/deconnecter" routerLinkActive="active">deconnecter</a></li>
+  <ol ng-init="value=0">
+    <li class="menu-item" ><a (click)="value = 2">gestiondesagents</a></li>
+    <li class="menu-item"><a (click)="value = 1">agent-profile-création</a></li>
+    <li class="menu-item"><a (click)="value = 3">affectation</a></li>
+    <li class="menu-item"><a (click)="value = 0">deconnecter</a></li>
 
   </ol>
 </nav>
 
-<router-outlet></router-outlet>
+<div [ngSwitch]="value">
+    <app-agent-profile *ngSwitchCase=1></app-agent-profile>
+    <app-gestiondesagents *ngSwitchCase=2></app-gestiondesagents>
+    <app-affectation *ngSwitchCase=3></app-affectation>
+</div>
+
+
+
+

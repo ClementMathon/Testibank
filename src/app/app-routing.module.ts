@@ -10,9 +10,9 @@ import { ManagerModule } from './manager/manager.module';
 
 
 const routes: Routes = [
-  {path: 'client', loadChildren: () => ClientModule},
-  {path: 'conseiller', loadChildren: () => ConseillerModule},
-  {path: 'manager', loadChildren: () => ManagerModule}
+  { path: 'client', loadChildren: () => ClientModule },
+  { path: 'conseiller', loadChildren: () => ConseillerModule },
+  { path: 'manager', loadChildren: () => ManagerModule }
 
 
 ];

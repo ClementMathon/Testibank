@@ -6,13 +6,14 @@ import { AgentProfileComponent } from './agent-profile/agent-profile.component';
 import { GestiondesagentsComponent } from './gestiondesagents/gestiondesagents.component';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const managerRoutes: Routes = [
-  {path: '**', component: ManagerComponent,},
-  { path: 'gestiondesagents', component: GestiondesagentsComponent },
+
+  /*{ path: 'gestiondesagents', component: GestiondesagentsComponent },
   { path: 'agent-profile', component: AgentProfileComponent },
   { path: 'affectation', component: AffectationComponent  },
-  {path: 'deconnecter',  redirectTo: '', }
-
+  {path: 'deconnecter',  redirectTo: '' },*/
+  { path: '**', component: ManagerComponent }
 ];
 
 
