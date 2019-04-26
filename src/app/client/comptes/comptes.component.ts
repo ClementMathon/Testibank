@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { COMPTES } from 'src/model/mock-compte';
+
 import { Compte } from 'src/model/compte';
+import { FakeServiceCompteService } from 'src/model/fake-service-compte.service';
 
 @Component({
   selector: 'app-comptes',
@@ -8,12 +9,13 @@ import { Compte } from 'src/model/compte';
   styleUrls: ['./comptes.component.css']
 })
 export class ComptesComponent implements OnInit {
-  comptes = COMPTES;
+  comptes: Compte[];
   selectedCompte: Compte;
 
-  constructor() { }
+  constructor(private compteService: FakeServiceCompteService) { }
 
   ngOnInit() {
+    this.getCompte();
   }
 
   onSelect(compte: Compte): void {
