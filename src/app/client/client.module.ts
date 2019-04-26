@@ -9,6 +9,7 @@ import { CommandesComponent } from './commandes/commandes.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SidebarClientComponent } from './sidebar-client/sidebar-client.component';
+import { FormsModule } from '@angular/forms';
 
 const clientRoutes: Routes = [
   {path: '', component: ClientComponent, children: 
@@ -35,7 +36,8 @@ const clientRoutes: Routes = [
   ],
   imports: [
     RouterModule.forChild(clientRoutes),
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     RouterModule

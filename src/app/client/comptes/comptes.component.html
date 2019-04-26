@@ -1,3 +1,7 @@
-<p>
-  comptes works!
-</p>
+<h2>Mes comptes</h2>
+<ul class="heroes">
+    <li *ngFor="let compte of comptes" (click)="onSelect(compte)">
+    <span class="badge">{{compte.numeroCompte}}</span> Solde: {{compte.solde}} euros
+  </li>
+</ul>
+
