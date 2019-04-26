@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
 import { ManagerModule } from './manager/manager.module';
 import { ConseillerModule } from './conseiller/conseiller.module';
+import { GuestComponent } from './guest/guest.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GuestComponent
   ],
   imports: [
     BrowserModule,
