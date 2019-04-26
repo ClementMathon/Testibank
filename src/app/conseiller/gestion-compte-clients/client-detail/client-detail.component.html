@@ -1,0 +1,13 @@
+<div *ngIf="client">
+
+  <h2>{{client.nom| uppercase}} Details</h2>
+  <div><span>id: </span>{{client.id}}</div>
+  <div>
+     <!--  ************************ NE Marche pas (y a une couille avec le Formsmodule? *******************)
+    <label>name:
+     
+     <input [(ngModel)]="client.nom" placeholder="nom"/>
+    </label>-->
+  </div>
+
+</div>

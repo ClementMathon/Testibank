@@ -1,0 +1,13 @@
+.conseillerNavList {
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+}
+
+.nav-item {
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 3px;
+    margin: 5px;
+    
+}
