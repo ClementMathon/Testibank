@@ -1,3 +1,17 @@
-<p>
-  comptes works!
-</p>
+<h2>Mes comptes</h2>
+<ul class="comptes">
+    <li *ngFor="let compte of comptes" [class.selected]="compte === selectedCompte" (click)="onSelect(compte)">
+      <div>
+          <span class="badge">Compte N° {{compte.numeroCompte}}</span> Solde : {{compte.solde}} 
+      </div>
+    </li>
+</ul>
+
+<div *ngIf="selectedCompte">
+
+    <h2>Details compte N° {{selectedCompte.numeroCompte | uppercase}}</h2>
+    <div><span>Type de compte: </span>{{selectedCompte.typeCompte}}</div>
+    <div><span>Solde: </span>{{selectedCompte.solde}} euros</div>
+    <div><span>Découvert autorisé: </span>{{selectedCompte.typeCompte}} euros</div>
+    <div><span>Plafond autorisé: </span>{{selectedCompte.typeCompte}} euros</div>
+  </div>

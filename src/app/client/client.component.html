@@ -3,7 +3,9 @@
 
 <!-- Page content -->
 <div class="content">
-  Bonjour {{client}}
+    <h2>{{client.nom | uppercase}} Details</h2>
+    <div><span>id: </span>{{client.id}}</div>
+    <div><span>name: </span>{{client.nom}}</div>
   <router-outlet></router-outlet>
 </div>
 
