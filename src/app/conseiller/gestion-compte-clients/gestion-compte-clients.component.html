@@ -1,3 +1,13 @@
 <h2 class="text-center">
-  gestion-compte-clients works!
+  Gestion des Comptes Clients
 </h2>
+<h3>Clients</h3>
+<ul class="heroes">
+  <li *ngFor="let client of mockClients"
+  [class.selected]="client === selectedClient"
+  (click)="onSelect(hero)"
+  >
+    <span class="badge">{{client.id}}</span> {{client.nom}}
+  </li>
+</ul> 
+<app-client-detail [client]="selectedClient"></app-client-detail>
