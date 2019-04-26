@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClientComponent } from './client/client.component';
 import { ConseillerComponent } from './conseiller/conseiller.component';
@@ -11,6 +11,7 @@ import { GuestComponent } from './guest/guest.component';
 
 
 const routes: Routes = [
+  { path: '', component: GuestComponent},
   { path: 'client', loadChildren: () => ClientModule },
   { path: 'conseiller', loadChildren: () => ConseillerModule },
   { path: 'manager', loadChildren: () => ManagerModule },
