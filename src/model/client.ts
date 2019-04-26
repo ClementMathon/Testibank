@@ -24,6 +24,7 @@ export class Client{
 		this.codePostale = codePostale;
 		this.ville = ville;
 		this.situation = situation;
+		this.nombreEnfant = nombreEnfant;
 		this.conseiller = conseiller;
 	}
 }
