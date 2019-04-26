@@ -9,7 +9,7 @@ import { ConseillerModule } from './conseiller/conseiller.module';
 import { GuestComponent } from './guest/guest.component';
 import { FormulaireConnexionComponent } from './guest/formulaire-connexion/formulaire-connexion.component';
 import { NotificationComponent } from './guest/notification/notification.component';
-
+import { FormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { NotificationComponent } from './guest/notification/notification.compone
     AppRoutingModule,
     ClientModule,
     ManagerModule,
-    ConseillerModule
+    ConseillerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
