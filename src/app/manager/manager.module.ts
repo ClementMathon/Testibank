@@ -9,19 +9,21 @@ import { FilterPipe } from './gestiondesagents/filter.pipe';
 import { AffectationPipe1 } from './affectation/affectationliste2.pipe';
 import { AffectationPipe } from './affectation/affectation.pipe';
 import { FormsModule } from '@angular/forms';
-import { GuestComponent } from '../guest/guest.component';
+import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
+
 const managerRoutes: Routes = [
 
   /*{ path: 'gestiondesagents', component: GestiondesagentsComponent },
   { path: 'agent-profile', component: AgentProfileComponent },
   { path: 'affectation', component: AffectationComponent  }
   {path: 'deconnecter',  component: GuestComponent },*/
-  { path: '**', component: ManagerComponent }
+  { path: '', component: ManagerComponent }
 ];
 
 
 @NgModule({
-  declarations: [ManagerComponent, AffectationComponent, AgentProfileComponent, GestiondesagentsComponent, FilterPipe, AffectationPipe],
+  declarations: [ManagerComponent, AffectationComponent, AgentProfileComponent,
+    GestiondesagentsComponent, FilterPipe, AffectationPipe, AffectationPipe1, FakeServiceConseillerService],
   imports: [
     CommonModule,
     FormsModule,

@@ -8,7 +8,7 @@ import { Compte } from 'src/model/compte';
   styleUrls: ['./comptes.component.css']
 })
 export class ComptesComponent implements OnInit {
-  comptes= COMPTES;
+  comptes = COMPTES;
   selectedCompte: Compte;
 
   constructor() { }
@@ -18,7 +18,7 @@ export class ComptesComponent implements OnInit {
 
   onSelect(compte: Compte): void {
     this.selectedCompte = compte;
-  }  
-  
+  }
+
 
 }
