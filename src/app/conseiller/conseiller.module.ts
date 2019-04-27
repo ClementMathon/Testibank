@@ -12,6 +12,7 @@ const conseillerRoute : Routes = [
   {path: '**', component: ConseillerComponent,}
 ]
 
+
 @NgModule({
   declarations: [ConseillerComponent, ConseillerHomeComponent, ValideNouveauCompteComponent, GestionCompteClientsComponent, ClientDetailComponent],
   imports: [

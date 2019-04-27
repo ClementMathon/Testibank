@@ -1,5 +1,5 @@
 export class Client{
-	id : number;
+	id : Number;
 	motDePasse : string;
 	nom: string;
 	prenom : string;

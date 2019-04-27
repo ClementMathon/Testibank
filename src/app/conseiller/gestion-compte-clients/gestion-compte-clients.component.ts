@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MOCKCLIENTS} from '../gestion-compte-clients/mock-clients';
-import { Client2 } from 'src/model/client2';
-import {MockclientService} from '../gestion-compte-clients/mockclient.service';
+import { Client } from 'src/model/client';
+import {FakeServiceClientService} from '../../../model/fake-service-client.service';
 
 
 @Component({
@@ -11,12 +10,12 @@ import {MockclientService} from '../gestion-compte-clients/mockclient.service';
 })
 export class GestionCompteClientsComponent implements OnInit {
  
-  mockClients : Client2[];
+  clients : Client[];
 
-  constructor( private mockclientService: MockclientService) { }
+  constructor( private clientService: FakeServiceClientService) { }
 
   getClients(): void {
-    this.mockClients = this.mockclientService.getClients();
+    this.clients = this.clientService.getClientsDuConseiller(1);
   }
 
   ngOnInit() {

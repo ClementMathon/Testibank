@@ -3,7 +3,7 @@
 </h2>
 <h3>Clients</h3>
 <ul class="heroes">
-  <li *ngFor="let client of mockClients"
+  <li *ngFor="let client of clients"
   [class.selected]="client === selectedClient"
   (click)="onSelect(hero)"
   >
