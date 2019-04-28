@@ -12,6 +12,14 @@ export class FakeServiceCompteService {
   getComptes() {
     return COMPTES;
   }
+
+  getComptesDuClient(targetClientID) {
+    var filteredcomptes = COMPTES.filter(function (el) {
+      return (el.idClient === targetClientID);
+      });
+  return filteredcomptes;
+  }  
+
   /*
   getAll() {
     const fakeComptes = [

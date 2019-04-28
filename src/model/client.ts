@@ -1,5 +1,5 @@
 export class Client{
-	id : string;
+	id : Number;
 	motDePasse : string;
 	nom: string;
 	prenom : string;
@@ -24,6 +24,7 @@ export class Client{
 		this.codePostale = codePostale;
 		this.ville = ville;
 		this.situation = situation;
+		this.nombreEnfant = nombreEnfant;
 		this.conseiller = conseiller;
 	}
 }
