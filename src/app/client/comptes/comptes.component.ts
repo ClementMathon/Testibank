@@ -16,7 +16,7 @@ export class ComptesComponent implements OnInit {
 
   ngOnInit() {
     this.getCompte();
-  } 
+  }
 
   onSelect(compte: Compte): void {
     this.selectedCompte = compte;
@@ -25,6 +25,6 @@ export class ComptesComponent implements OnInit {
   getCompte(): void {
     this.comptes = this.compteService.getComptesDuClient(1);
   }
-  
+
 
 }

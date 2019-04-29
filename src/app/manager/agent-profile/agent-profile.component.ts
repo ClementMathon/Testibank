@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input, OnDestroy} from '@angular/core';
+import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
+import { Conseiller } from 'src/model/conseiller';
+
 
 
 @Component({
@@ -6,11 +9,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './agent-profile.component.html',
   styleUrls: ['./agent-profile.component.scss']
 })
-export class AgentProfileComponent implements OnInit {
+export class AgentProfileComponent implements OnInit, OnDestroy {
+myNewAdvisor: Conseiller;
 
-  constructor() { }
+  constructor(public myAgentListservice: FakeServiceConseillerService) {
 
-  ngOnInit() {
+   this.myNewAdvisor = new Conseiller(0, '', '', '', '', '', '', 0, '');
+
   }
 
+  ngOnInit() {
+
+  }
+iAddAConsultant() {
+
+this.myAgentListservice.addAnAdvisor(this.myNewAdvisor);
+
+}
+  ngOnDestroy() {
+  }
 }

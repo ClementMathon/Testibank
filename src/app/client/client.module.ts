@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CompteDetailComponent } from './compte-detail/compte-detail.component';
 
 const clientRoutes: Routes = [
-  {path: '', component: ClientComponent, children: 
+  {path: '', component: ClientComponent, children:
     [
       {path: 'comptes',  component: ComptesComponent},
       {path: 'virement',  component: VirementComponent},
@@ -21,18 +21,18 @@ const clientRoutes: Routes = [
       {path: 'historique',  component: HistoriqueComponent},
       {path: 'commandes',  component: CommandesComponent},
       {path: 'notifications',  component: NotificationsComponent},
-    ] 
+    ]
   }
-] ;    
+] ;
 
 @NgModule({
   declarations: [
-    ClientComponent, 
-    ComptesComponent, 
-    VirementComponent, 
-    ProfilComponent, 
-    HistoriqueComponent, 
-    CommandesComponent, 
+    ClientComponent,
+    ComptesComponent,
+    VirementComponent,
+    ProfilComponent,
+    HistoriqueComponent,
+    CommandesComponent,
     NotificationsComponent, SidebarClientComponent, CompteDetailComponent
   ],
   imports: [
