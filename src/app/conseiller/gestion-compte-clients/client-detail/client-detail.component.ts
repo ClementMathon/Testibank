@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Client2} from 'src/model/client2';
+import {Client} from 'src/model/client';
 
 
 @Component({
@@ -10,7 +10,7 @@ import {Client2} from 'src/model/client2';
 
 
 export class ClientDetailComponent implements OnInit {
-  @Input() client: Client2;
+  @Input() client: Client;
   constructor() { }
 
   ngOnInit() {
