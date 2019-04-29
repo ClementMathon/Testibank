@@ -1,14 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Conseiller } from 'src/model/conseiller';
 @Pipe({
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-  transform(items: any[], searchText: string): any[] {
-    if (!items) return [];
-    if (!searchText) return items;
+  agentselectionner: Conseiller[];
+  transform(items: Conseiller[], searchText: string): Conseiller[] {
+    if (!items) { return this.agentselectionner  ; }
+    if (!searchText) { return items; }
     searchText = searchText.toLowerCase();
+
     return items.filter(it => {
-      return it.toLowerCase().includes(searchText);
-    });
-  }
+
+      return (it.nom + it.prenom).toLowerCase().includes(searchText);
+    } );
+    }
+
 }

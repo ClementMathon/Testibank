@@ -7,6 +7,7 @@ import { Conseiller } from './conseiller';
 export class FakeServiceConseillerService {
   fakeConseiller: Conseiller [] = [];
 
+  myAdvisorByMle: Conseiller[];
   constructor() {
   this.fakeConseiller = [
     new Conseiller(0, '24/04/2019', 'TARDIOU', 'kim', 'tk@gmail.com', '0700000000', '5 rue de la fontaine', 69000, 'Lyon'),
@@ -21,5 +22,9 @@ export class FakeServiceConseillerService {
     myNewAdvisor.mle = this.fakeConseiller.length + 1;
     this.fakeConseiller.push(myNewAdvisor);
 
+  }
+  iReturnACounselorByTheMle(mle: number): Conseiller[] {
+this.myAdvisorByMle = this.fakeConseiller.filter(conseiller1 => conseiller1.mle === mle);
+return this.myAdvisorByMle;
   }
 }
