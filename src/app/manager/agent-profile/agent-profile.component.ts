@@ -23,7 +23,7 @@ myNewAdvisor: Conseiller;
   }
 iAddAConsultant() {
 
-this.myAgentListservice.addAnAdvisor(this.myNewAdvisor);
+  this.myAgentListservice.addCounselor(this.myNewAdvisor);
 
 
 }

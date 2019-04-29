@@ -35,5 +35,5 @@ agentsChoice(individu: Conseiller) {
   ngOnDestroy() {
 
   }
-  
+
 }

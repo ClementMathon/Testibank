@@ -20,7 +20,7 @@ export class ComptesComponent implements OnInit {
 
   onSelect(compte: Compte): void {
     this.selectedCompte = compte;
-  }  
+  }
 
   getCompte(): void {
     this.comptes = this.compteService.getComptesDuClient(1);

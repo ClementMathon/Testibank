@@ -14,7 +14,7 @@ $txt-color:   #DCE3E7;
   width: $card-width;
   height: $card-height;
   position: absolute;
-  top: 20vh;
+  top: 25vh;
   left: 20vw;
   margin: -250px 0 0 -175px;
   overflow: hidden;
@@ -88,11 +88,11 @@ hr{
   background: $yellow;
 }
 .intro{
-  width: 170px;
+  width: 250px;
   margin: 0 auto;
   color: $txt-color;
   font-family: 'Droid Serif', serif;
-  font-size: 13px;
+  font-size: 18px;
   font-style: italic;
   line-height: 18px;
 }
