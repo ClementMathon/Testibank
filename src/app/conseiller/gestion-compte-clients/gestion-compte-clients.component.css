@@ -1,3 +1,27 @@
+
+.titleBox {
+  height: 100px;
+ 
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+
+.mainContainer {
+
+  display: flex;
+  justify-content: space-around,
+  
+}
+
+.titleText {
+  margin: auto;
+  text-align: center;
+  color: blue;
+}
+
+
 /* Heroes... heu gestion-compte-components©'s private CSS styles */
 .selected {
     background-color: #CFD8DC !important;
@@ -45,4 +69,17 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+  .mainContainer {
+
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .panel {
+    width: 30%;
+ 
+  }
+  h3 {
+    margin-left: 30px;
   }

@@ -1,13 +1,30 @@
-<h2 class="text-center">
-  Gestion des Comptes Clients
-</h2>
-<h3>Clients</h3>
-<ul class="heroes">
-  <li *ngFor="let client of clients"
-  [class.selected]="client === selectedClient"
-  (click)="onSelect(hero)"
-  >
-    <span class="badge">{{client.id}}</span> {{client.nom}}
-  </li>
-</ul> 
-<app-client-detail [client]="selectedClient"></app-client-detail>
+
+<div class="titleBox">
+  <h2 class="titleText">
+    Gestion des Comptes Clients
+  </h2>
+</div>
+
+<div class="mainContainer">
+<div class="panel panelOne">
+  <h3>Mes Clients</h3>
+  <ul class="heroes">
+    <li *ngFor="let client of clients"
+    [class.selected]="client === selectedClient"
+    (click)="onSelect(client)"
+    >
+      <span class="badge">{{client.id}}</span> {{client.nom}}, {{client.prenom}}
+    </li>
+  </ul> 
+</div>
+<div class="panel panelTwo">
+  <app-client-detail [client]="selectedClient"></app-client-detail>
+
+</div>
+<div class="panel panelThree">
+
+</div> 
+
+</div>
+
+

@@ -1,13 +1,13 @@
 
 
   <nav class="conseillerNav">
-
+<p class="connectedStatus">Connecté : conseiller matricule 1</p>
         <ul class="conseillerNavList">
-            <li class="nav-item" ><a (click)="value = 0">Conseiller Home</a></li>
+            <li class="nav-item" ><a (click)="value = 0">Home</a></li>
             <li class="nav-item"><a (click)="value = 1">Validation Nouveau Comptes</a></li>
             <li class="nav-item"><a (click)="value = 2">Gestion Compte Clients</a></li>
+            <li class="nav-item"><a (click)="value = 2">Me Déconnecter</a></li>
         </ul>
-  
     </nav>
   
   <div [ngSwitch]="value">

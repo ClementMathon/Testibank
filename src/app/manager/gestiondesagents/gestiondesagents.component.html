@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="alert alert-primary" role="alert">
   <h4>Fiche Agents</h4>
@@ -7,7 +8,9 @@
 <div class="row" >
   <div class="col-4">
 <div ng-app="myApp" ng-controller="charactersCtrl" class="list-group" >
-  <input [(ngModel)]="searchText" placeholder="rechercher un agent" class="form-control" (input)="displaycard=false">
+  <input [(ngModel)]="searchText" placeholder="rechercher un agent" class="form-control"
+    (input)="displaycard=false">
+
 <div>
   <ul >
     <li *ngFor="let individu of myAgentList | filter : searchText" (click)="agentsChoice(individu)"
@@ -18,6 +21,9 @@
 </div>
 </div>
     </div>
+    <div class="col-1" >
+      <button type="submit" class="btn btn-info" (click)="searchText=''"><span class=" fa fa-arrow-left" title="effacer"></span>
+      </button></div>
 <div *ngIf="displaycard">
   <div class="col-8">
     <div class="tab-content" id="nav-tabContent">

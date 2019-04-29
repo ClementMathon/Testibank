@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-import { Client } from 'src/model/client';
+import {Client} from 'src/model/client';
 
 
 @Component({

@@ -11,8 +11,12 @@ import {FakeServiceClientService} from '../../../model/fake-service-client.servi
 export class GestionCompteClientsComponent implements OnInit {
  
   clients : Client[];
-
+  selectedClient: Client;
   constructor( private clientService: FakeServiceClientService) { }
+
+  onSelect(client: Client): void {
+    this.selectedClient = client;
+  } 
 
   getClients(): void {
     this.clients = this.clientService.getClientsDuConseiller(1);

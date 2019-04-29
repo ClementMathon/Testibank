@@ -1,13 +1,58 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 <div *ngIf="client">
 
-  <h2>{{client.nom| uppercase}} Details</h2>
+  <h2> {{client.prenom}} {{client.nom| uppercase}}</h2>
   <div><span>id: </span>{{client.id}}</div>
-  <div>
-     <!--  ************************ NE Marche pas (y a une couille avec le Formsmodule? *******************)
-    <label>name:
-     
-     <input [(ngModel)]="client.nom" placeholder="nom"/>
-    </label>-->
-  </div>
+  <div class="card-header card-header-danger">
+    <h4 class="card-title">Ajouter un conseiller</h4>
+    <p class="card-category">Le matricule est généré automatiquement</p>
+</div>
+<div class="card-body">
+    <form>
+        <div class="row">
 
+            <div class="col-md-4">
+               
+                  <input matInput placeholder="Adresse Email" type="email">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              
+                <input matInput placeholder="Prenom" type="text">
+              
+            </div>
+            <div class="col-md-6">
+           
+                <input matInput placeholder="Nom" type="text">
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              
+                <input matInput placeholder="Adresse" type="text">
+          
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+          
+                <input matInput placeholder="Ville" type="text">
+             
+            </div>
+          
+            <div class="col-md-4">
+             
+                <input matInput placeholder="Code postal" type="text">
+              
+            </div>
+        </div>
+        
+        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Créer</button>
+        <div class="clearfix"></div>
+    </form>
+</div>
 </div>
