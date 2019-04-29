@@ -25,6 +25,7 @@ iAddAConsultant() {
 
 this.myAgentListservice.addAnAdvisor(this.myNewAdvisor);
 
+
 }
   ngOnDestroy() {
   }
