@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input, OnDestroy} from '@angular/core';
 
+import { Conseiller } from 'src/model/conseiller';
+
+import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
 
 
 @Component({
@@ -7,19 +10,30 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './gestiondesagents.component.html',
   styleUrls: ['./gestiondesagents.component.scss']
 })
-export class GestiondesagentsComponent implements OnInit {
-  searchText = '';
-  characters = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ];
-  constructor() { }
+export class GestiondesagentsComponent implements OnInit, OnDestroy {
+  searchText: string ;
+  myAgentList: Conseiller[];
+  agentselectionner: Conseiller ;
+  displaycard = false;
 
+  constructor(public myAgentListservice: FakeServiceConseillerService) {
+
+    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', 0, '');
+
+   }
+agentsChoice(individu: Conseiller) {
+  this.agentselectionner = individu;
+  this.searchText = individu.nom + ' ' + individu.prenom;
+  this.displaycard = true;
+}
   ngOnInit() {
-  }
 
+    this.myAgentList = this.myAgentListservice.getAll();
+
+
+  }
+  ngOnDestroy() {
+
+  }
+  
 }

@@ -16,7 +16,7 @@
             <input [(ngModel)]="searchText" placeholder="search text goes here" class="form-control">
             <div>
               <ul>
-                <li *ngFor="let c of characters | filter : searchText" (click)="searchText=c"
+                <li *ngFor="let c of characters | filter1 : searchText" (click)="searchText=c"
                   class="list-group-item d-flex justify-content-between align-items-center">
                   {{c}}
                 </li>
@@ -38,7 +38,7 @@
              <input [(ngModel)]="searchText1" placeholder="search text goes here" class="form-control">
              <div>
                <ul>
-                 <li *ngFor="let c of characters1 | filter : searchText1" (click)="searchText1=c"
+                 <li *ngFor="let c of characters1 | filter2 : searchText1" (click)="searchText1=c"
                    class="list-group-item d-flex justify-content-between align-items-center">
                    {{c}}
                  </li>

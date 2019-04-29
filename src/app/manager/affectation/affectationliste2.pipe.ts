@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
-  name: 'filter'
+  name: 'filter2'
 })
 export class AffectationPipe1 implements PipeTransform {
   transform(items: any[], searchText: string): any[] {
