@@ -23,7 +23,7 @@ export class ComptesComponent implements OnInit {
   }  
 
   getCompte(): void {
-    this.comptes = this.compteService.getComptes();
+    this.comptes = this.compteService.getComptesDuClient(1);
   }
   
 
