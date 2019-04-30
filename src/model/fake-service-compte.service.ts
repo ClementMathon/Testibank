@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Compte } from './compte';
 import { COMPTES } from 'src/model/mock-compte';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +10,16 @@ export class FakeServiceCompteService {
 
   constructor() { }
 
-  getComptes() {
-    return COMPTES;
-  }
+  /*getComptes(): Observable<Compte[]> {
+    return of(COMPTES);
+  }*/
 
-  getComptesDuClient(targetClientID) {
+  getComptesDuClient(targetClientID): Observable<Compte[]> {
     var filteredcomptes = COMPTES.filter(function (el) {
       return (el.idClient === targetClientID);
       });
-  return filteredcomptes;
+  return of(filteredcomptes);
   }  
 
-  /*
-  getAll() {
-    const fakeComptes = [
-      new Compte(),
-      new Compte(),
-      new Compte()
-    ];
-
-    return fakeComptes;
-  }*/
+ 
 }
