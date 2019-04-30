@@ -39,7 +39,7 @@
         </div>
         <div class="form-group">
 
-          <input [(ngModel)]="myNewAdvisor.tel" type="number" class="form-control" name="tel" placeholder="téléphone">
+          <input [(ngModel)]="myNewAdvisor.tel" type="string" class="form-control" name="tel" placeholder="téléphone">
         </div>
       <button type="submit" class="btn btn-primary" (click)="iAddAConsultant()"
         [routerLink]="['/manager/gestiondesagents']">Enregistrer un Agent</button>

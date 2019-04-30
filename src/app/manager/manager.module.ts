@@ -9,10 +9,14 @@ import { FilterPipe } from './gestiondesagents/filter.pipe';
 import { AffectationPipe1 } from './affectation/affectationliste2.pipe';
 import { AffectationPipe } from './affectation/affectation.pipe';
 import { FormsModule } from '@angular/forms';
+import { ModifierunagentComponent } from './modifierunagent/modifierunagent.component';
+import { SupprimerunagentComponent } from './supprimerunagent/supprimerunagent.component';
 
 const managerRoutes: Routes = [
 { path: '', component: ManagerComponent , children: [
   { path: 'gestiondesagents', component: GestiondesagentsComponent },
+  { path: 'modifierunagent', component: ModifierunagentComponent },
+
   { path: 'profile', component: AgentProfileComponent },
   { path: 'affectation', component: AffectationComponent  }]
 
@@ -22,7 +26,7 @@ const managerRoutes: Routes = [
 
 @NgModule({
   declarations: [ManagerComponent, AffectationComponent, AgentProfileComponent,
-    GestiondesagentsComponent, FilterPipe, AffectationPipe, AffectationPipe1],
+    GestiondesagentsComponent, FilterPipe, AffectationPipe, AffectationPipe1, ModifierunagentComponent, SupprimerunagentComponent],
   imports: [
     CommonModule,
     FormsModule,
