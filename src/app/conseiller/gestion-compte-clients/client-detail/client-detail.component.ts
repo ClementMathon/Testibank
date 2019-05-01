@@ -22,7 +22,7 @@ export class ClientDetailComponent implements OnInit {
 
 
   getComptesClient(): void {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient(1);
+     this.compteClientService.getComptesDuClient(1).subscribe(comptesDuClient => this.comptesDuClient = comptesDuClient);
   }
 
   ngOnInit() {
