@@ -19,6 +19,7 @@ const conseillerRoute : Routes = [
   declarations: [ConseillerComponent, ConseillerHomeComponent, ValideNouveauCompteComponent,  GestionCompteClientsComponent, ClientDetailComponent, CompteClientDetailComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(conseillerRoute),
   ],
   exports: [
