@@ -3,17 +3,17 @@
   <h4>Gestion des Agents</h4>
 </div>
 <nav class="menu">
-  <ol ng-init="value=0">
-    <li class="menu-item"><a [routerLink]="['/manager/gestiondesagents']" >Fiche Agent</a></li>
-    <li class="menu-item"><a [routerLink]="['/manager/profile']" >Ajouter Agent</a></li>
-    <li class="menu-item"><a [routerLink]="['/manager/profile']" >modifier Agent</a></li>
-    <li class="menu-item"><a [routerLink]="['/manager/profile']" >Enlever Agent</a></li>
-    <li class="menu-item"><a [routerLink]="['/manager/affectation']" >affectation</a></li>
-    <li class="menu-item"><a routerLink="/">deconnecter</a></li>
+  <ol >
+    <li ><a [routerLink]="['/manager/gestiondesagents']" >Fiche Agent</a></li>
+    <li><a [routerLink]="['/manager/profile']" >Ajouter Agent</a></li>
+    <li ><a [routerLink]="['/manager/modifierunagent']">modifier Agent</a></li>
+    <li ><a [routerLink]="['/manager/profile']" >Enlever Agent</a></li>
+    <li ><a [routerLink]="['/manager/affectation']" >affectation</a></li>
+    <li><a routerLink="/">deconnecter</a></li>
 
   </ol>
 </nav>
- <router-outlet></router-outlet>
+ <router-outlet ></router-outlet>
 <footer>Made by Jean Charles Gouleau</footer>
 
 

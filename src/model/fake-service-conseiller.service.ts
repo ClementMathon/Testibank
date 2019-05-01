@@ -18,12 +18,12 @@ export class FakeServiceConseillerService {
 
      return this.fakeConseiller;
   }
-  addAnAdvisor(myNewAdvisor: Conseiller): void {
+  addCounselor(myNewAdvisor: Conseiller): void {
     myNewAdvisor.mle = this.fakeConseiller.length + 1;
     this.fakeConseiller.push(myNewAdvisor);
 
   }
-  iReturnACounselorByTheMle(mle: number): Conseiller[] {
+  returnCounselorByMle(mle: number): Conseiller[] {
 this.myAdvisorByMle = this.fakeConseiller.filter(conseiller1 => conseiller1.mle === mle);
 return this.myAdvisorByMle;
   }
