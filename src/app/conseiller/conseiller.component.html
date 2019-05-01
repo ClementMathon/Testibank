@@ -6,13 +6,12 @@
             <li class="nav-item" ><a (click)="value = 0">Home</a></li>
             <li class="nav-item"><a (click)="value = 1">Validation Nouveau Comptes</a></li>
             <li class="nav-item"><a (click)="value = 2">Gestion Compte Clients</a></li>
-            <li class="nav-item"><a (click)="value = 2">Me Déconnecter</a></li>
+            <li class="nav-item"><a href="/">Me Déconnecter</a></li>
         </ul>
     </nav>
   
   <div [ngSwitch]="value">
       <app-conseiller-home *ngSwitchCase=0></app-conseiller-home>
-
       <app-valide-nouveau-compte *ngSwitchCase=1></app-valide-nouveau-compte>
       <app-gestion-compte-clients *ngSwitchCase=2></app-gestion-compte-clients>
 

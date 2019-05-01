@@ -1,58 +1,62 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<div *ngIf="client">
 
-  <h2> {{client.prenom}} {{client.nom| uppercase}}</h2>
-  <div><span>id: </span>{{client.id}}</div>
+<div *ngIf="client" class="clientBox">
+
+  <div class="card">
   <div class="card-header card-header-danger">
-    <h4 class="card-title">Ajouter un conseiller</h4>
-    <p class="card-category">Le matricule est généré automatiquement</p>
+    <h5 class="card-title">{{client.prenom}} {{client.nom| uppercase}}</h5>
+    <p class="card-category"><span>id: {{client.id}} </span></p>
 </div>
 <div class="card-body">
     <form>
-        <div class="row">
 
-            <div class="col-md-4">
-               
-                  <input matInput placeholder="Adresse Email" type="email">
-                
+        <div class="formRow">
+            <div class="formItem">
+              <label for="prenom">Prénom</label>
+              <input name="prenom" type="text" [(ngModel)]=client.prenom>            
+            </div>
+            <div class="formItem">           
+              <input name="nom" type="text" [(ngModel)]=client.nom>        
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-              
-                <input matInput placeholder="Prenom" type="text">
-              
-            </div>
-            <div class="col-md-6">
-           
-                <input matInput placeholder="Nom" type="text">
-            
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-              
-                <input matInput placeholder="Adresse" type="text">
-          
+
+        <div class="formRow">
+          <div class="formItem">    
+            <input name="email" type="email" [(ngModel)]=client.email>             
+          </div>
+          <div class="formItem">    
+            <input name="telephone" type="text" [(ngModel)]=client.telephone>             
+          </div>
+      </div>
+
+        <div class="formRow">
+            <div class="formItem">            
+              <input name="adresse" type="text" [(ngModel)]=client.adresse>        
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-          
-                <input matInput placeholder="Ville" type="text">
-             
-            </div>
-          
-            <div class="col-md-4">
-             
-                <input matInput placeholder="Code postal" type="text">
-              
+
+        <div class="formRow">
+            <div class="formItem">          
+              <input name="ville" type="text" [(ngModel)]=client.ville>             
+            </div>          
+            <div class="formItem">             
+              <input name="codePostal" type="text" [(ngModel)]=client.codePostale>            
             </div>
         </div>
         
-        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Créer</button>
-        <div class="clearfix"></div>
+        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Actualiser</button>
+        
     </form>
 </div>
+</div> <!-- fin client card -->
+
+<li *ngFor="let compteClient of compteClients" >
+
+    <!--   [class.selected]="client === selectedClient"
+    (click)="onSelect(client)"-->
+
+      Compte numéro: {{compteClient.numeroCompte}}, solde: {{compteClient.solde}}
+    </li>
+
+
 </div>
