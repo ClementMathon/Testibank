@@ -49,14 +49,14 @@
     </form>
 </div>
 </div> <!-- fin client card -->
-
-<li *ngFor="let compteClient of compteClients" >
+<ul>
+<li *ngFor="let compteClient of comptesDuClient" >
 
     <!--   [class.selected]="client === selectedClient"
     (click)="onSelect(client)"-->
 
       Compte numéro: {{compteClient.numeroCompte}}, solde: {{compteClient.solde}}
     </li>
-
+  </ul>
 
 </div>
