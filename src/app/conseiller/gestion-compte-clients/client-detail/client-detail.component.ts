@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Client} from 'src/model/client';
+import { Compte } from 'src/model/compte';
+import {FakeServiceCompteService} from '../../../../model/fake-service-compte.service';
 
 
 @Component({
@@ -11,9 +13,23 @@ import {Client} from 'src/model/client';
 
 export class ClientDetailComponent implements OnInit {
   @Input() client: Client;
-  constructor() { }
+
+  //compteDuClient : Client;
+
+  comptesDuClient : Compte[]; 
+
+  constructor( private compteClientService: FakeServiceCompteService) { }
+
+
+  getComptesClient(): void {
+     this.compteClientService.getComptesDuClient(1).subscribe(comptesDuClient => this.comptesDuClient = comptesDuClient);
+  }
 
   ngOnInit() {
+    this.getComptesClient();
   }
+
+
+
 
 }
