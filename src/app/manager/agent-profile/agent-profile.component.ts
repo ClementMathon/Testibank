@@ -14,7 +14,7 @@ myNewAdvisor: Conseiller;
 
   constructor(public myAgentListservice: FakeServiceConseillerService) {
 
-   this.myNewAdvisor = new Conseiller(0, '', '', '', '', '', '', 0, '');
+   this.myNewAdvisor = new Conseiller(0, '', '', '', '', '', '', null, '');
 
   }
 

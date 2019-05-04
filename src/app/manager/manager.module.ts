@@ -16,6 +16,7 @@ const managerRoutes: Routes = [
 { path: '', component: ManagerComponent , children: [
   { path: 'gestiondesagents', component: GestiondesagentsComponent },
   { path: 'modifierunagent', component: ModifierunagentComponent },
+  { path: 'suprimerunagent', component: SupprimerunagentComponent },
 
   { path: 'profile', component: AgentProfileComponent },
   { path: 'affectation', component: AffectationComponent  }]
