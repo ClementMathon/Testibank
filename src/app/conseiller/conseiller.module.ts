@@ -7,7 +7,7 @@ import { ValideNouveauCompteComponent } from './valide-nouveau-compte/valide-nou
 import { GestionCompteClientsComponent } from './gestion-compte-clients/gestion-compte-clients.component';
 import { ClientDetailComponent } from './gestion-compte-clients/client-detail/client-detail.component';
 import { FormsModule } from '@angular/forms';
-import { CompteClientDetailComponent } from './compte-client-detail/compte-client-detail.component'
+
 
 
 const conseillerRoute : Routes = [
@@ -16,7 +16,7 @@ const conseillerRoute : Routes = [
 
 
 @NgModule({
-  declarations: [ConseillerComponent, ConseillerHomeComponent, ValideNouveauCompteComponent,  GestionCompteClientsComponent, ClientDetailComponent, CompteClientDetailComponent],
+  declarations: [ConseillerComponent, ConseillerHomeComponent, ValideNouveauCompteComponent,  GestionCompteClientsComponent, ClientDetailComponent],
   imports: [
     CommonModule,
     FormsModule,
