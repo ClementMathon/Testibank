@@ -15,7 +15,7 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
   agentselectionner: Conseiller;
   displaycard = false;
   constructor(public myAgentListservice: FakeServiceConseillerService) {
-    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', 0, '');
+    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', null, '');
 
 
    }
@@ -29,6 +29,10 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
 
   }
   ngOnDestroy() {
+
+  }
+ modifConsultant() {
+   this.myAgentListservice.ModifCounselor(this.agentselectionner);
 
   }
 }

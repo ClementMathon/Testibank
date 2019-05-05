@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Conseiller } from 'src/model/conseiller';
+
 import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
+import { FakeServiceClientService } from 'src/model/fake-service-client.service';
+import { Client } from 'src/model/client';
 @Component({
   selector: 'app-affectation',
   templateUrl: './affectation.component.html',
@@ -8,26 +13,35 @@ import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.
 export class AffectationComponent implements OnInit {
   searchText = '';
   searchText1 = '';
-  characters = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ];
 
-  characters1 = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ];
-  constructor() { }
 
-  ngOnInit() {
+  myAgentList: Conseiller[];
+  agentselectionner: Conseiller;
+  clientselectionner: Client;
+  myClientList: Client[];
+  constructor(public myAgentListservice: FakeServiceConseillerService, public MyClientListservice: FakeServiceClientService) {
+
+    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', null, '');
+    this.clientselectionner = new Client(1, '', '', '', '', '', '', 0, '', '', 0, null);
+
+  }
+  agentsChoice(individu: Conseiller) {
+    this.agentselectionner = individu;
+    this.searchText = individu.nom + ' ' + individu.prenom;
+
+  }
+  clientsChoice(myclient: Client) {
+    this.clientselectionner = myclient;
+    this.searchText1 = myclient.nom + ' ' + myclient.prenom;
+
   }
 
+  ngOnInit() {
+    this.myAgentList = this.myAgentListservice.getAll();
+    this.myClientList = this.MyClientListservice.getAll().filter(it => it.conseiller === null);
+  }
+  assigneclienttoconselor(){
+
+    
+  }
 }

@@ -18,7 +18,7 @@ export class GestiondesagentsComponent implements OnInit, OnDestroy {
 
   constructor(public myAgentListservice: FakeServiceConseillerService) {
 
-    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', 0, '');
+    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', null, '');
 
    }
 agentsChoice(individu: Conseiller) {
