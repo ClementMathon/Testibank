@@ -6,16 +6,16 @@
   <ol >
 
     <li
-       [routerLink]="['/manager/gestiondesagents']"><a (click)='mychoice(0)'>Fiche Agent</a>
+       ><a [routerLink]="['/manager/gestiondesagents']" (click)='mychoice(0)'>Fiche Agent</a>
        <div [ngClass]="calculateclass()"></div>
        </li>
-    <li [routerLink]="['/manager/profile']"><a (click)='mychoice(1)'>Ajouter Agent</a>
+    <li ><a [routerLink]="['/manager/profile']" (click)='mychoice(1)'>Ajouter Agent</a>
 
     </li>
-    <li [routerLink]="['/manager/modifierunagent']"><a (click)='mychoice(2)'>modifier Agent</a></li>
-    <li [routerLink]="['/manager/suprimerunagent']"><a (click)='mychoice(3)'>Enlever Agent</a></li>
-    <li [routerLink]="['/manager/affectation']"><a (click)='mychoice(4)'>affectation</a></li>
-    <li [routerLink]="['']"><a >deconnecter</a>
+    <li ><a [routerLink]="['/manager/modifierunagent']" (click)='mychoice(2)'>modifier Agent</a></li>
+    <li><a  [routerLink]="['/manager/suprimerunagent']" (click)='mychoice(3)'>Enlever Agent</a></li>
+    <li ><a [routerLink]="['/manager/affectation']" (click)='mychoice(4)'>affectation</a></li>
+    <li ><a [routerLink]="['']">deconnecter</a>
     </li>
 
   </ol>

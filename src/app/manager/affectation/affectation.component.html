@@ -50,7 +50,9 @@
 
          </div>
          <div class="row">
-      <button type="button" id="assignButton" class="btn btn-success text-center" (click)="assigneclienttoconselor()">Assigner</button>
+      <button type="submit" id="assignButton" class="btn btn-success text-center"
+      [routerLink]="['/manager/affectation']"
+        (click)="assigneclienttoconselor()">Assigner</button>
     </div>
     </div> <!-- end row-->
 

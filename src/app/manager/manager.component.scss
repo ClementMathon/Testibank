@@ -14,7 +14,7 @@ $gradient-end2 :#DE4313;
 left:0%;
    background: rgba(0, 0, 0, 0.2);
    border-radius: 0.5rem;
-   z-index: 2;
+   z-index: 0;
 
    transition: 350ms cubic-bezier(1, 0.49, 0.09, 1.29) all;
 
@@ -66,7 +66,7 @@ left:0%;
     color: black;
     text-decoration: none;
     font-weight: 400;
-z-index: 0;
+z-index: 1;
     &:focus,
     &:focus-within {
       outline: none;
@@ -81,7 +81,7 @@ z-index: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-
+z-index: 1;
     }
   }
 
@@ -91,7 +91,7 @@ z-index: 0;
   .menu {
     >ol {  position: relative;
       justify-content: space-around;
- z-index: 0;
+ z-index: 3;
 
       >li {
         flex: 1 1 0;
@@ -102,7 +102,7 @@ z-index: 0;
 
           width: 100%;
           text-align: center;
-z-index: 0;
+z-index: 3;
           opacity: 0.7;
           transition: 250ms ease all;
         }

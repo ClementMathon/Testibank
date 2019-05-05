@@ -9,21 +9,23 @@ export class FakeServiceClientService {
 
   constructor() { }
 
-  getAll(){
+  getAll() {
       return CLIENTS;
     }
 
   getClientsDuConseiller(targetConseillerID) {
-    var filteredclients = CLIENTS.filter(function (el) {
+    const filteredclients = CLIENTS.filter(function(el) {
       return (el.conseiller === targetConseillerID);
       });
-  return filteredclients;
-  }  
-
+    return filteredclients;
+  }
+setConseillerToClient(clientId: number, conseillerId: number) {
+CLIENTS.filter(myclient => myclient.id === clientId)[0].conseiller = conseillerId;
+}
   }
 
 
-/* ==========================   ancienne méthode d'instanciation, maintenant dans mock-clients ==============================================    
+/* ==========================   ancienne méthode d'instanciation, maintenant dans mock-clients ==============================================
 
 const fakeClient = [
 		  new Client(0, 'pwd', 'Leault', 'Jérémie', 'jeremie.leault@gmail.com', 706060606, '28 rue de GK', 69007, 'Lyon', 'celibataire', 0, 0 ),
