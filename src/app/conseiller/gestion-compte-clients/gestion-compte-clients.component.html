@@ -5,26 +5,25 @@
   </h2>
 </div>
 
-<div class="mainContainer">
-
-
-<div class="panel panelOne">
+<div class="row" id="mainContainer">
+<div class="col-xs-2 mx-3">
   <h3>Mes Clients</h3>
-  <ul class="heroes">
+  <ul class="list-group">
     <li *ngFor="let client of clients"
     [class.selected]="client === selectedClient"
     (click)="onSelect(client)"
+    class="list-group-item"
     >
-      <span class="badge">{{client.id}}</span> {{client.nom}}, {{client.prenom}}
+      <span class="badge badge-secondary">{{client.id}}</span> {{client.nom}}, {{client.prenom}}
     </li>
   </ul> 
 </div>
 
-<div class="panel panelTwo">
+<div class="col-xs-5 mx-3">
   <app-client-detail [client]="selectedClient"></app-client-detail>
 </div>
 
-<div class="panel panelThree">
+<div class="col-xs-5 mx-3">
 </div> 
 
 </div>

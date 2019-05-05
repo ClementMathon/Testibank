@@ -25,5 +25,4 @@ export class GestionCompteClientsComponent implements OnInit {
   ngOnInit() {
     this.getClients();
   }
-
 }

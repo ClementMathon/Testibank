@@ -1,14 +1,36 @@
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+<!--
 
-  <nav class="conseillerNav">
-<p class="connectedStatus">Connecté : conseiller matricule 1</p>
-        <ul class="conseillerNavList">
+<nav class="navbar navbar-dark bg-primary">
+
+<p class="mx-auto">Espace conseiller</p>
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item" ><a (click)="value = 0">Home</a></li>
             <li class="nav-item"><a (click)="value = 1">Validation Nouveau Comptes</a></li>
             <li class="nav-item"><a (click)="value = 2">Gestion Compte Clients</a></li>
             <li class="nav-item"><a href="/">Me Déconnecter</a></li>
         </ul>
     </nav>
+-->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand abs" href="#">Espace conseiller</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item" ><a class="nav-link" (click)="value = 0">Home</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="value = 1">Validation Nouveau Comptes</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="value = 2">Gestion Compte Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Me Déconnecter</a></li>
+            </ul>
+        </div>
+        <p class="ml-auto">Connecté : conseiller matricule 1</p>
+    </nav>
+    
   
   <div [ngSwitch]="value">
       <app-conseiller-home *ngSwitchCase=0></app-conseiller-home>
