@@ -4,24 +4,21 @@
 </div>
 <nav class="menu">
   <ol >
-    <li [ngClass]="{'choixAction': choix[0]===true}" (click)=" mychoice(0)"><a
-        [routerLink]="['/manager/gestiondesagents']">Fiche Agent</a></li>
-    <li [ngClass]="{'choixAction': choix[1]===true}" (click)="mychoice(1)"><a [routerLink]="['/manager/profile']">Ajouter
-        Agent</a></li>
-    <li [ngClass]="{'choixAction': choix[2]===true}" (click)="mychoice(2)"><a
-        [routerLink]="['/manager/modifierunagent']">modifier Agent</a>
+
+    <li
+       [routerLink]="['/manager/gestiondesagents']"><a (click)='mychoice(0)'>Fiche Agent</a>
+       <div [ngClass]="calculateclass()"></div>
+       </li>
+    <li [routerLink]="['/manager/profile']"><a (click)='mychoice(1)'>Ajouter Agent</a>
+
     </li>
-    <li [ngClass]="{'choixAction': choix[3]===true}" (click)="mychoice(3)"><a
-        [routerLink]="['/manager/suprimerunagent']">Enlever
-        Agent</a></li>
-    <li [ngClass]="{'choixAction': choix[4]===true}" (click)="mychoice(4)"><a
-        [routerLink]="['/manager/affectation']">affectation</a></li>
-    <li [ngClass]="{'choixAction': choix[5]===true}" (click)="mychoice(5)"><a routerLink="/">deconnecter</a></li>
+    <li [routerLink]="['/manager/modifierunagent']"><a (click)='mychoice(2)'>modifier Agent</a></li>
+    <li [routerLink]="['/manager/suprimerunagent']"><a (click)='mychoice(3)'>Enlever Agent</a></li>
+    <li [routerLink]="['/manager/affectation']"><a (click)='mychoice(4)'>affectation</a></li>
+    <li [routerLink]="['']"><a >deconnecter</a>
+    </li>
 
   </ol>
 </nav>
- <router-outlet ></router-outlet>
+<router-outlet></router-outlet>
 <footer>Made by Jean Charles Gouleau</footer>
-
-
-

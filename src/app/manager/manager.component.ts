@@ -7,19 +7,27 @@ import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.
   providers: [FakeServiceConseillerService]
 })
 export class ManagerComponent implements OnInit {
-  choix: boolean[] = [];
-indicetrue: number;
+  decale: boolean[];
+  indicetrue: number;
 
   constructor() {
-    this.choix = [true, false, false, false, false, false];
+    this.decale = [true, false, false, false, false, false];
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+  mychoice(choixmenu: number) {
+    this.indicetrue = this.decale.findIndex(it => it === true);
+    this.decale[this.indicetrue] = false;
+    this.decale[choixmenu] = true;
   }
-mychoice(choixmenu: number) {
-this.indicetrue = this.choix.findIndex((it) => it === true );
-this.choix[this.indicetrue] = false;
-this.choix[choixmenu] = true;
-
-}
+  calculateclass() {
+    return {
+      choixAction: true,
+      choixActionwidth1: this.decale[1],
+      choixActionwidth2: this.decale[2],
+      choixActionwidth3: this.decale[3],
+      choixActionwidth4: this.decale[4],
+      choixActionwidth5: this.decale[5]
+    };
+  }
 }
