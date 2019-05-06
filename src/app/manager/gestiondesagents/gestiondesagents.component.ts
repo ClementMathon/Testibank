@@ -1,9 +1,8 @@
-import { Component, OnInit , Input, OnDestroy} from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
 import { Conseiller } from 'src/model/conseiller';
 
 import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
-
 
 @Component({
   selector: 'app-gestiondesagents',
@@ -11,29 +10,21 @@ import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.
   styleUrls: ['./gestiondesagents.component.scss']
 })
 export class GestiondesagentsComponent implements OnInit, OnDestroy {
-  searchText: string ;
+  searchText: string;
   myAgentList: Conseiller[];
-  agentselectionner: Conseiller ;
+  agentselectionner: Conseiller;
   displaycard = false;
 
   constructor(public myAgentListservice: FakeServiceConseillerService) {
-
     this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', null, '');
-
-   }
-agentsChoice(individu: Conseiller) {
-  this.agentselectionner = individu;
-  this.searchText = individu.nom + ' ' + individu.prenom;
-  this.displaycard = true;
-}
+  }
+  agentsChoice(individu: Conseiller) {
+    this.agentselectionner = individu;
+    this.searchText = individu.nom + ' ' + individu.prenom;
+    this.displaycard = true;
+  }
   ngOnInit() {
-
     this.myAgentList = this.myAgentListservice.getAll();
-
-
   }
-  ngOnDestroy() {
-
-  }
-
+  ngOnDestroy() {}
 }

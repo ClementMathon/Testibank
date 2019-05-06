@@ -13,31 +13,48 @@ import { ModifierunagentComponent } from './modifierunagent/modifierunagent.comp
 import { SupprimerunagentComponent } from './supprimerunagent/supprimerunagent.component';
 
 const managerRoutes: Routes = [
-{ path: '', component: ManagerComponent , children: [
-  { path: 'gestiondesagents', component: GestiondesagentsComponent },
-  { path: 'modifierunagent', component: ModifierunagentComponent },
-  { path: 'suprimerunagent', component: SupprimerunagentComponent },
+  {
+    path: '',
+    component: ManagerComponent,
+    children: [
+      {
+        path: 'gestiondesagents',
+        component: GestiondesagentsComponent
+      },
+      {
+        path: 'modifierunagent',
+        component: ModifierunagentComponent
+      },
+      {
+        path: 'suprimerunagent',
+        component: SupprimerunagentComponent
+      },
 
-  { path: 'profile', component: AgentProfileComponent },
-  { path: 'affectation', component: AffectationComponent  }]
-
-}
+      {
+        path: 'profile',
+        component: AgentProfileComponent
+      },
+      {
+        path: 'affectation',
+        component: AffectationComponent
+      }
+    ]
+  }
 ];
 
-
 @NgModule({
-  declarations: [ManagerComponent, AffectationComponent, AgentProfileComponent,
-    GestiondesagentsComponent, FilterPipe, AffectationPipe, AffectationPipe1, ModifierunagentComponent, SupprimerunagentComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule.forChild(managerRoutes)
+  declarations: [
+    ManagerComponent,
+    AffectationComponent,
+    AgentProfileComponent,
+    GestiondesagentsComponent,
+    FilterPipe,
+    AffectationPipe,
+    AffectationPipe1,
+    ModifierunagentComponent,
+    SupprimerunagentComponent
   ],
-  exports: [
-    RouterModule
-  ]
+  imports: [CommonModule, FormsModule, RouterModule.forChild(managerRoutes)],
+  exports: [RouterModule]
 })
-export class ManagerModule {
-
-
- }
+export class ManagerModule {}

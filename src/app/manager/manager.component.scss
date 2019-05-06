@@ -4,8 +4,58 @@ $gradient-start1 : #FEC163;
 $gradient-end2 :#DE4313;
 
 
+ .choixAction {
+
+   content: '';
+   position: absolute;
+   top: 0;
+   width: 100%;
+   bottom: 0;
+left:0%;
+   background: rgba(0, 0, 0, 0.2);
+   border-radius: 0.5rem;
+   z-index: 0;
+
+   transition: 350ms cubic-bezier(1, 0.49, 0.09, 1.29) all;
 
 
+
+ }
+.choixActionwidth1{
+
+  left:100%;
+
+
+
+}
+.choixActionwidth2{
+
+  left:200%;
+
+
+
+}
+.choixActionwidth3{
+
+  left:300%;
+
+
+
+}
+.choixActionwidth4{
+
+  left:400%;
+
+
+
+}
+.choixActionwidth5{
+
+  left:500%;
+
+
+
+}
 .menu {
   background-image: linear-gradient(135deg, $gradient-start 10%, $gradient-end 100%);
   border-radius: 0.5rem;
@@ -16,7 +66,7 @@ $gradient-end2 :#DE4313;
     color: black;
     text-decoration: none;
     font-weight: 400;
-
+z-index: 1;
     &:focus,
     &:focus-within {
       outline: none;
@@ -26,28 +76,22 @@ $gradient-end2 :#DE4313;
   >ol {
     display: flex;
 
-    >li {
+    >li {outline: none;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+z-index: 1;
     }
   }
+
 }
 
 @media(min-width: 45rem) {
   .menu {
-    >ol {
+    >ol {  position: relative;
       justify-content: space-around;
-
-      &:hover,
-      &:focus-within {
-        >li:first-child {
-          >a {
-            opacity: 0.6;
-          }
-        }
-      }
+ z-index: 3;
 
       >li {
         flex: 1 1 0;
@@ -55,10 +99,10 @@ $gradient-end2 :#DE4313;
         >a {
           padding: 1rem 0;
           font-size: 1.2vw;
-          position: relative;
+
           width: 100%;
           text-align: center;
-          z-index: 1;
+z-index: 3;
           opacity: 0.7;
           transition: 250ms ease all;
         }
@@ -85,112 +129,16 @@ $gradient-end2 :#DE4313;
               color: rgba(255, 255, 255, 0.6);
               transition: 250ms ease all;
 
-              &:hover,
-              &:focus,
-              &:focus-within {
-                box-shadow: inset 0 0 0 3rem rgba(0, 0, 0, 0.1);
-                color: rgba(255, 255, 255, 1);
-              }
+
             }
           }
         }
-       &:hover,
-       &:focus,
-       &:focus-within {
-         >a {
-           opacity: 1 !important;
-         }
 
-         >ol {
-           visibility: visible;
-
-           >li {
-             transform: scale(1);
-
-             &:first-child {
-               transition-delay: 150ms;
-             }
-           }
-
-           @for $k from 1 to 12 {
-             >li:nth-child(#{$k}) {
-               transition-delay: 150ms * $k;
-             }
-           }
-         }
-       }
       }
     }
   }
 }
-/*
-@media(max-width: 45rem) {
-  .menu {
-    background-image: linear-gradient(to bottom, $gradient-start 0%, $gradient-end 100%);
 
-    a {
-      font-size: 1.4rem;
-      padding: 1rem 0.5rem;
-    }
-
-    >ol {
-      flex-direction: column;
-
-      >li {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-
-        >a:nth-last-child(2) {
-          position: relative;
-
-          &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            margin-top: -0.25rem;
-            right: 1.5rem;
-            border-top: 0.5rem solid #fff;
-            border-left: 0.3rem solid transparent;
-            border-right: 0.3rem solid transparent;
-            transition: 250ms ease all;
-          }
-        }
-
-        &:focus-within,
-        &:focus,
-        >a:hover,
-        >a:focus-within,
-        >a:focus {
-          &:nth-last-child(2) {
-            &:after {
-              transform: rotate(180deg);
-            }
-          }
-
-          +ol {
-            max-height: 12rem;
-          }
-        }
-
-        >ol {
-          background: rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
-          overflow: hidden;
-          max-height: 0;
-          transition: 250ms ease all;
-
-          >li {
-            a {
-              display: block;
-              font-size: 1.2rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}*/
 footer {
   position: absolute;
   right: 0;
@@ -200,32 +148,4 @@ footer {
   background-color: #efefef;
   text-align: center;
 }
-  .choixAction {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    bottom: 0;
 
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 0.5rem;
-    z-index: 0;
-    transition: 1s cubic-bezier(1, 0.49, 0.09, 1.29) all;
-    pointer-events: none;
-  }
-
-/*.focusonli{
-
-    //right: 50% ;
-
-
-  >ol a {
-    box-shadow: inset 0 0 0 3rem rgba(0, 0, 0, 0), inset 0 0 0 3rem rgba(237, 110, 160, 0.8);
-
-
-    &:focus,
-    &:focus-within {
-      box-shadow: inset 0 0 0 3rem rgba(0, 0, 0, 0.1), inset 0 0 0 3rem rgba(237, 110, 160, 0.8);
-    }
-  }
-}*/

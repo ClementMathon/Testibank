@@ -31,6 +31,7 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
   }
 deleteConsultant() {
     this.myAgentListservice.deleteCounselor(this.agentselectionner);
-
+    this.myAgentListservice.decale[3] = false;
+    this.myAgentListservice.decale[0] = true;
   }
 }

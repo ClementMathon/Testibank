@@ -1,18 +1,16 @@
-export class Compte{	
-	numeroCompte: Number; 
-	idClient: Number;
-	typeCompte: Number;
-	decouverAutorise: Number;
-	plafondAutorise: Number;
-	solde: Number;
+export class Compte {
+  numeroCompte: number;
+  idClient: number;
+  typeCompte: number;
+  decouverAutorise: number;
+  plafondAutorise: number;
+  solde: number;
 
-	/**
-	 * on a obligatoirement besoin d'un client pour creer un compte <3
-	 */
+  /**
+   * on a obligatoirement besoin d'un client pour creer un compte <3
+   */
 
-	
-
-	/*public constructor (numeroCompte: Number ,idClient :Number, typeCompte: Number,  decouverAutorise: Number, plafondAutorise: Number){
+  /*public constructor (numeroCompte: number ,idClient :number, typeCompte: number,  decouverAutorise: number, plafondAutorise: number){
 		this.idClient = idClient;
 		this.numeroCompte = numeroCompte;
 		this.typeCompte = typeCompte;
@@ -20,41 +18,41 @@ export class Compte{
 		this.plafondAutorise = plafondAutorise;
 	}
 
-	public getNumeroCompte(): Number {
+	public getNumeroCompte(): number {
 		return this.numeroCompte;
 	}
-	public setNumeroCompte(value: Number) {
+	public setNumeroCompte(value: number) {
 		this.numeroCompte = value;
 	}
 
-	public getIdClient(): Number {
+	public getIdClient(): number {
 		return this.idClient;
 	}
-	public setIdClient(value: Number) {
+	public setIdClient(value: number) {
 		this.idClient = value;
 	}
 
-	
-	public getTypeCompte(): Number {
+
+	public getTypeCompte(): number {
 		return this.typeCompte;
 	}
-	public setTypeCompte(value: Number) {
+	public setTypeCompte(value: number) {
 		this.typeCompte = value;
 	}
 
-	
-	public getDecouverAutorise(): Number {
+
+	public getDecouverAutorise(): number {
 		return this.decouverAutorise;
 	}
-	public setDecouverAutorise(value: Number) {
+	public setDecouverAutorise(value: number) {
 		this.decouverAutorise = value;
 	}
 
-	
-	public getPlafondAutorise(): Number {
+
+	public getPlafondAutorise(): number {
 		return this.plafondAutorise;
 	}
-	public setPlafondAutorise(value: Number) {
+	public setPlafondAutorise(value: number) {
 		this.plafondAutorise = value;
 	}*/
 }

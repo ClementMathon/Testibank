@@ -14,34 +14,59 @@ export class AffectationComponent implements OnInit {
   searchText = '';
   searchText1 = '';
 
-
   myAgentList: Conseiller[];
   agentselectionner: Conseiller;
   clientselectionner: Client;
   myClientList: Client[];
-  constructor(public myAgentListservice: FakeServiceConseillerService, public MyClientListservice: FakeServiceClientService) {
-
-    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', null, '');
-    this.clientselectionner = new Client(1, '', '', '', '', '', '', 0, '', '', 0, null);
-
+  constructor(
+    public myAgentListservice: FakeServiceConseillerService,
+    public MyClientListservice: FakeServiceClientService
+  ) {
+    this.agentselectionner = new Conseiller(
+      0,
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      null,
+      ''
+    );
+    this.clientselectionner = new Client(
+      1,
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      0,
+      '',
+      '',
+      0,
+      null
+    );
   }
   agentsChoice(individu: Conseiller) {
     this.agentselectionner = individu;
     this.searchText = individu.nom + ' ' + individu.prenom;
-
   }
   clientsChoice(myclient: Client) {
     this.clientselectionner = myclient;
     this.searchText1 = myclient.nom + ' ' + myclient.prenom;
-
   }
 
   ngOnInit() {
     this.myAgentList = this.myAgentListservice.getAll();
-    this.myClientList = this.MyClientListservice.getAll().filter(it => it.conseiller === null);
+    this.myClientList = this.MyClientListservice.getAll().filter(
+      it => it.conseiller === null
+    );
+    this.searchText = '';
+    this.searchText1 = '';
   }
-  assigneclienttoconselor(){
-
-    
-  }
+  assigneclienttoconselor() {
+this.MyClientListservice.setConseillerToClient(this.clientselectionner.id, this.agentselectionner.mle);
+this.ngOnInit();
+}
 }
