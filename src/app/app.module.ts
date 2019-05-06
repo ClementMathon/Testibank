@@ -10,6 +10,8 @@ import { GuestComponent } from './guest/guest.component';
 import { FormulaireConnexionComponent } from './guest/formulaire-connexion/formulaire-connexion.component';
 import { NotificationComponent } from './guest/notification/notification.component';
 import { FormsModule }   from '@angular/forms';
+import { TitreComponent } from './guest/titre/titre.component';
+import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule }   from '@angular/forms';
     AppComponent,
     GuestComponent,
     FormulaireConnexionComponent,
-    NotificationComponent
+    NotificationComponent,
+    TitreComponent,
+    FondGuestComponent
   ],
   imports: [
     BrowserModule,
