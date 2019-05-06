@@ -20,11 +20,23 @@
 }
 
 .center {
+    text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-  }
+    font-size: 135px;
+    color: white;
+    animation-name: fadeIn;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    
+}
+
+.majTitre{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
 
 @keyframes haut {
     from {right: -1900px;}
@@ -35,3 +47,9 @@
     from {right: 7600px;}
     to {right: -10px; }
 }
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
