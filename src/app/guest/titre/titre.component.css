@@ -1,21 +1,30 @@
 .barreHaute {
     width: 1900px;
     
-    background: lightblue;
+    /*background: lightblue;*/
     position: relative;
     animation-name: haut;
     animation-duration: 1.5s;  
     animation-fill-mode: forwards;
+    color: white
     
 }
 
 .barreBasse{
-    background: lightblue;
+    /*background: lightblue;*/
     position: relative;
     animation-name: bas;
     animation-duration: 4.5s;  
     animation-fill-mode: forwards;
+    color: white
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
 @keyframes haut {
     from {right: -1900px;}
