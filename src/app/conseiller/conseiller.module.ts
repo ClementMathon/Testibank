@@ -10,9 +10,22 @@ import { FormsModule } from '@angular/forms';
 
 
 
-const conseillerRoute : Routes = [
-  {path: '**', component: ConseillerComponent,}
-]
+//const conseillerRoute : Routes = [
+ // {path: '**', component: ConseillerComponent,}
+//]
+
+const conseillerRoutes: Routes = [
+  {path: '', component: ConseillerComponent, children:
+    [
+      {path: 'conseillerHome',  component: ConseillerHomeComponent},
+      {path: 'gestionCompteClients',  component: GestionCompteClientsComponent},
+      {path: 'validationCompte',  component: ValideNouveauCompteComponent},
+
+    ]
+  }
+] ;
+
+
 
 
 @NgModule({
@@ -20,7 +33,7 @@ const conseillerRoute : Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(conseillerRoute),
+    RouterModule.forChild(conseillerRoutes),
   ],
   exports: [
     RouterModule,

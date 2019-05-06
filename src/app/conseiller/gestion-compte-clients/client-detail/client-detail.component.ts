@@ -11,6 +11,7 @@ import {FakeServiceCompteService} from '../../../../model/fake-service-compte.se
 
 export class ClientDetailComponent implements OnInit {
   @Input() client: Client;
+  
 
   comptesDuClient : Compte[]; 
 
@@ -28,6 +29,7 @@ export class ClientDetailComponent implements OnInit {
 
   // putting this.client.id instead of 1 doesn't work
   ngOnInit() {
+   
     this.getComptesClient();
   }
 }
