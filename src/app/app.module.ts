@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
@@ -21,7 +21,7 @@ import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
     FormulaireConnexionComponent,
     NotificationComponent,
     TitreComponent,
-    FondGuestComponent
+    FondGuestComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,9 +29,10 @@ import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
     ClientModule,
     ManagerModule,
     ConseillerModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

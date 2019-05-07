@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Conseiller } from 'src/model/conseiller';
+import { Conseiller } from '../../../model/conseiller';
 @Pipe({
   name: 'filter'
 })

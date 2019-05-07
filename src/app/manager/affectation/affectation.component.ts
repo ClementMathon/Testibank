@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Conseiller } from 'src/model/conseiller';
+import { Conseiller } from '../../../model/conseiller';
 
-import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
-import { FakeServiceClientService } from 'src/model/fake-service-client.service';
-import { Client } from 'src/model/client';
+import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
+import {FakeServiceClientService} from '../../../model/fake-service-client.service';
+import {Client} from '../../../model/client';
 @Component({
   selector: 'app-affectation',
   templateUrl: './affectation.component.html',

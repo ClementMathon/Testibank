@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Conseiller } from 'src/model/conseiller';
+import {Conseiller} from '../../../model/conseiller';
 
-import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
+import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
 @Component({
   selector: 'app-supprimerunagent',
   templateUrl: './supprimerunagent.component.html',
@@ -31,7 +31,8 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
   }
 deleteConsultant() {
     this.myAgentListservice.deleteCounselor(this.agentselectionner);
-    this.myAgentListservice.decale[3] = false;
-    this.myAgentListservice.decale[0] = true;
+    this.myAgentList = this.myAgentListservice.getAll();
+     this.displaycard = false;
+      this.searchText = '';
   }
 }
