@@ -8,24 +8,24 @@ $h-color: #9CC9E3;
 $yellow: #D0BB57;
 $txt-color: #DCE3E7;
 
+   .spring-fever {
 
+   }
 
 .blog-card {
     width: $card-width;
     height: $card-height;
     position: absolute;
-    top: 25vh;
+    top: 28vh;
     left: 20vw;
     margin: -250px 0 0 -175px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
     text-align: center;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/bg-blog-card.jpg) no-repeat;
+     background-size: cover;
 
-    &.spring-fever {
-        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/bg-blog-card.jpg) no-repeat;
-        background-size: contain;
-    }
 
     .color-overlay {
         /* Rectangle 11: */
@@ -74,6 +74,7 @@ $txt-color: #DCE3E7;
     width: 100%;
     top: 0;
     left: 0;
+
 }
 
 h3 {

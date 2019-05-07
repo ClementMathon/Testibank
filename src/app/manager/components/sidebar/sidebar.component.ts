@@ -41,7 +41,7 @@ export const ROUTES: RouteInfo[] = [
          },
 
          {
-           path: '/',
+           path: '/invite',
            title: 'déconnecter',
            icon: 'notifications',
            class: '',
