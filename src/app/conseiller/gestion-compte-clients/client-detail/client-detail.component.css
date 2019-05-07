@@ -1,12 +1,12 @@
-.formRow, .formItem {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
+
+label {
+    font-size: 0.7em;
 }
 
-.clientBox {
-    background-color: #EEE;
-    border-radius: 30px;
-    padding: 30px;
+h5 {
+    margin: 20px 0;
+}
+
+.badge {
+    margin-right: 20px;
 }

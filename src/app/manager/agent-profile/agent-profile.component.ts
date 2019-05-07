@@ -1,8 +1,6 @@
-import { Component, OnInit , Input, OnDestroy} from '@angular/core';
-import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
-import { Conseiller } from 'src/model/conseiller';
-
-
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
+import {Conseiller} from '../../../model/conseiller';
 
 @Component({
   selector: 'app-agent-profile',
@@ -10,23 +8,17 @@ import { Conseiller } from 'src/model/conseiller';
   styleUrls: ['./agent-profile.component.scss']
 })
 export class AgentProfileComponent implements OnInit, OnDestroy {
-myNewAdvisor: Conseiller;
+  myNewAdvisor: Conseiller;
 
   constructor(public myAgentListservice: FakeServiceConseillerService) {
-
-   this.myNewAdvisor = new Conseiller(0, '', '', '', '', '', '', 0, '');
-
+    this.myNewAdvisor = new Conseiller(0, '', '', '', '', '', '', null, '');
   }
 
-  ngOnInit() {
-
+  ngOnInit() {}
+  iAddAConsultant() {
+    this.myAgentListservice.addCounselor(this.myNewAdvisor);
+    this.myAgentListservice.decale[1] = false;
+    this.myAgentListservice.decale[0] = true;
   }
-iAddAConsultant() {
-
-  this.myAgentListservice.addCounselor(this.myNewAdvisor);
-
-
-}
-  ngOnDestroy() {
-  }
+  ngOnDestroy() {}
 }

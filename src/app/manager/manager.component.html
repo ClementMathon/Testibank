@@ -1,20 +1,16 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<div class="alert alert-primary" role="alert">
-  <h4>Gestion des Agents</h4>
-</div>
-<nav class="menu">
-  <ol >
-    <li ><a [routerLink]="['/manager/gestiondesagents']" >Fiche Agent</a></li>
-    <li><a [routerLink]="['/manager/profile']" >Ajouter Agent</a></li>
-    <li ><a [routerLink]="['/manager/modifierunagent']">modifier Agent</a></li>
-    <li ><a [routerLink]="['/manager/profile']" >Enlever Agent</a></li>
-    <li ><a [routerLink]="['/manager/affectation']" >affectation</a></li>
-    <li><a routerLink="/">deconnecter</a></li>
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+<div class="wrapper">
+    <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <app-navbar></app-navbar>
+       
+        <router-outlet></router-outlet>
 
-  </ol>
-</nav>
- <router-outlet ></router-outlet>
-<footer>Made by Jean Charles Gouleau</footer>
-
-
+            <app-footer></app-footer>
+        </div>
+    </div>
 

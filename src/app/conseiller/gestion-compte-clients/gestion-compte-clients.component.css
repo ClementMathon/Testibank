@@ -27,7 +27,7 @@
     background-color: #CFD8DC !important;
     color: white;
   }
-  .heroes {
+  /*.heroes {
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
@@ -38,9 +38,8 @@
     position: relative;
     left: 0;
     background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
+    margin: 1em;
+
     border-radius: 4px;
   }
   .heroes li.selected:hover {
@@ -65,21 +64,16 @@
     line-height: 1em;
     position: relative;
     left: -1px;
-    top: -4px;
-    height: 1.8em;
+ 
+    height:2.5em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
-  }
-  .mainContainer {
+  }*/
+  #mainContainer {
 
-    display: flex;
-    justify-content: space-around;
+  margin: 30px;
   }
 
-  .panel {
-    width: 30%;
- 
-  }
   h3 {
     margin-left: 30px;
   }

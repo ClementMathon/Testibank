@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
-import { Conseiller } from 'src/model/conseiller';
+import {Conseiller} from '../../../model/conseiller';
 
-import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
+import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
 
 @Component({
   selector: 'app-modifierunagent',
@@ -15,7 +15,7 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
   agentselectionner: Conseiller;
   displaycard = false;
   constructor(public myAgentListservice: FakeServiceConseillerService) {
-    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', 0, '');
+    this.agentselectionner = new Conseiller(0, '', '', '', '', '', '', null, '');
 
 
    }
@@ -30,5 +30,11 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
 
+  }
+  
+ modifConsultant() {
+   this.myAgentListservice.ModifCounselor(this.agentselectionner);
+   this.myAgentListservice.decale[2] = false;
+   this.myAgentListservice.decale[0] = true;
   }
 }
