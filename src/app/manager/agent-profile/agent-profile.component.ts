@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
-import { Conseiller } from 'src/model/conseiller';
+import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
+import {Conseiller} from '../../../model/conseiller';
 
 @Component({
   selector: 'app-agent-profile',

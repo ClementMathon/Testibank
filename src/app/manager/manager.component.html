@@ -1,24 +1,16 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<div class="alert alert-primary" role="alert">
-  <h4>Gestion des Agents</h4>
-</div>
-<nav class="menu">
-  <ol >
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+<div class="wrapper">
+    <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <app-navbar></app-navbar>
+       
+        <router-outlet></router-outlet>
 
-    <li
-       ><a [routerLink]="['/manager/gestiondesagents']" (click)='mychoice(0)'>Fiche Agent</a>
-       <div [ngClass]="calculateclass()"></div>
-       </li>
-    <li ><a [routerLink]="['/manager/profile']" (click)='mychoice(1)'>Ajouter Agent</a>
+            <app-footer></app-footer>
+        </div>
+    </div>
 
-    </li>
-    <li ><a [routerLink]="['/manager/modifierunagent']" (click)='mychoice(2)'>modifier Agent</a></li>
-    <li><a  [routerLink]="['/manager/suprimerunagent']" (click)='mychoice(3)'>Enlever Agent</a></li>
-    <li ><a [routerLink]="['/manager/affectation']" (click)='mychoice(4)'>affectation</a></li>
-    <li ><a [routerLink]="['']">deconnecter</a>
-    </li>
-
-  </ol>
-</nav>
-<router-outlet></router-outlet>
-<footer>Made by Jean Charles Gouleau</footer>
