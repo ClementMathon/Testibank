@@ -7,6 +7,7 @@ import { ValideNouveauCompteComponent } from './valide-nouveau-compte/valide-nou
 import { GestionCompteClientsComponent } from './gestion-compte-clients/gestion-compte-clients.component';
 import { ClientDetailComponent } from './gestion-compte-clients/client-detail/client-detail.component';
 import { FormsModule } from '@angular/forms';
+import { DetailCompteClientComponent } from './gestion-compte-clients/detail-compte-client/detail-compte-client.component';
 
 
 
@@ -15,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 //]
 
 const conseillerRoutes: Routes = [
-  {path: '', component: ConseillerComponent, children:
+  {path: '', component: ConseillerComponent , children:
     [
       {path: 'conseillerHome',  component: ConseillerHomeComponent},
       {path: 'gestionCompteClients',  component: GestionCompteClientsComponent},
@@ -29,7 +30,7 @@ const conseillerRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [ConseillerComponent, ConseillerHomeComponent, ValideNouveauCompteComponent,  GestionCompteClientsComponent, ClientDetailComponent],
+  declarations: [ConseillerComponent, ConseillerHomeComponent, ValideNouveauCompteComponent,  GestionCompteClientsComponent, ClientDetailComponent, DetailCompteClientComponent],
   imports: [
     CommonModule,
     FormsModule,
