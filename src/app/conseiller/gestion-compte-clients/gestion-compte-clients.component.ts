@@ -9,14 +9,14 @@ import {FakeServiceClientService} from '../../../model/fake-service-client.servi
   styleUrls: ['./gestion-compte-clients.component.css']
 })
 export class GestionCompteClientsComponent implements OnInit {
- 
-  clients : Client[];
+
+  clients: Client[];
   selectedClient: Client;
   constructor( private clientService: FakeServiceClientService) { }
 
   onSelect(client: Client): void {
     this.selectedClient = client;
-  } 
+  }
 
   getClients(): void {
     this.clients = this.clientService.getClientsDuConseiller(1);
@@ -24,5 +24,6 @@ export class GestionCompteClientsComponent implements OnInit {
 
   ngOnInit() {
     this.getClients();
+    this.selectedClient = this.clients[0];
   }
 }
