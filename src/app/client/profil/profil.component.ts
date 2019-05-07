@@ -14,6 +14,7 @@ export class ProfilComponent implements OnInit {
   model = new Client(8, 'pwd', 'Trump', 'Donald', 'iLuvGoldenShower@potus.com', 706060656, '28 rue de GK', 69007, 'New York', this.situations[6], 0, 0 );
 
   submitted = false;
+
   
   constructor() { }
 
@@ -21,6 +22,5 @@ export class ProfilComponent implements OnInit {
   }
   onSubmit() { this.submitted = true; }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  
 }
