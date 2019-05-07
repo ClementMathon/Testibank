@@ -16,15 +16,15 @@
     >
       <span class="badge badge-secondary">{{client.id}}</span> {{client.nom}}, {{client.prenom}}
     </li>
-  </ul> 
+  </ul>
+</div>
+
+<div  *ngIf="show" class="col-xs-5 mx-3">
+  <app-client-detail [client]="selectedClient" [comptecli]="comptesDuClient"></app-client-detail>
 </div>
 
 <div class="col-xs-5 mx-3">
-  <app-client-detail [client]="selectedClient"></app-client-detail>
 </div>
-
-<div class="col-xs-5 mx-3">
-</div> 
 
 </div>
 

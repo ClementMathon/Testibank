@@ -13,59 +13,58 @@
             <div class="row">
             <div class="col-xs-6 form-group">
               <label for="prenom">Prénom</label>
-              <input name="prenom" class="form-control" type="text" [(ngModel)]=client.prenom>            
+              <input name="prenom" class="form-control" type="text" [(ngModel)]=client.prenom>
             </div>
-            <div class="col-xs-6 form-group"> 
-                <label for="nom">Nom</label>          
-              <input name="nom" class="form-control" type="text" [(ngModel)]=client.nom>        
+            <div class="col-xs-6 form-group">
+                <label for="nom">Nom</label>
+              <input name="nom" class="form-control" type="text" [(ngModel)]=client.nom>
             </div>
           </div>
           <div class="row">
-          <div class="form-group col-xs-6 ">   
-              <label for="emai">email</label> 
-            <input name="email" class="form-control" type="email" [(ngModel)]=client.email>             
+          <div class="form-group col-xs-6 ">
+              <label for="emai">email</label>
+            <input name="email" class="form-control" type="email" [(ngModel)]=client.email>
           </div>
-          <div class="form-group col-xs-6 "> 
-              <label for="telephone">Téléphone</label>   
-            <input name="telephone" class="form-control" type="text" [(ngModel)]=client.telephone>             
+          <div class="form-group col-xs-6 ">
+              <label for="telephone">Téléphone</label>
+            <input name="telephone" class="form-control" type="text" [(ngModel)]=client.telephone>
           </div>
         </div>
 
 
-            <div class="form-group"> 
-                <label for="adresse">Adresse</label>           
-              <input name="adresse" class="form-control" type="text" [(ngModel)]=client.adresse>        
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+              <input name="adresse" class="form-control" type="text" [(ngModel)]=client.adresse>
             </div>
 
 
        <div class="row">
-            <div class="form-group col-xs-6 ">     
-                <label for="ville">Ville</label>     
-              <input name="ville" class="form-control" type="text" [(ngModel)]=client.ville>             
-            </div>          
-            <div class="form-group col-xs-6 ">    
-                <label for="codePostal">Code Postal</label>         
-              <input name="codePostal" class="form-control" type="text" [(ngModel)]=client.codePostale>            
+            <div class="form-group col-xs-6 ">
+                <label for="ville">Ville</label>
+              <input name="ville" class="form-control" type="text" [(ngModel)]=client.ville>
+            </div>
+            <div class="form-group col-xs-6 ">
+                <label for="codePostal">Code Postal</label>
+              <input name="codePostal" class="form-control" type="text" [(ngModel)]=client.codePostale>
             </div>
           </div>
-        
+
         <button mat-raised-button type="submit" class="btn btn-primary pull-right">Actualiser</button>
-        
+
     </form>
 </div>
 </div> <!-- fin client card -->
 <H5>Les comptes de  {{client.prenom}} : </H5>
 <ul class="list-group">
-<li *ngFor="let compteClient of comptesDuClient" 
+<li *ngFor="let compteClient of comptecli"
 [class.selected]="compteClient === selectedCompteClient"
 (click)="onSelect(compteClient)"
 class="list-group-item">
 
-   <span class="badge badge-secondary mr-auto">{{compteClient.numeroCompte}}</span> type: {{compteClient.typeCompte}}, 
+   <span class="badge badge-secondary mr-auto">{{compteClient.numeroCompte}}</span> type: {{compteClient.typeCompte}},
 
        solde: {{compteClient.solde | currency:'EUR':'symbol-narrow':'1.2-2'}}
     </li>
   </ul>
 
 </div>
- 

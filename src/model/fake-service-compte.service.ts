@@ -14,12 +14,11 @@ export class FakeServiceCompteService {
     return of(COMPTES);
   }*/
 
-  getComptesDuClient(targetClientID): Observable<Compte[]> {
-    var filteredcomptes = COMPTES.filter(function (el) {
-      return (el.idClient === targetClientID);
-      });
-  return of(filteredcomptes);
-  }  
+  getComptesDuClient(targetClientID): Compte[] {
+    return COMPTES.filter(compteclientvisé =>  compteclientvisé.idClient === targetClientID);
 
- 
+
+  }
+
+
 }
