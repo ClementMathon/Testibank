@@ -11,6 +11,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SidebarClientComponent } from './sidebar-client/sidebar-client.component';
 import { FormsModule } from '@angular/forms';
 import { CompteDetailComponent } from './compte-detail/compte-detail.component';
+import { MatButtonModule, MatRippleModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTooltipModule } from '@angular/material';
 
 const clientRoutes: Routes = [
   {path: '', component: ClientComponent, children:
@@ -38,10 +39,16 @@ const clientRoutes: Routes = [
   imports: [
     RouterModule.forChild(clientRoutes),
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTooltipModule,
   ],
   exports: [
-    RouterModule
+    RouterModule,
   ]
 })
 export class ClientModule { }
