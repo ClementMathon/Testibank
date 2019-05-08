@@ -67,7 +67,7 @@
                         {{ myclient.prenom }}
                       </td>
                       <td>
-                        {{ myclient.adresse }} {{ myclient.cp }}
+                        {{ myclient.adresse }} {{ myclient.codePostale }}
                         {{ myclient.ville }}
                       </td>
                       <td>
@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
       <div class="col-6">
         <div class="card">
@@ -147,23 +147,24 @@
                         {{individu.ville }}
                       </td>
                       <td>
-                        {{individu.telephone }}
+                        {{individu.tel }}
                       </td>
                     </tr>
+                      <span class="input-group-text" id="addon-wrapping">1</span>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-           
+
         </div>
          <button mat-raised-button  type="submit" class="btn btn-success pull-right" (click)="assigneclienttoconselor()"
         [routerLink]="['/affectation']">Assigner {{agentselectionner.nom}} à {{clientselectionner.nom}}</button>
-        
+
       </div>
     </div>
   </div>
 </div>
 
-    
- 
+
+
