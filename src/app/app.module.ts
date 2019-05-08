@@ -13,6 +13,8 @@ import { FormsModule }   from '@angular/forms';
 import { TitreComponent } from './guest/titre/titre.component';
 import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
 import { InscriptionComponent } from './guest/inscription/inscription.component';
+import { InscriptionClientComponent } from './guest/inscription/inscription-client/inscription-client.component';
+import { InscriptionConseillerComponent } from './guest/inscription/inscription-conseiller/inscription-conseiller.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { InscriptionComponent } from './guest/inscription/inscription.component'
     TitreComponent,
     FondGuestComponent,
     InscriptionComponent,
+    InscriptionClientComponent,
+    InscriptionConseillerComponent,
   ],
   imports: [
     BrowserModule,
