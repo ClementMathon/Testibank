@@ -19,13 +19,13 @@ export const clientRoutes: RouteInfo[] = [
          {
            path: '/client/comptes',
            title: 'Comptes',
-           icon: 'content_paste',
+           icon: 'account_balance_wallet',
            class: '',
          },
          {
            path: '/client/virement',
            title: 'Virement',
-           icon: 'dashboard',
+           icon: 'swap_horiz',
            class: '',
          },
          {
@@ -44,19 +44,19 @@ export const clientRoutes: RouteInfo[] = [
          {
            path: '/client/commandes',
            title: 'Commander',
-           icon: 'bubble_chart',
+           icon: 'add_shopping_cart',
            class: '',
          },
          {
           path: '/client/notifications',
           title: 'Notifications',
-          icon: 'bubble_chart',
+          icon: 'notifications',
           class: '',
         },
          {
            path: '/invite',
            title: 'déconnecter',
-           icon: 'notifications',
+           icon: 'exit_to_app',
            class: '',
          },
        ];
