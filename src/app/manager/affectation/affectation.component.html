@@ -33,7 +33,7 @@
                 </div>
 
                 <table class="table">
-                  <thead class=" text-primary">
+                  <thead *ngIf="showclient" class=" text-primary">
                     <th>
                       ID
                     </th>
@@ -111,7 +111,7 @@
                 </div>
 
                 <table class="table">
-                  <thead class=" text-primary">
+                  <thead *ngIf="showconseiller" class=" text-primary">
                     <th>
                       MLE
                     </th>
@@ -127,10 +127,13 @@
                     <th>
                       tel
                     </th>
+                    <th>
+                      Nb de client
+                    </th>
                   </thead>
                   <tbody>
                     <tr
-                      *ngFor="let individu of myAgentList | filter: searchText"
+                      *ngFor="let individu of myAgentList | filter: searchText "
               (click)="agentsChoice(individu)"
                     >
                       <td>
@@ -149,8 +152,12 @@
                       <td>
                         {{individu.tel }}
                       </td>
+                      <td>
+                        <h3><span class="badge badge-danger" title="Nombre de client">{{numberOfClientByConselor( individu.mle)}}</span></h3>
+                      </td>
+
                     </tr>
-                      <span class="input-group-text" id="addon-wrapping">1</span>
+
                   </tbody>
                 </table>
               </div>
@@ -159,7 +166,7 @@
 
         </div>
          <button mat-raised-button  type="submit" class="btn btn-success pull-right" (click)="assigneclienttoconselor()"
-        [routerLink]="['/affectation']">Assigner {{agentselectionner.nom}} à {{clientselectionner.nom}}</button>
+        [routerLink]="['/manager/affectation']">Assigner {{agentselectionner.nom}} à {{clientselectionner.nom}}</button>
 
       </div>
     </div>

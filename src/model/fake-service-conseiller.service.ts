@@ -4,16 +4,18 @@ import { Conseiller } from './conseiller';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FakeServiceConseillerService {
   fakeConseiller: Conseiller[] = [];
-  decale: boolean[];
+
+
   myAdvisorByMle: Conseiller[];
   constructor() {
-    this.decale = [true, false, false, false, false, false];
+
     this.fakeConseiller = [
       new Conseiller(
         0,
-        '24/04/2019',
+        '2019/04/24',
         'TARDIOU',
         'kim',
         'tk@gmail.com',
@@ -24,7 +26,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         10,
-        '12/03/2019',
+        '2019/03/12',
         'stephane',
         'stephane',
         'stephane@gmail.com',
@@ -35,7 +37,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         1,
-        '12/06/1956',
+        '1965/06/12',
         'Poulain',
         'Innocent',
         'poulain@free.fr',
@@ -46,7 +48,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         2,
-        '07/02/2098',
+        '2007/02/20',
         'Lejeune',
         'Francis',
         'francislejeune@yahoo.com',
@@ -57,7 +59,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         3,
-        '17/02/1902',
+        '2017/02/19',
         'Binet',
         'Girart',
         'binet@orange.fr',
@@ -68,7 +70,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         4,
-        '14/03/1945',
+        '2014/03/19',
         'Pujol',
         'Vital',
         'vitalpujol@laposte.net',
@@ -79,7 +81,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         5,
-        '04/12/1958',
+        '2004/12/18',
         'Lebon',
         'Lorelyne',
         'lebon@hotmail.fr',
@@ -90,7 +92,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         6,
-        '24/01/1927',
+        '1924/01/27',
         'Roux',
         'Esteban',
         'roux@yahoo.fr',
@@ -101,7 +103,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         7,
-        '27/10/1943',
+        '2017/10/13',
         'Arnaud',
         'Arnaud',
         'arnaudarnaud@gmail.com',
@@ -112,7 +114,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         8,
-        '25/03/2081',
+        '1952/03/21',
         'Boucher',
         'Aélis',
         'aelis.boucher@yahoo.fr',
@@ -123,7 +125,7 @@ export class FakeServiceConseillerService {
       ),
       new Conseiller(
         9,
-        '21/04/1957',
+        '2001/04/17',
         'Bouquet',
         'Iris',
         'bouquet@yahoo.com',
@@ -133,13 +135,14 @@ export class FakeServiceConseillerService {
         'Montpellier'
       )
     ];
+    this.fakeConseiller.sort((obj1, obj2) =>  (obj1.mle > obj2.mle ? 1 : -1) ) ;
   }
 
   getAll() {
     return this.fakeConseiller;
   }
   addCounselor(myNewAdvisor: Conseiller): void {
-    myNewAdvisor.mle = this.fakeConseiller.length + 1;
+    myNewAdvisor.mle = Math.max(...this.fakeConseiller.map(o => o.mle), 0) + 1;
     this.fakeConseiller.push(myNewAdvisor);
   }
   deleteCounselor(myNewAdvisor: Conseiller): void {
@@ -148,14 +151,14 @@ export class FakeServiceConseillerService {
     );
   }
   ModifCounselor(myNewAdvisor: Conseiller): void {
-    this.fakeConseiller
-      .filter(it => it.mle === myNewAdvisor.mle)
-      .fill(myNewAdvisor);
+    this.fakeConseiller.filter(it => it.mle === myNewAdvisor.mle)[0] = myNewAdvisor;
   }
-  returnCounselorByMle(mle: number): Conseiller[] {
+  CounselorByMle(mle: number): Conseiller[] {
     this.myAdvisorByMle = this.fakeConseiller.filter(
       conseiller1 => conseiller1.mle === mle
     );
     return this.myAdvisorByMle;
   }
+
+
 }

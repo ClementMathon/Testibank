@@ -158,7 +158,7 @@
                   <mat-form-field class="example-full-width">
                     <input
                       matInput
-                      [(ngModel)]="agentselectionner.dateEmbauche"
+                      [ngModel]="agentselectionner.dateEmbauche | date:'yyyy-MM-dd'" (ngModelChange)="agentselectionner.dateEmbauche = $event"
                       type="date"
                       name="dateembauche"
                       placeholder="agentselectionner.dateEmbauche"
@@ -184,7 +184,7 @@
                 type="submit"
                 class="btn btn-danger pull-right"
                 (click)="modifConsultant()"
-                [routerLink]="['/gestiondesagents']"
+                [routerLink]="['/manager/gestiondesagents']"
               >
                 Enregistrer un Agent
               </button>

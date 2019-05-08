@@ -17,8 +17,7 @@ export class AgentProfileComponent implements OnInit, OnDestroy {
   ngOnInit() {}
   iAddAConsultant() {
     this.myAgentListservice.addCounselor(this.myNewAdvisor);
-    this.myAgentListservice.decale[1] = false;
-    this.myAgentListservice.decale[0] = true;
+   
   }
   ngOnDestroy() {}
 }
