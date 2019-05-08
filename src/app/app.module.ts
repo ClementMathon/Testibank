@@ -12,6 +12,7 @@ import { NotificationComponent } from './guest/notification/notification.compone
 import { FormsModule }   from '@angular/forms';
 import { TitreComponent } from './guest/titre/titre.component';
 import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
+import { InscriptionComponent } from './guest/inscription/inscription.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
     NotificationComponent,
     TitreComponent,
     FondGuestComponent,
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,
