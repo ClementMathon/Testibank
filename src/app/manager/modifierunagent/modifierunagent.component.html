@@ -1,13 +1,13 @@
 <div class="main-content">
   <div class="container-fluid">
-<div class="row">
-  <div class="col-6">
-    <div class="card">
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
           <div class="card-header card-header-danger">
             <h4 class="card-title ">Modifier un Agent</h4>
             <p class="card-category">Liste des agents</p>
           </div>
-     <div ng-app="myApp" ng-controller="charactersCtrl" class="list-group">
+          <div ng-app="myApp" ng-controller="charactersCtrl" class="list-group">
             <div class="card-body">
               <div class="table-responsive">
                 <div class="input-group no-border">
@@ -72,103 +72,128 @@
               </div>
             </div>
           </div>
-  </div>
-  
-</div>
-  <div *ngIf="displaycard">
-    <div class="card">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title">Modifier un conseiller</h4>
-                     
-                  </div>
-                  <div class="card-body">
-                      <form>
-                          
-                          <div class="row">
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                               
-                                  <input matInput  [(ngModel)]="agentselectionner.nom" placeholder="Nom" name="Nom" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                   <input matInput [(ngModel)]="agentselectionner.prenom" type="text" name="prenom" placeholder="prenom">
-                                
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                             
-                             
-                              <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput [(ngModel)]="agentselectionner.email" type="email"  name="email" placeholder="email">
-     
-
-         
-                                  
-                                  </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                   <input matInput [(ngModel)]="agentselectionner.adresse" type="text"  name="adresse" placeholder="adresse">
-       
-                   
-                                  
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                 <input matInput [(ngModel)]="agentselectionner.ville" type="text"  name="ville" placeholder="ville" >
-        
-        
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                 <input matInput [(ngModel)]="agentselectionner.cp" type="number"  name="cp" placeholder="Code Postal">
-       
-       
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput [(ngModel)]="agentselectionner.dateEmbauche"  type="date" name="dateembauche" placeholder="agentselectionner.dateEmbauche">
-        
-
-       
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                               
-                                <mat-form-field class="example-full-width">
-                                   <input matInput [(ngModel)]="agentselectionner.tel" type="string"  name="tel" placeholder="téléphone">
-                                 </mat-form-field>
-                                  <!-- <div class="form-group">
-
-                                      <div class="form-group">
-                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                          <textarea class="form-control" rows="5"></textarea>
-                                      </div>
-                                  </div> -->
-                              </div>
-                          </div>
-                             <button mat-raised-button  type="submit" class="btn btn-danger pull-right"   (click)="modifConsultant()"
-                  [routerLink]="['/gestiondesagents']">Enregistrer un Agent</button>
-                          
-                          <div class="clearfix"></div>
-                      </form>
-                  </div>
-              </div>
+        </div>
+      </div>
+      <div *ngIf="displaycard">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Modifier un conseiller</h4>
           </div>
-    
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.nom"
+                      placeholder="Nom"
+                      name="Nom"
+                      type="text"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.prenom"
+                      type="text"
+                      name="prenom"
+                      placeholder="prenom"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.email"
+                      type="email"
+                      name="email"
+                      placeholder="email"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.adresse"
+                      type="text"
+                      name="adresse"
+                      placeholder="adresse"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.ville"
+                      type="text"
+                      name="ville"
+                      placeholder="ville"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.cp"
+                      type="number"
+                      name="cp"
+                      placeholder="Code Postal"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.dateEmbauche"
+                      type="date"
+                      name="dateembauche"
+                      placeholder="agentselectionner.dateEmbauche"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      [(ngModel)]="agentselectionner.tel"
+                      type="string"
+                      name="tel"
+                      placeholder="téléphone"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-danger pull-right"
+                (click)="modifConsultant()"
+                [routerLink]="['/gestiondesagents']"
+              >
+                Enregistrer un Agent
+              </button>
+
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>
