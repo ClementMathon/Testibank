@@ -8,6 +8,7 @@ import { Client } from 'src/model/client';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
+  
   client: Client = {
   id : 1,
 	motDePasse : 'motDePasse',
