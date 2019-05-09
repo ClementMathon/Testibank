@@ -31,10 +31,10 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
 
   }
-  
+
  modifConsultant() {
-   this.myAgentListservice.ModifCounselor(this.agentselectionner);
-   this.myAgentListservice.decale[2] = false;
-   this.myAgentListservice.decale[0] = true;
+  this.myAgentListservice.ModifCounselor(this.agentselectionner);
+  
+
   }
 }

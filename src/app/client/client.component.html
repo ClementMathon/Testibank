@@ -1,13 +1,19 @@
-<app-sidebar-client></app-sidebar-client>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+<div class="wrapper">
+  <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+    <app-sidebar-client></app-sidebar-client>
+    <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div>
+  </div>
 
 
-<!-- Page content -->
-<div class="content">
+  <!-- Page content -->
+
+  <div class="main-panel">
     <h2>Bienvenue {{client.nom | uppercase}} !</h2>
-    <!--
-    <div><span>id: </span>{{client.id}}</div>
-    <div><span>name: </span>{{client.nom}}</div>
-    -->
-  <router-outlet></router-outlet>
-</div>
+  
+    <router-outlet></router-outlet>
 
+      
+  </div>
+</div>

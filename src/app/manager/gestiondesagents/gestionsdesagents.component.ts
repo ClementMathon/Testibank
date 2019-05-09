@@ -27,6 +27,7 @@ export class GestionDesAgentsComponent implements OnInit, OnDestroy {
       null,
       ''
     );
+
   }
   agentsChoice(individu: Conseiller) {
     this.agentselectionner = individu;
@@ -34,7 +35,7 @@ export class GestionDesAgentsComponent implements OnInit, OnDestroy {
     this.displaycard = true;
   }
   ngOnInit() {
-    this.myAgentList = this.myAgentListservice.getAll();
+  this.myAgentList = this.myAgentListservice.getAll();
   }
   ngOnDestroy() {}
 }

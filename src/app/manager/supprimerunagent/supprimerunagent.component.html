@@ -158,7 +158,8 @@
                   <mat-form-field class="example-full-width">
                     <input
                       matInput
-                      [(ngModel)]="agentselectionner.dateEmbauche"
+                      [ngModel]="agentselectionner.dateEmbauche | date: 'yyyy-MM-dd'"
+                      (ngModelChange)="agentselectionner.dateEmbauche = $event"
                       type="date"
                       name="dateembauche"
                       placeholder="date d'embauche"
@@ -177,7 +178,6 @@
                       placeholder="téléphone"
                     />
                   </mat-form-field>
-                
                 </div>
               </div>
               <button
@@ -185,7 +185,7 @@
                 type="submit"
                 class="btn btn-danger pull-right"
                 (click)="deleteConsultant()"
-                [routerLink]="['/supprimerunagent']"
+                [routerLink]="['/manager/supprimerunagent']"
               >
                 Suprimer un Agent
               </button>

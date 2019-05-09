@@ -7,6 +7,7 @@ import { ClientModule } from './client/client.module';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { ManagerModule } from './manager/manager.module';
 import { GuestComponent } from './guest/guest.component';
+import { InscriptionComponent } from './guest/inscription/inscription.component';
 //import {ClientModule} from './client/client.module';
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'client', loadChildren: () => ClientModule },
   { path: 'conseiller', loadChildren: () => ConseillerModule },
   { path: 'manager', loadChildren: () => ManagerModule },
-  { path: 'invite', component: GuestComponent}
+  { path: 'invite', component: GuestComponent},
+  { path: 'inscription', component: InscriptionComponent}
 
 
 ];
