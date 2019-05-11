@@ -18,7 +18,6 @@ export class ClientDetailComponent implements OnInit {
 
   onSelect(compteClient: Compte): void {
     this.selectedCompteClient = compteClient;
-
   }
 
   constructor(private compteClientService: FakeServiceCompteService) {}

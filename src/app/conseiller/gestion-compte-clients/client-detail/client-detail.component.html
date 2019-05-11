@@ -55,12 +55,12 @@
 </div>
 </div> <!-- fin client card -->
 <H5>Les comptes de  {{client.prenom}} : </H5>
+
 <ul class="list-group">
 <li *ngFor="let compteClient of comptecli"
 [class.selected]="compteClient === selectedCompteClient"
 (click)="onSelect(compteClient)"
 class="list-group-item">
-
    <span class="badge badge-secondary mr-auto">{{compteClient.numeroCompte}}</span> type: {{compteClient.typeCompte}},
 
        solde: {{compteClient.solde | currency:'EUR':'symbol-narrow':'1.2-2'}}

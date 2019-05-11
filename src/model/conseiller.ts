@@ -22,6 +22,5 @@ export class Conseiller {
         this.cp = cp;
         this.ville = ville;
     }
-
 }
 

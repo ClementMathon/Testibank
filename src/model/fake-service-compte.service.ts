@@ -16,9 +16,5 @@ export class FakeServiceCompteService {
 
   getComptesDuClient(targetClientID): Compte[] {
     return COMPTES.filter(compteclientvisé =>  compteclientvisé.idClient === targetClientID);
-
-
   }
-
-
 }
