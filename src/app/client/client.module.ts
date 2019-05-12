@@ -16,6 +16,7 @@ import { MatButtonModule, MatRippleModule, MatFormFieldModule, MatInputModule, M
 const clientRoutes: Routes = [
   {path: '', component: ClientComponent, children:
     [
+      {path: '',  component: ComptesComponent},
       {path: 'comptes',  component: ComptesComponent},
       {path: 'virement',  component: VirementComponent},
       {path: 'profil',  component: ProfilComponent},
