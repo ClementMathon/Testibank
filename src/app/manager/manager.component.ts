@@ -43,9 +43,9 @@ export class ManagerComponent implements OnInit {
         .getElementsByTagName('body')[0]
         .classList.remove('perfect-scrollbar-off');
     }
-    const elemMainPanel =  document.querySelector('.main-panel') as HTMLElement;
-    const elemSidebar =  (
-      document.querySelector('.sidebar .sidebar-wrapper')
+    const elemMainPanel = document.querySelector('.main-panel') as HTMLElement;
+    const elemSidebar = document.querySelector(
+      '.sidebar .sidebar-wrapper'
     ) as HTMLElement;
 
     this.location.subscribe((ev: PopStateEvent) => {
@@ -90,7 +90,9 @@ export class ManagerComponent implements OnInit {
   }
   runOnRouteChange(): void {
     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
-      const elemMainPanel =  document.querySelector('.main-panel') as HTMLElement;
+      const elemMainPanel = document.querySelector(
+        '.main-panel'
+      ) as HTMLElement;
       const ps = new PerfectScrollbar(elemMainPanel);
       ps.update();
     }

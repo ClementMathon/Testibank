@@ -72,17 +72,20 @@ export class AffectationComponent implements OnInit {
     return a > b ? -1 : 1;
   }
   ngOnInit() {
-    this.myAgentList = this.myAgentListservice.getAll();
-    this.essai = this.myAgentList.sort((obj1, obj2) =>
+      this.myAgentListservice
+        .getAll()
+        .subscribe(agents => (this.myAgentList = agents));
+
+      this.essai = this.myAgentList.sort((obj1, obj2) =>
       this.SortofconselorbynumberOfClient(obj1.mle, obj2.mle)
     );
 
-    this.myClientList = this.MyClientListservice.getAll().filter(
+      this.myClientList = this.MyClientListservice.getAll().filter(
       it => it.conseiller === null
     );
 
-    this.searchText = '';
-    this.searchText1 = '';
+      this.searchText = '';
+      this.searchText1 = '';
   }
   assigneclienttoconselor() {
     this.MyClientListservice.setConseillerToClient(

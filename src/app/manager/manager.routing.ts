@@ -7,7 +7,9 @@ import {AgentProfileComponent} from '../manager/agent-profile/agent-profile.comp
 import {AffectationComponent} from '../manager/affectation/affectation.component';
 import {ModifierunagentComponent} from '../manager/modifierunagent/modifierunagent.component';
 import {SupprimerunagentComponent} from '../manager/supprimerunagent/supprimerunagent.component';
-import { ManagerComponent } from './manager.component';
+import {ManagerComponent} from './manager.component';
+
+
 export const AdminLayoutRoutes: Routes = [
          {
            path: '',
@@ -22,7 +24,15 @@ export const AdminLayoutRoutes: Routes = [
                component: GestionDesAgentsComponent,
              },
              {
+               path: 'gestiondesagents/:id',
+               component: GestionDesAgentsComponent,
+             },
+             {
                path: 'modifierunagent',
+               component: ModifierunagentComponent,
+             },
+             {
+               path: 'modifierunagent/:id',
                component: ModifierunagentComponent,
              },
              {

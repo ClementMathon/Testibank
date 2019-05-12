@@ -24,6 +24,8 @@ import {
 } from '@angular/material';
 import { ManagerComponent } from './manager.component';
 import {ComponentsModule} from '../manager/components/components.module';
+import { DetailagentComponent } from './gestiondesagents/detailagent/detailagent.component';
+import { DetailmodifieragentComponent } from '../manager/modifierunagent/detailmodifieragent/detailmodifieragent.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import {ComponentsModule} from '../manager/components/components.module';
     ModifierunagentComponent,
     AffectationPipe1,
     SupprimerunagentComponent,
+    DetailagentComponent,
+    DetailmodifieragentComponent,
   ],
 })
 export class ManagerModule {}

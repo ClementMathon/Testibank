@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Conseiller } from './conseiller';
-
+import {Observable, of} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -138,8 +138,8 @@ export class FakeServiceConseillerService {
     this.fakeConseiller.sort((obj1, obj2) =>  (obj1.mle > obj2.mle ? 1 : -1) ) ;
   }
 
-  getAll() {
-    return this.fakeConseiller;
+  getAll(): Observable<Conseiller[]> {
+    return of(this.fakeConseiller);
   }
   addCounselor(myNewAdvisor: Conseiller): void {
     myNewAdvisor.mle = Math.max(...this.fakeConseiller.map(o => o.mle), 0) + 1;
@@ -153,11 +153,11 @@ export class FakeServiceConseillerService {
   ModifCounselor(myNewAdvisor: Conseiller): void {
     this.fakeConseiller.filter(it => it.mle === myNewAdvisor.mle)[0] = myNewAdvisor;
   }
-  CounselorByMle(mle: number): Conseiller[] {
+  GetCounselorByMle(mle: number): Conseiller {
     this.myAdvisorByMle = this.fakeConseiller.filter(
       conseiller1 => conseiller1.mle === mle
     );
-    return this.myAdvisorByMle;
+    return this.myAdvisorByMle[0];
   }
 
 

@@ -9,7 +9,7 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
          {
-           path: '/manager/gestiondesagents',
+           path: '/manager/gestiondesagents/0',
            title: 'Fiche Agent',
            icon: 'content_paste',
            class: '',
@@ -28,7 +28,7 @@ export const ROUTES: RouteInfo[] = [
          },
 
          {
-           path: '/manager/modifierunagent',
+           path: '/manager/modifierunagent/0',
            title: 'modifier un agent',
            icon: 'library_books',
            class: '',
