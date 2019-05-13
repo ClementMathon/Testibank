@@ -21,14 +21,14 @@
                   <button
                     type="submit"
                     class="btn btn-info"
-                    (click)="searchText = ''"
+                    (click)="effacechoix()"
                   >
                     <span class=" fa fa-arrow-left" title="effacer"></span>
                   </button>
                 </div>
 
                 <table class="table">
-                  <thead class=" text-primary">
+                  <thead *ngIf="show" class=" text-primary">
                     <th>
                       MLE
                     </th>
@@ -48,7 +48,9 @@
                   <tbody>
                     <tr
                       *ngFor="let individu of myAgentList | filter: searchText"
+                      routerLink="/manager/gestiondesagents/{{individu.mle}}"
                       (click)="agentsChoice(individu)"
+
                     >
                       <td>
                         {{ individu.mle }}
@@ -74,60 +76,9 @@
           </div>
         </div>
       </div>
+<app-detailagent *ngIf="displaycard" ></app-detailagent>
 
-      <div *ngIf="displaycard" class="col-md-4">
-        <div class="tab-content" id="nav-tabContent">
-          <div
-            class="tab-pane fade show active"
-            id="list-home"
-            role="tabpanel"
-            aria-labelledby="list-home-list"
-          >
-            <div class="blog-card spring-fever">
-              <div class="title-content">
-                <h3>
-                  {{ agentselectionner.nom }} {{ agentselectionner.prenom }}
-                </h3>
-                <hr />
-                <div class="intro ">tel: {{ agentselectionner.tel }}</div>
-                <div class="intro ">
-                  adresse: {{ agentselectionner.adresse }}
-                </div>
-                <div class="intro ">
-                  Ville: {{ agentselectionner.cp }}
-                  {{ agentselectionner.ville }}
-                </div>
-                <br />
-                <div class="card-profile">
-                  <div class="card-avatar">
-                    <img class="img" src="./assets/img/faces/marc.jpg" />
-                  </div>
-                </div>
-              </div>
-              <!-- /.title-content -->
-              <div class="card-info">
-                Voici mon mail: {{ agentselectionner.email }}
-              </div>
-              <!-- /.card-info -->
-              <div class="utility-info">
-                <ul class="utility-list">
-                  <li class="comments">
-                    Numéro mle: {{ agentselectionner.mle }}
-                  </li>
-                  <li class="date">
-                    Date d'embauche: {{ agentselectionner.dateEmbauche }}
-                  </li>
-                </ul>
-              </div>
-              <!-- /.utility-info -->
-              <!-- overlays -->
-              <div class="gradient-overlay"></div>
-              <div class="color-overlay"></div>
-            </div>
-            <!-- /.blog-card -->
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
+
