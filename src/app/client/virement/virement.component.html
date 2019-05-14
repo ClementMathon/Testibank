@@ -1,3 +1,12 @@
-<p>
-  virement works!
-</p>
+<h2>Mes comptes</h2>
+<ul class="comptes">
+    
+      <div>
+        <select class="form-control" id="comptes" [class.selected]="compte === selectedCompte" (click)="onSelect(compte)" required>
+          <option *ngFor="let compte of comptes" [value]="compte">{{compte}}</option>
+        </select>
+      </div>
+    
+</ul>
+
+<app-compte-detail [compte]="selectedCompte"></app-compte-detail>
