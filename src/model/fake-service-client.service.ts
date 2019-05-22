@@ -14,7 +14,7 @@ export class FakeServiceClientService {
     }
 
   getClientsDuConseiller(targetConseillerID) {
-    const filteredclients = CLIENTS.filter(function(el) {
+    const filteredclients = CLIENTS.filter(el => {
       return (el.conseiller === targetConseillerID);
       });
     return filteredclients;

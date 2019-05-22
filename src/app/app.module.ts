@@ -9,13 +9,13 @@ import { ConseillerModule } from './conseiller/conseiller.module';
 import { GuestComponent } from './guest/guest.component';
 import { FormulaireConnexionComponent } from './guest/formulaire-connexion/formulaire-connexion.component';
 import { NotificationComponent } from './guest/notification/notification.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TitreComponent } from './guest/titre/titre.component';
 import { FondGuestComponent } from './guest/fond-guest/fond-guest.component';
 import { InscriptionComponent } from './guest/inscription/inscription.component';
 import { InscriptionClientComponent } from './guest/inscription/inscription-client/inscription-client.component';
 import { InscriptionConseillerComponent } from './guest/inscription/inscription-conseiller/inscription-conseiller.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { InscriptionConseillerComponent } from './guest/inscription/inscription-
     ManagerModule,
     ConseillerModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

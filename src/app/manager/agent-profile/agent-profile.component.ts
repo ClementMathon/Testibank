@@ -9,14 +9,36 @@ import {Conseiller} from '../../../model/conseiller';
 })
 export class AgentProfileComponent implements OnInit, OnDestroy {
   myNewAdvisor: Conseiller;
-
-  constructor(public myAgentListservice: FakeServiceConseillerService) {
+  myAgentList: any = [];
+  constructor(private myAgentListservice: FakeServiceConseillerService) {
     this.myNewAdvisor = new Conseiller(0, '', '', '', '', '', '', null, '');
   }
+  SortconselorbynumberOfid(obj1: number, obj2: number): number {
+    const a = obj1;
+    const b = obj2;
+    return a > b ? 1 : -1;
+  }
+  ngOnInit() {
+    this.addAgentinlist(); }
+    addAgentinlist() {
+    this.myAgentListservice.getAll().subscribe(data => {
+      this.myAgentList = data;
+      });
 
-  ngOnInit() {}
+    return this.myAgentList.sort((obj1, obj2) =>
+      this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+
+
+  }
   iAddAConsultant() {
-    this.myAgentListservice.addCounselor(this.myNewAdvisor);
+    this.myAgentListservice.addCounselor(this.myNewAdvisor).subscribe(data => {
+      this.myAgentList = data;
+
+
+    });
+    this.myAgentList.sort((obj1, obj2) =>
+    this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+    this.ngOnInit();
   }
   ngOnDestroy() {}
 }

@@ -11,13 +11,13 @@
     >
       <div class="blog-card spring-fever">
         <div class="title-content">
-          <h3>{{ agentselectionner.nom }} {{ agentselectionner.prenom }}</h3>
+          <h3>{{ agentselectionner.cons_nom }} {{ agentselectionner.cons_prenom }}</h3>
           <hr />
-          <div class="intro ">tel: {{ agentselectionner.tel }}</div>
-          <div class="intro ">adresse: {{ agentselectionner.adresse }}</div>
+          <div class="intro ">tel: {{ agentselectionner.cons_tel }}</div>
+          <div class="intro ">adresse: {{ agentselectionner.cons_adresse }}</div>
           <div class="intro ">
-            Ville: {{ agentselectionner.cp }}
-            {{ agentselectionner.ville }}
+            Ville: {{ agentselectionner.cons_cp }}
+            {{ agentselectionner.cons_ville }}
           </div>
           <br />
           <div class="card-profile">
@@ -28,14 +28,14 @@
         </div>
         <!-- /.title-content -->
         <div class="card-info">
-          Voici mon mail: {{ agentselectionner.email }}
+          Voici mon mail: {{ agentselectionner.cons_email }}
         </div>
         <!-- /.card-info -->
         <div class="utility-info">
           <ul class="utility-list">
-            <li class="comments">Numéro mle: {{ agentselectionner.mle }}</li>
+            <li class="comments">Numéro mle: {{ agentselectionner.cons_id }}</li>
             <li class="date">
-              Date d'embauche: {{ agentselectionner.dateEmbauche }}
+              Date d'embauche: {{ agentselectionner.cons_dateEmbauche }}
             </li>
           </ul>
         </div>

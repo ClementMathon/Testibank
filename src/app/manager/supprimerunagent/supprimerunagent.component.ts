@@ -5,15 +5,17 @@ import {FakeServiceConseillerService} from '../../../model/fake-service-conseill
 @Component({
   selector: 'app-supprimerunagent',
   templateUrl: './supprimerunagent.component.html',
-  styleUrls: ['./supprimerunagent.component.css'],
+  styleUrls: ['./supprimerunagent.component.css']
+
 })
 export class SupprimerunagentComponent implements OnInit, OnDestroy {
   searchText: string;
-  myAgentList: Conseiller[];
+  myAgentList: any = [];
   agentselectionner: Conseiller;
   displaycard = false;
   essai: Conseiller[];
   constructor(public myAgentListservice: FakeServiceConseillerService) {
+
     this.agentselectionner = new Conseiller(
       0,
       '',
@@ -25,20 +27,35 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
       null,
       ''
     );
+
+
+
+
+
+
   }
   agentsChoice(individu: Conseiller) {
     this.agentselectionner = individu;
-    this.searchText = individu.nom + ' ' + individu.prenom;
+    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
     this.displaycard = true;
   }
   ngOnInit() {
-    this.myAgentListservice
-      .getAll()
-      .subscribe(agents => (this.myAgentList = agents));
-    this.essai = this.myAgentList.sort((obj1, obj2) =>
-      this.SortconselorbynumberOfid(obj1.mle, obj2.mle)
-    );
-  }
+    this.getAgentlist();
+      }
+      getAgentlist() {
+         this.myAgentListservice.getAll().subscribe(data => {
+          this.myAgentList = data;
+          });
+
+         return this.myAgentList.sort((obj1, obj2) =>
+          this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+
+
+
+
+
+
+      }
   SortconselorbynumberOfid(obj1: number, obj2: number): number {
     const a = obj1;
     const b = obj2;
@@ -48,13 +65,18 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
   affichelist() {
     this.displaycard = false;
     this.searchText = '';
+    this.ngOnInit();
   }
   deleteConsultant() {
-    this.myAgentListservice.deleteCounselor(this.agentselectionner);
-    this.myAgentListservice
-      .getAll()
-      .subscribe(agents => (this.myAgentList = agents));
+    this.myAgentListservice.deleteCounselor(this.agentselectionner).subscribe(data => {
+      this.myAgentList = data;
+
+
+    });
     this.displaycard = false;
     this.searchText = '';
+    this.myAgentList.sort((obj1, obj2) =>
+    this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+    this.ngOnInit();
   }
 }

@@ -15,15 +15,15 @@ export class AffectationComponent implements OnInit {
   searchText1 = '';
   showconseiller = true;
   showclient = true;
-  myAgentList: Conseiller[];
+  myAgentList: Conseiller[] = [];
   essai: Conseiller[];
   agentselectionner: Conseiller;
   clientselectionner: Client;
   myClientList: Client[];
   numberOfClientOfConselor: number;
   constructor(
-    public myAgentListservice: FakeServiceConseillerService,
-    public MyClientListservice: FakeServiceClientService
+    private myAgentListservice: FakeServiceConseillerService,
+    private MyClientListservice: FakeServiceClientService
   ) {
     this.agentselectionner = new Conseiller(
       0,
@@ -50,10 +50,13 @@ export class AffectationComponent implements OnInit {
       0,
       null
     );
+    this.myAgentListservice.getAll().subscribe(data => {
+         this.myAgentList = data;
+       });
   }
   agentsChoice(individu: Conseiller) {
     this.agentselectionner = individu;
-    this.searchText = individu.nom + ' ' + individu.prenom;
+    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
     this.showconseiller = false;
   }
   clientsChoice(myclient: Client) {
@@ -72,25 +75,37 @@ export class AffectationComponent implements OnInit {
     return a > b ? -1 : 1;
   }
   ngOnInit() {
-      this.myAgentListservice
-        .getAll()
-        .subscribe(agents => (this.myAgentList = agents));
+     this.getAgentlist();
 
-      this.essai = this.myAgentList.sort((obj1, obj2) =>
-      this.SortofconselorbynumberOfClient(obj1.mle, obj2.mle)
-    );
+     this.getClientlist();
 
-      this.myClientList = this.MyClientListservice.getAll().filter(
+     this.searchText = '';
+     this.searchText1 = '';
+  }
+  getClientlist() {
+this.myClientList = this.MyClientListservice.getAll().filter(
       it => it.conseiller === null
     );
 
-      this.searchText = '';
-      this.searchText1 = '';
   }
+  getAgentlist() {
+    this.myAgentListservice.getAll().subscribe(data => {
+     this.myAgentList = data;
+     });
+
+    return this.myAgentList.sort((obj1, obj2) =>
+     this.SortofconselorbynumberOfClient(obj1.cons_id, obj2.cons_id));
+
+
+
+
+
+
+ }
   assigneclienttoconselor() {
     this.MyClientListservice.setConseillerToClient(
       this.clientselectionner.id,
-      this.agentselectionner.mle
+      this.agentselectionner.cons_id
     );
     this.ngOnInit();
   }

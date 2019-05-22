@@ -9,24 +9,14 @@ import {Conseiller} from '../../../../model/conseiller';
   styleUrls: ['./detailagent.component.scss'],
 })
 export class DetailagentComponent implements OnInit, OnDestroy {
-  agentselectionner: Conseiller;
+  agentselectionner: any = [];
   constructor(
     private route: ActivatedRoute,
-   
+
     private myAgentListservice: FakeServiceConseillerService,
     private location: Location
   ) {
-    this.agentselectionner = new Conseiller(
-      0,
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      null,
-      ''
-    );
+
     this.route.paramMap.subscribe(paramMap => {
       this.getAgent();
     });
@@ -43,7 +33,9 @@ export class DetailagentComponent implements OnInit, OnDestroy {
 
   getAgent(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.agentselectionner = this.myAgentListservice.GetCounselorByMle(id);
+    this.myAgentListservice.GetCounselorByMle(id).subscribe(data => {
+    this.agentselectionner = data;
+  });
   }
 
   ngOnDestroy(): void {}
