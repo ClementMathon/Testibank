@@ -1,23 +1,26 @@
-import {Component, ViewChild, OnInit, OnDestroy} from '@angular/core';
+import {Component,  OnInit, OnDestroy, } from '@angular/core';
 
 import {Conseiller} from '../../../model/conseiller';
-
+import {ActivatedRoute} from '@angular/router';
 import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
 
 @Component({
   selector: 'app-gestiondesagents',
   templateUrl: './gestionsdesagents.component.html',
   styleUrls: ['./gestionsdesagents.component.scss'],
+
 })
 export class GestionDesAgentsComponent implements OnInit, OnDestroy {
   searchText: string;
-  myAgentList: Conseiller[];
+  myAgentList: any = [];
   show = true;
   displaycard = false;
   essai: Conseiller[];
-  constructor(private myAgentListservice: FakeServiceConseillerService) {}
+  constructor(public myAgentListservice: FakeServiceConseillerService) {
+
+  }
   agentsChoice(individu: Conseiller) {
-    this.searchText = individu.nom + ' ' + individu.prenom;
+    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
     this.displaycard = true;
     this.show = false;
   }
@@ -32,12 +35,22 @@ export class GestionDesAgentsComponent implements OnInit, OnDestroy {
     return a > b ? 1 : -1;
   }
   ngOnInit() {
-    this.myAgentListservice
-      .getAll()
-      .subscribe(agents => (this.myAgentList = agents));
-    this.essai = this.myAgentList.sort((obj1, obj2) =>
-      this.SortconselorbynumberOfid(obj1.mle, obj2.mle)
-    );
+this.getAgentlist();
+  }
+  getAgentlist() {
+     this.myAgentListservice.getAll().subscribe(data => {
+      this.myAgentList = data;
+      });
+
+     return this.myAgentList.sort((obj1, obj2) =>
+      this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+
+
+
+
+
+
   }
   ngOnDestroy() {}
+
 }

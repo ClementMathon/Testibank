@@ -12,7 +12,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.nom"
+                    [(ngModel)]="agentselectionner.cons_nom"
                     placeholder="Nom"
                     name="Nom"
                     type="text"
@@ -23,7 +23,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.prenom"
+                    [(ngModel)]="agentselectionner.cons_prenom"
                     type="text"
                     name="prenom"
                     placeholder="prenom"
@@ -36,7 +36,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.email"
+                    [(ngModel)]="agentselectionner.cons_email"
                     type="email"
                     name="email"
                     placeholder="email"
@@ -49,7 +49,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.adresse"
+                    [(ngModel)]="agentselectionner.cons_adresse"
                     type="text"
                     name="adresse"
                     placeholder="adresse"
@@ -62,7 +62,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.ville"
+                    [(ngModel)]="agentselectionner.cons_ville"
                     type="text"
                     name="ville"
                     placeholder="ville"
@@ -73,7 +73,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.cp"
+                    [(ngModel)]="agentselectionner.cons_cp"
                     type="number"
                     name="cp"
                     placeholder="Code Postal"
@@ -85,12 +85,12 @@
                   <input
                     matInput
                     [ngModel]="
-                      agentselectionner.dateEmbauche | date: 'yyyy-MM-dd'
+                      agentselectionner.cons_dateEmbauche | date: 'yyyy-MM-dd'
                     "
-                    (ngModelChange)="agentselectionner.dateEmbauche = $event"
+                    (ngModelChange)="agentselectionner.cons_dateEmbauche = $event"
                     type="date"
                     name="dateembauche"
-                    placeholder="agentselectionner.dateEmbauche"
+                    placeholder="agentselectionner.cons_dateEmbauche"
                   />
                 </mat-form-field>
               </div>
@@ -100,7 +100,7 @@
                 <mat-form-field class="example-full-width">
                   <input
                     matInput
-                    [(ngModel)]="agentselectionner.tel"
+                    [(ngModel)]="agentselectionner.cons_tel"
                     type="string"
                     name="tel"
                     placeholder="téléphone"

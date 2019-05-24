@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   Location,
-  LocationStrategy,
-  PathLocationStrategy,
+
   PopStateEvent,
 } from '@angular/common';
 import 'rxjs/add/operator/filter';
@@ -15,14 +14,19 @@ import {FakeServiceConseillerService} from '../../model/fake-service-conseiller.
   selector: 'app-manager',
   templateUrl: './manager.component.html',
   styleUrls: ['./manager.component.scss'],
-  providers: [FakeServiceConseillerService],
+  providers: [FakeServiceConseillerService]
 })
 export class ManagerComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor(public location: Location, private router: Router) {}
+  constructor(
+              public location: Location, private router: Router) {
+
+
+
+  }
 
   ngOnInit() {
     const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
