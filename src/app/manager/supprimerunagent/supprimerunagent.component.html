@@ -19,7 +19,6 @@
                     (input)="displaycard = false"
                   />
                   <button
-
                     type="submit"
                     class="btn btn-info"
                     (click)="affichelist()"
@@ -27,15 +26,15 @@
                     <span class=" fa fa-arrow-left" title="effacer"></span>
                   </button>
                   <button
-            *ngIf="displaycard"
-                mat-raised-button
-                type="submit"
-                class="btn btn-danger pull-right"
-                (click)="deleteConsultant()"
-                [routerLink]="['/manager/supprimerunagent']"
-              >
-                Confirmer la suppressionde l'agent
-              </button>
+                    *ngIf="displaycard"
+                    mat-raised-button
+                    type="submit"
+                    class="btn btn-danger pull-right"
+                    (click)="deleteConsultant()"
+                    [routerLink]="['/manager/suprimerunagent']"
+                  >
+                    Confirmer la suppressionde l'agent
+                  </button>
                 </div>
 
                 <table class="table">
@@ -62,20 +61,20 @@
                       (click)="agentsChoice(individu)"
                     >
                       <td>
-                        {{ individu.mle }}
+                        {{ individu.cons_id }}
                       </td>
                       <td>
-                        {{ individu.nom }}
+                        {{ individu.cons_nom }}
                       </td>
                       <td>
-                        {{ individu.prenom }}
+                        {{ individu.cons_prenom }}
                       </td>
                       <td>
-                        {{ individu.adresse }} {{ individu.cp }}
-                        {{ individu.ville }}
+                        {{ individu.cons_adresse }} {{ individu.cons_cp }}
+                        {{ individu.cons_ville }}
                       </td>
                       <td>
-                        {{ individu.tel }}
+                        {{ individu.cons_tel }}
                       </td>
                     </tr>
                   </tbody>
@@ -85,10 +84,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
+    </div>
+  </div>
+</div>

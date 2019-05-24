@@ -7,23 +7,29 @@ import {FakeServiceConseillerService} from '../../../model/fake-service-conseill
 @Component({
   selector: 'app-modifierunagent',
   templateUrl: './modifierunagent.component.html',
-  styleUrls: ['./modifierunagent.component.css'],
+  styleUrls: ['./modifierunagent.component.css']
+
 })
 export class ModifierunagentComponent implements OnInit, OnDestroy {
   searchText: string;
-  myAgentList: Conseiller[];
+  myAgentList: any = [];
   agentselectionner: Conseiller;
   show = true;
   essai: Conseiller[];
   displaycard = false;
-  constructor(public myAgentListservice: FakeServiceConseillerService) {}
+  constructor(private myAgentListservice: FakeServiceConseillerService) {
+
+
+
+
+  }
   effacechoix() {
     this.searchText = '';
     this.show = true;
     this.displaycard = false;
   }
   agentsChoice(individu: Conseiller) {
-    this.searchText = individu.nom + ' ' + individu.prenom;
+    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
     this.displaycard = true;
     this.show = false;
   }
@@ -33,12 +39,9 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
     return a > b ? 1 : -1;
   }
   ngOnInit() {
-    this.myAgentListservice
-      .getAll()
-      .subscribe(agents => (this.myAgentList = agents));
-    this.essai = this.myAgentList.sort((obj1, obj2) =>
-      this.SortconselorbynumberOfid(obj1.mle, obj2.mle)
-    );
+    return this.myAgentListservice.getAll().subscribe((data: {}) => {
+      this.myAgentList = data;
+      });
   }
   ngOnDestroy() {}
 }
