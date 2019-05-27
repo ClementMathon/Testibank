@@ -3,6 +3,9 @@ import { Client } from 'src/model/client';
 import {FakeServiceClientService} from '../../../model/fake-service-client.service';
 import { FakeServiceCompteService } from 'src/model/fake-service-compte.service';
 import { Compte } from 'src/model/compte';
+import { ClientService } from 'src/model/client.service';
+import { Client2 } from 'src/model/client2';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -11,27 +14,31 @@ import { Compte } from 'src/model/compte';
   styleUrls: ['./gestion-compte-clients.component.css'],
 })
 export class GestionCompteClientsComponent implements OnInit {
-  clients: Client[];
-  selectedClient: Client;
+  clients: Client2[] = [];
+  selectedClient: Client2;
   comptesDuClient: Compte[];
   show = false;
   constructor(
-    private clientService: FakeServiceClientService,
+  //  private clientService: FakeServiceClientService,
+  private clientService: ClientService,
     private compteClientService: FakeServiceCompteService
   ) {}
 
-  onSelect(client: Client): void {
+  onSelect(client: Client2): void {
     this.selectedClient = client;
     this.getComptesClient(this.selectedClient);
     this.show = true;
   }
 
   getClients(): void {
-    this.clients = this.clientService.getClientsDuConseiller(1);
+    this.clientService.getClientsDuConseiller(1).subscribe(
+(data:Client2[])=>{this.clients=data}, (error) => {console.log('error')}
+
+    );
   }
-  getComptesClient(selectedClient: Client) {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient(
-      selectedClient.id
+  getComptesClient(selectedClient: Client2) {
+     this.compteClientService.getComptesDuClient(
+      this.selectedClient.clientId
     );
   }
 

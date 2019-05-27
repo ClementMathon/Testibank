@@ -12,6 +12,8 @@ import { SidebarClientComponent } from './sidebar-client/sidebar-client.componen
 import { FormsModule } from '@angular/forms';
 import { CompteDetailComponent } from './compte-detail/compte-detail.component';
 import { MatButtonModule, MatRippleModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTooltipModule } from '@angular/material';
+import { FakeServiceCompteService } from 'src/model/fake-service-compte.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const clientRoutes: Routes = [
   {path: '', component: ClientComponent, children:
@@ -47,9 +49,9 @@ const clientRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    HttpClientModule
   ],
-  exports: [
-    RouterModule,
-  ]
+  providers: [FakeServiceCompteService],
+  exports: [RouterModule,]
 })
 export class ClientModule { }
