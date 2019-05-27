@@ -33,4 +33,5 @@ export class ClientDetailComponent implements OnInit {
   ngOnInit() {
     this.getComptesClient();
   }
+  
 }
