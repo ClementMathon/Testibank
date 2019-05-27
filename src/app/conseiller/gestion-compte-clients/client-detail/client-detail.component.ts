@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Client} from 'src/model/client';
 import { Compte } from 'src/model/compte';
 import {FakeServiceCompteService} from '../../../../model/fake-service-compte.service';
+import { Client2 } from 'src/model/client2';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,8 +11,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./client-detail.component.css'],
 })
 export class ClientDetailComponent implements OnInit {
-  @Input() client: Client;
-  @Input() comptecli: Observable<Compte[]>;
+  @Input() client: Client2;
+  @Input() comptecli: Compte[];
 
   comptesDuClient: Observable<Compte[]>;
 
@@ -19,13 +20,12 @@ export class ClientDetailComponent implements OnInit {
 
   onSelect(compteClient: Compte): void {
     this.selectedCompteClient = compteClient;
-
   }
 
   constructor(private compteClientService: FakeServiceCompteService) {}
 
   getComptesClient(): void {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.id );
+    this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.clientId);
 
   }
 

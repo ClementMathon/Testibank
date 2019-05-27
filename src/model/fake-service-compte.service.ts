@@ -48,7 +48,6 @@ export class FakeServiceCompteService {
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
-  }
 
-
+    }
 }
