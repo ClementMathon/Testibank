@@ -1,3 +1,73 @@
-<p>
-  historique works!
-</p>
+<h2>Veuillez sélectionner un compte</h2>
+<ul class="comptes">
+        <option *ngFor="let compte of comptes" [value]="compte"  (click)="onSelect(compte)">{{compte.compteId}}</option>
+</ul>
+
+<div *ngIf="selectedCompte" >
+
+   
+
+<div class="main-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <div class="card">
+                <div class="card-header card-header-danger">
+                  <h4 class="card-title ">Historique du compte</h4>
+                  <p class="card-category">compte N° {{selectedCompte.compteId }}</p>
+                </div>
+                <div ng-app="myApp" ng-controller="charactersCtrl" class="list-group">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      
+      
+                      <table class="table">
+                        <thead class=" text-primary">
+                          <th>
+                            Date transaction
+                          </th>
+                          <th>
+                            Montant transaction
+                          </th>
+                          <th>
+                           Type transaction
+                          </th>
+                          <th>
+                            Libellé
+                          </th>
+                          
+                        </thead>
+                        <tbody>
+                          <tr
+                            *ngFor="let transaction of transactions" >   
+      
+                 
+                            <td>
+                                    {{transaction.dateTransaction}}
+                            </td>
+                            <td>
+                                    {{transaction.montantTransaction}} euros
+                            </td>
+                            <td>
+                                    {{transaction.typeTransaction}}
+                            </td>
+                            <td>
+                                    {{transaction.libelleTransaction}}
+                              
+                            </td>
+                           
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+      
+          </div>
+        </div>
+      </div>
+  
+    </div>   

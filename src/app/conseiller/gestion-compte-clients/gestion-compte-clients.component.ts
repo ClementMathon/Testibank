@@ -37,7 +37,7 @@ export class GestionCompteClientsComponent implements OnInit {
     );
   }
   getComptesClient(selectedClient: Client2) {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient(
+     this.compteClientService.getComptesDuClient(
       this.selectedClient.clientId
     );
   }

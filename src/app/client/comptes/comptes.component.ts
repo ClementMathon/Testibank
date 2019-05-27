@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Compte } from 'src/model/compte';
 import { FakeServiceCompteService } from 'src/model/fake-service-compte.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-comptes',
@@ -15,16 +16,19 @@ export class ComptesComponent implements OnInit {
   constructor(private compteService: FakeServiceCompteService) { }
 
   ngOnInit() {
-    this.getCompte();
+   return this.getComptesByClientId(6);
   }
 
   onSelect(compte: Compte): void {
     this.selectedCompte = compte;
   }
 
-  getCompte(): void {
-   this.comptes = this.compteService.getComptesDuClient(2);
+  getComptesList() {
+    this.compteService.getAll().subscribe((data : Compte[] )=> {
+      this.comptes = data;});
+  }  
+  getComptesByClientId (id : number) {
+    this.compteService.getComptesDuClient(id).subscribe((data : Compte[] )=> {
+      this.comptes = data;});
   }
-
-
 }

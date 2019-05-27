@@ -48,24 +48,24 @@
                   <tbody>
                     <tr
                       *ngFor="let individu of myAgentList | filter: searchText"
-                      routerLink="/manager/modifierunagent/{{ individu.cons_id }}"
+                      routerLink="/manager/modifierunagent/{{ individu.consId }}"
                       (click)="agentsChoice(individu)"
                     >
                       <td>
-                        {{ individu.cons_id }}
+                        {{ individu.consId }}
                       </td>
                       <td>
-                        {{ individu.cons_nom }}
+                        {{ individu.consNom }}
                       </td>
                       <td>
-                        {{ individu.cons_prenom }}
+                        {{ individu.consPrenom }}
                       </td>
                       <td>
-                        {{ individu.cons_adresse }} {{ individu.cons_cp }}
-                        {{ individu.cons_ville }}
+                        {{ individu.consAdresse }} {{ individu.consCp }}
+                        {{ individu.consVille }}
                       </td>
                       <td>
-                        {{ individu.cons_tel }}
+                        {{ individu.consTel }}
                       </td>
                     </tr>
                   </tbody>

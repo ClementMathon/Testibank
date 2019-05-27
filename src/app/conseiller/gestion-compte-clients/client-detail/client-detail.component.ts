@@ -3,6 +3,7 @@ import {Client} from 'src/model/client';
 import { Compte } from 'src/model/compte';
 import {FakeServiceCompteService} from '../../../../model/fake-service-compte.service';
 import { Client2 } from 'src/model/client2';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-client-detail',
@@ -13,7 +14,7 @@ export class ClientDetailComponent implements OnInit {
   @Input() client: Client2;
   @Input() comptecli: Compte[];
 
-  comptesDuClient: Compte[];
+  comptesDuClient: Observable<Compte[]>;
 
   selectedCompteClient: Compte;
 
@@ -32,4 +33,5 @@ export class ClientDetailComponent implements OnInit {
   ngOnInit() {
     this.getComptesClient();
   }
+  
 }

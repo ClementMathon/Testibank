@@ -26,18 +26,19 @@ export class AgentProfileComponent implements OnInit, OnDestroy {
       });
 
     return this.myAgentList.sort((obj1, obj2) =>
-      this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+      this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
 
 
   }
   iAddAConsultant() {
     this.myAgentListservice.addCounselor(this.myNewAdvisor).subscribe(data => {
-      this.myAgentList = data;
 
+console.log('data' + data);
+      },
+      error => {console.log(error); });
 
-    });
     this.myAgentList.sort((obj1, obj2) =>
-    this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+    this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
     this.ngOnInit();
   }
   ngOnDestroy() {}

@@ -2,7 +2,7 @@
 <ul class="comptes">
     <li *ngFor="let compte of comptes" [class.selected]="compte === selectedCompte" (click)="onSelect(compte)">
       <div>
-          <span class="badge">Compte N° {{compte.numeroCompte}}</span> Solde : {{compte.solde}} 
+          <span class="badge">Compte N° {{compte.compteId}}</span> Solde : {{compte.compteSolde}} 
       </div>
     </li>
 </ul>
