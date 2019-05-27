@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-  client : Observable<Client2>;
+  client : Client2;
 
   situations = ['Celibataire', 'Marie(e)',
   'Veuf/veuve', 'Divorce', 'En cours de Brexit', 'PACse', 'Marie a un raton laveur'];
@@ -23,10 +23,19 @@ export class ProfilComponent implements OnInit {
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
-    this.client = this.clientService.getClientById(2);
+    this.client = new Client2;
+    return this.getClientByClientId(4);
   }
-  onSubmit() { this.submitted = true; }
+  onSubmit() { 
+    this.submitted = true; 
+    this.clientService.updateClient(this.client);
+    console.log(this.client);
+  }
 
+  getClientByClientId (id : number) {
+    this.clientService.getClientById(id).subscribe((data : Client2 )=> {
+      this.client = data;});
+  }
 
 
   
