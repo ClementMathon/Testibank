@@ -20,7 +20,7 @@ export class GestionDesAgentsComponent implements OnInit, OnDestroy {
 
   }
   agentsChoice(individu: Conseiller) {
-    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
+    this.searchText = individu.consNom + ' ' + individu.consPrenom;
     this.displaycard = true;
     this.show = false;
   }
@@ -36,6 +36,7 @@ export class GestionDesAgentsComponent implements OnInit, OnDestroy {
   }
   ngOnInit() {
 this.getAgentlist();
+this.effacechoix();
   }
   getAgentlist() {
      this.myAgentListservice.getAll().subscribe(data => {
@@ -43,7 +44,7 @@ this.getAgentlist();
       });
 
      return this.myAgentList.sort((obj1, obj2) =>
-      this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+      this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
 
 
 

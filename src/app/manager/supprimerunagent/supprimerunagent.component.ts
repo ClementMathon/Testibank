@@ -36,7 +36,7 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
   }
   agentsChoice(individu: Conseiller) {
     this.agentselectionner = individu;
-    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
+    this.searchText = individu.consNom + ' ' + individu.consPrenom;
     this.displaycard = true;
   }
   ngOnInit() {
@@ -46,9 +46,10 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
          this.myAgentListservice.getAll().subscribe(data => {
           this.myAgentList = data;
           });
-
+         this.displaycard = false;
+         this.searchText = '';
          return this.myAgentList.sort((obj1, obj2) =>
-          this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+          this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
 
 
 
@@ -76,7 +77,8 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
     this.displaycard = false;
     this.searchText = '';
     this.myAgentList.sort((obj1, obj2) =>
-    this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
+    this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
     this.ngOnInit();
+    this.affichelist();
   }
 }

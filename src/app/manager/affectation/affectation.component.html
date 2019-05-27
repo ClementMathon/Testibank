@@ -137,23 +137,23 @@
               (click)="agentsChoice(individu)"
                     >
                       <td>
-                        {{ individu.cons_id }}
+                        {{ individu.consId }}
                       </td>
                       <td>
-                        {{ individu.cons_nom }}
+                        {{ individu.consNom }}
                       </td>
                       <td>
-                        {{individu.cons_prenom }}
+                        {{individu.consPrenom }}
                       </td>
                       <td>
-                        {{individu.cons_adresse }} {{individu.cons_cp }}
-                        {{individu.cons_ville }}
+                        {{individu.consAdresse }} {{individu.consCp }}
+                        {{individu.consVille }}
                       </td>
                       <td>
-                        {{individu.cons_tel }}
+                        {{individu.consTel }}
                       </td>
                       <td>
-                        <h3><span class="badge badge-danger" title="Nombre de client">{{numberOfClientByConselor( individu.cons_id)}}</span></h3>
+                        <h3><span class="badge badge-danger" title="Nombre de client">{{numberOfClientByConselor( individu.consId)}}</span></h3>
                       </td>
 
                     </tr>
@@ -166,7 +166,7 @@
 
         </div>
          <button mat-raised-button  type="submit" class="btn btn-success pull-right" (click)="assigneclienttoconselor()"
-        [routerLink]="['/manager/affectation']">Assigner {{agentselectionner.cons_nom}} à {{clientselectionner.nom}}</button>
+        [routerLink]="['/manager/affectation']">Assigner {{agentselectionner.consNom}} à {{clientselectionner.nom}}</button>
 
       </div>
     </div>

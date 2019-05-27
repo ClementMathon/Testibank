@@ -29,7 +29,7 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
     this.displaycard = false;
   }
   agentsChoice(individu: Conseiller) {
-    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
+    this.searchText = individu.consNom + ' ' + individu.consPrenom;
     this.displaycard = true;
     this.show = false;
   }
