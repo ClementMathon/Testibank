@@ -18,6 +18,7 @@ import { DetailCompteClientComponent } from './gestion-compte-clients/detail-com
 const conseillerRoutes: Routes = [
   {path: '', component: ConseillerComponent , children:
     [
+      {path: '',  component: ConseillerHomeComponent},
       {path: 'conseillerHome',  component: ConseillerHomeComponent},
       {path: 'gestionCompteClients',  component: GestionCompteClientsComponent},
       {path: 'validationCompte',  component: ValideNouveauCompteComponent},

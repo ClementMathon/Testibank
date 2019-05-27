@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Client} from 'src/model/client';
 import { Compte } from 'src/model/compte';
 import {FakeServiceCompteService} from '../../../../model/fake-service-compte.service';
+import { Client2 } from 'src/model/client2';
 
 @Component({
   selector: 'app-client-detail',
@@ -9,7 +10,7 @@ import {FakeServiceCompteService} from '../../../../model/fake-service-compte.se
   styleUrls: ['./client-detail.component.css'],
 })
 export class ClientDetailComponent implements OnInit {
-  @Input() client: Client;
+  @Input() client: Client2;
   @Input() comptecli: Compte[];
 
   comptesDuClient: Compte[];
@@ -23,7 +24,7 @@ export class ClientDetailComponent implements OnInit {
   constructor(private compteClientService: FakeServiceCompteService) {}
 
   getComptesClient(): void {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.id );
+    this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.clientId);
 
   }
 
