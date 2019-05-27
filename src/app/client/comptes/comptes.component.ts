@@ -10,22 +10,25 @@ import { Observable } from 'rxjs';
   styleUrls: ['./comptes.component.css']
 })
 export class ComptesComponent implements OnInit {
-  comptes: Observable<Compte[]>;
+  comptes: Compte[];
   selectedCompte: Compte;
 
   constructor(private compteService: FakeServiceCompteService) { }
 
   ngOnInit() {
-    this.getCompte();
+   return this.getComptesByClientId(6);
   }
 
   onSelect(compte: Compte): void {
     this.selectedCompte = compte;
   }
 
-  getCompte(): void {
-   this.comptes = this.compteService.getAll;
+  getComptesList() {
+    this.compteService.getAll().subscribe((data : Compte[] )=> {
+      this.comptes = data;});
+  }  
+  getComptesByClientId (id : number) {
+    this.compteService.getComptesDuClient(id).subscribe((data : Compte[] )=> {
+      this.comptes = data;});
   }
-
-
 }

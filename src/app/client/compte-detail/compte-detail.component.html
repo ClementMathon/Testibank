@@ -1,8 +1,9 @@
 <div *ngIf="compte">
 
-    <h2>Details compte N° {{compte.numeroCompte }}</h2>
-    <div><span>Type de compte: </span>{{compte.typeCompte}}</div>
-    <div><span>Solde: </span>{{compte.solde}} euros</div>
-    <div><span>Découvert autorisé: </span>{{compte.typeCompte}} euros</div>
-    <div><span>Plafond autorisé: </span>{{compte.typeCompte}} euros</div>
+    <h2>Details compte N° {{compte.compteId }}</h2>
+    
+    <div><span>Type de compte: </span>{{compte.compteType}}</div>
+    <div><span>Solde: </span>{{compte.compteSolde}} euros</div>
+    <div><span>Découvert autorisé: </span>{{compte.compte_decouvertAutorise}} euros</div>
+    <div><span>Plafond autorisé: </span>{{compte.compte_plafondAutorise}} euros</div>
   </div>

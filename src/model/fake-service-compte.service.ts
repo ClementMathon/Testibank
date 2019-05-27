@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Compte } from './compte';
-import { COMPTES } from 'src/model/mock-compte';
+
 import { Observable, throwError, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { retry, catchError, tap } from 'rxjs/operators';
+import { Transactions } from './transactions';
 
 @Injectable({
   providedIn: 'root'
@@ -11,26 +12,29 @@ import { retry, catchError, tap } from 'rxjs/operators';
 export class FakeServiceCompteService {
   COMPTES: Observable<Compte[]>;
   taillebase = 0;
-  myAdvisorByMle: Observable<Compte>;
   i: number;
+  uri = 'http://localhost:8080/Testibank/compte';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+   }
 
   /*getComptes(): Observable<Compte[]> {
     return of(COMPTES);
   }*/
 
-  getComptesDuClient(targetClientID): Compte[] {
-    return COMPTES.filter(compteclientvisé =>  compteclientvisé.idClient === targetClientID);
+  getComptesDuClient(targetClientID) {
+    const uri2 = this.uri+ '/findAllComptesByClientId/' + targetClientID;
+    return this.http.get<Compte[]>(uri2).pipe(retry(1), catchError(this.handleError));
+  }
+  getTransactionsDuCompte(compteID){
+    const uri2 = this.uri+ '/findAllTransactionsByCompteId/' + compteID;
+    return this.http.get<Transactions[]>(uri2).pipe(retry(1), catchError(this.handleError));
   }
 
-  getAll(): Observable<Compte[]> {
-      const uri = 'http://localhost:8080/Testibank/compte';
-      this.COMPTES = this.http.get<Compte[]>(uri).pipe(
-        retry(1),
-        catchError(this.handleError)
-      );
-      return this.COMPTES;
+  getAll() {
+    const uri2 = this.uri+ '/getAll' ;
+      return this.http.get<Compte[]>(uri2).pipe(retry(1), catchError(this.handleError));
     } 
   
     handleError(error) {

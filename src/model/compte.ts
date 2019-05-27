@@ -1,10 +1,10 @@
 export class Compte {
-  numeroCompte: number;
+  compteId: number;
   idClient: number;
-  typeCompte: number;
-  decouverAutorise: number;
-  plafondAutorise: number;
-  solde: number;
+  compteType: number;
+  compte_decouvertAutorise: number;
+  compte_plafondAutorise: number;
+  compteSolde: number;
 
   /**
    * on a obligatoirement besoin d'un client pour creer un compte <3

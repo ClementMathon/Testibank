@@ -3,6 +3,7 @@ import { Client } from 'src/model/client';
 import {FakeServiceClientService} from '../../../model/fake-service-client.service';
 import { FakeServiceCompteService } from 'src/model/fake-service-compte.service';
 import { Compte } from 'src/model/compte';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Compte } from 'src/model/compte';
 export class GestionCompteClientsComponent implements OnInit {
   clients: Client[];
   selectedClient: Client;
-  comptesDuClient: Compte[];
+  comptesDuClient: Observable<Compte[]>;
   show = false;
   constructor(
     private clientService: FakeServiceClientService,

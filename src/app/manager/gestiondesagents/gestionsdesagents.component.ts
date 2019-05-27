@@ -44,12 +44,6 @@ this.getAgentlist();
 
      return this.myAgentList.sort((obj1, obj2) =>
       this.SortconselorbynumberOfid(obj1.cons_id, obj2.cons_id));
-
-
-
-
-
-
   }
   ngOnDestroy() {}
 

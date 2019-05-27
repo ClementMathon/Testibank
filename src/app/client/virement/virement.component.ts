@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FakeServiceCompteService } from 'src/model/fake-service-compte.service';
 import { Compte } from 'src/model/compte';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-virement',
@@ -8,7 +9,7 @@ import { Compte } from 'src/model/compte';
   styleUrls: ['./virement.component.css']
 })
 export class VirementComponent implements OnInit {
-  comptes: Compte[];
+  comptes: Observable<Compte[]>;
   selectedCompte: Compte;
 
 
