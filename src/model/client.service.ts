@@ -66,7 +66,10 @@ export class ClientService {
     const uri = this.webserviceRoot+'deletebyid/'+IdClientToDelete;
     this.http.get(uri);
   }
-
+  getClientById(idClient: number) : Observable<Client2> {
+    const uri = this.webserviceRoot+'findbyid/'+idClient;
+    return this.http.get<Client2>(uri).pipe(retry(1), catchError(this.handleError));
+  }
 }
 /*  ================= Pas encore impléménté - utiliser le FakeService ============================
 setConseillerToClient(clientId: number, conseillerId: number) {
