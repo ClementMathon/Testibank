@@ -16,6 +16,7 @@ import { InscriptionComponent } from './guest/inscription/inscription.component'
 import { InscriptionClientComponent } from './guest/inscription/inscription-client/inscription-client.component';
 import { InscriptionConseillerComponent } from './guest/inscription/inscription-conseiller/inscription-conseiller.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OngletNewsComponent } from './guest/notification/onglet-news/onglet-news.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     InscriptionComponent,
     InscriptionClientComponent,
     InscriptionConseillerComponent,
+    OngletNewsComponent,
   ],
   imports: [
     BrowserModule,

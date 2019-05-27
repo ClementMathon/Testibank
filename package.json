@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "angular-news-api": "0.0.7",
     "arrive": "^2.4.1",
     "axios": "^0.18.0",
     "body-parser": "^1.19.0",
