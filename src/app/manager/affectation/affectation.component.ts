@@ -56,7 +56,7 @@ export class AffectationComponent implements OnInit {
   }
   agentsChoice(individu: Conseiller) {
     this.agentselectionner = individu;
-    this.searchText = individu.cons_nom + ' ' + individu.cons_prenom;
+    this.searchText = individu.consNom + ' ' + individu.consPrenom;
     this.showconseiller = false;
   }
   clientsChoice(myclient: Client) {
@@ -94,7 +94,7 @@ this.myClientList = this.MyClientListservice.getAll().filter(
      });
 
     return this.myAgentList.sort((obj1, obj2) =>
-     this.SortofconselorbynumberOfClient(obj1.cons_id, obj2.cons_id));
+     this.SortofconselorbynumberOfClient(obj1.consId, obj2.consId));
 
 
 
@@ -105,7 +105,7 @@ this.myClientList = this.MyClientListservice.getAll().filter(
   assigneclienttoconselor() {
     this.MyClientListservice.setConseillerToClient(
       this.clientselectionner.id,
-      this.agentselectionner.cons_id
+      this.agentselectionner.consId
     );
     this.ngOnInit();
   }
