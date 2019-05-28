@@ -24,11 +24,19 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
     this.client = new Client2;
-    return this.getClientByClientId(4);
+    return this.getClientByClientId(3);
   }
   onSubmit() { 
     this.submitted = true; 
-    this.clientService.updateClient(this.client);
+    const recipeObs = this.clientService.updateClient(this.client);
+    recipeObs.subscribe(
+      (data)=>{
+        console.log(data);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
     console.log(this.client);
   }
 

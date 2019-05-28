@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Client } from './client';
 import { CLIENTS } from 'src/model/mock-clients';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Client2 } from './client2';
 import { retry, catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -55,11 +56,12 @@ export class ClientService {
     );
     return this.returnedClientList;
   }
-
-  updateClient(clientToUpdate: Client2) {
-    const uri = this.webserviceRoot+'update';
-    const jsonvari = JSON.parse(JSON.stringify(clientToUpdate));
-    this.http.post(uri, jsonvari);
+  
+  updateClient(clientToUpdate: Client2): Observable<Client2> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    let options = { headers: headers };
+    let uri = this.webserviceRoot+'update';
+    return this.http.put<Client2>(uri, JSON.stringify(clientToUpdate), options);
   }
 
   deleteClient(IdClientToDelete: number) {
