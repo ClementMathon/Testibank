@@ -11,5 +11,10 @@ export class CommandesComponent implements OnInit {
 
   ngOnInit() {
   }
+  commandeChequier() {
+    this.myAgentListservice.deleteCounselor(this.agentselectionner).subscribe(data => {
+      this.myAgentList = data;
 
+
+    });
 }
