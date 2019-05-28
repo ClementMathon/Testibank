@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Client2 } from 'src/model/client2';
-import { HttpClient } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { throwError, Observable } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
+import { Notification } from 'src/model/notifications';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
   Client: Client2;
-  uri = 'http://localhost:8080/Testibank/compte';
+  uri = 'http://localhost:8080/Testibank/notification/';
 
   constructor(private http: HttpClient) { }
-  /*
-  notifCommandeChequier(targetClientID) {
-    const uri2 = this.uri+ '/findAllComptesByClientId/' + targetClientID;
-    return this.http.get<Compte[]>(uri2).pipe(retry(1), catchError(this.handleError));
+  
+  notifCommandeChequier(notifCommandeChequier: Notification): Observable<Notification> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    let options = { headers: headers };
+    let uri2 = this.uri+'create';
+    return this.http.post<Notification>(uri2, JSON.stringify(notifCommandeChequier), options);
   }
-*/
+
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
