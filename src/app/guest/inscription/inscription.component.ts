@@ -6,6 +6,7 @@ import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.
 import {Manager} from 'src/model/Manager';
 import { Compte } from 'src/model/compte';
 
+
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',

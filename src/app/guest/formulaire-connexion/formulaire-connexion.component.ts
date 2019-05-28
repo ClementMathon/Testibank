@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {User} from './FakeUser';
   import { from } from 'rxjs';
 import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
+import { Auth} from 'src/model/auth'
+import {ClientService} from "src/model/client.service"
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-formulaire-connexion',
@@ -10,15 +13,18 @@ import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group
 })
 export class FormulaireConnexionComponent implements OnInit {
 
-  constructor() { }
+  auth : Auth;
+  constructor(private myClientService : ClientService, private route : Router) {
+    
+  }
 
-  model = new User();
+  //model = new User();
 
-  submited = false;
+  //submited = false;
 
-  onsubmit(){
-    this.submited = true;
-    this.model.isClient;
+  verif(){
+    this.auth = new Auth(this.myClientService, this.route);
+    this.auth.whoIsIt(this.myClientService , this.auth.inputId , this.auth.inputPwd);
   }
 
   ngOnInit() {
