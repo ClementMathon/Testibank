@@ -9,9 +9,9 @@ export class Conseiller  {
   consAdresse: string;
   consCp: number;
   consVille: string;
-  constructor(mle: number, dateEmbauche: string, nom: string, prenom: string,
+  constructor(/*mle: number,*/ dateEmbauche: string, nom: string, prenom: string,
               email: string, tel: string, adresse: string, cp: number, ville: string) {
-this.consId = mle;
+//this.consId = mle;
 this.consDateEmbauche = dateEmbauche;
 this.consNom = nom;
 this.consPrenom = prenom;
