@@ -1,0 +1,73 @@
+
+
+<div *ngIf="client" class="row">
+<div  cclass="col-6 mx-3">
+  <div class="card">
+  <div class="card-header card-header-danger">
+    <h5 class="card-title">{{client.clientPrenom}} {{client.clientNom| uppercase}}</h5>
+    <p class="card-category"><span>id: {{client.clientId}} </span></p>
+</div>
+<div class="card-body">
+    <form>
+
+            <div class="row">
+            <div class="col-xs-6 form-group">
+              <label for="prenom">Prénom</label>
+              <input name="prenom" class="form-control" type="text" [(ngModel)]=client.clientPrenom>
+            </div>
+            <div class="col-xs-6 form-group">
+                <label for="nom">Nom2</label>
+              <input name="nom" class="form-control" type="text" [(ngModel)]=client.clientNom>
+            </div>
+          </div>
+          <div class="row">
+          <div class="form-group col-xs-6 ">
+              <label for="emai">email</label>
+            <input name="email" class="form-control" type="email" [(ngModel)]=client.clientEmail>
+          </div>
+          <div class="form-group col-xs-6 ">
+              <label for="telephone">Téléphone</label>
+            <input name="telephone" class="form-control" type="text" [(ngModel)]=client.clientTel>
+          </div>
+        </div>
+
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+              <input name="adresse" class="form-control" type="text" [(ngModel)]=client.clientAdresse>
+            </div>
+
+
+       <div class="row">
+            <div class="form-group col-xs-6 ">
+                <label for="ville">Ville</label>
+              <input name="ville" class="form-control" type="text" [(ngModel)]=client.clientVille>
+            </div>
+            <div class="form-group col-xs-6 ">
+                <label for="codePostal">Code Postal</label>
+              <input name="codePostal" class="form-control" type="text" [(ngModel)]=client.Cp>
+            </div>
+          </div>
+
+        <button mat-raised-button type="submit" (click)="onClickActualiserClient(client)" class="btn btn-primary pull-right">Actualiser</button>
+
+    </form>
+</div>
+</div> <!-- fin client card -->
+<H5>Les comptes de  {{client.clientPrenom}} : </H5>
+
+<ul class="list-group">
+<li *ngFor="let compteClient of comptecli"
+[class.selected]="compteClient === selectedCompteClient"
+(click)="onSelect(compteClient)"
+class="list-group-item">
+   <span class="badge badge-secondary mr-auto">{{compteClient.compteId}}</span> type: {{compteClient.compteType}},
+
+       solde: {{compteClient.compteSolde | currency:'EUR':'symbol-narrow':'1.2-2'}}
+    </li>
+  </ul>
+</div> <!-- fin colonne de gauche (enfin, du milieu, quoi) -->
+
+<div *ngIf="showCompteFlag" class="col-6 mx-3">
+  <app-detail-compte-client [displayedCompte]="selectedCompteClient" > </app-detail-compte-client>
+</div>
+</div> <!-- fin row -->
