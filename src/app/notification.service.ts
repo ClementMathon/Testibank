@@ -11,12 +11,12 @@ export class NotificationService {
   uri = 'http://localhost:8080/Testibank/compte';
 
   constructor(private http: HttpClient) { }
-
+  /*
   notifCommandeChequier(targetClientID) {
     const uri2 = this.uri+ '/findAllComptesByClientId/' + targetClientID;
     return this.http.get<Compte[]>(uri2).pipe(retry(1), catchError(this.handleError));
   }
-
+*/
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
