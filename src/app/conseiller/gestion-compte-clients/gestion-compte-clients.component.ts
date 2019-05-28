@@ -37,9 +37,7 @@ export class GestionCompteClientsComponent implements OnInit {
     );
   }
   getComptesClient(selectedClient: Client2) {
-     this.compteClientService.getComptesDuClient(
-      this.selectedClient.clientId
-    );
+    this.compteClientService.getComptesDuClient( this.selectedClient.clientId).subscribe(data => {this.comptesDuClient=data});
   }
 
   ngOnInit() {

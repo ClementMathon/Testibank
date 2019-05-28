@@ -14,7 +14,7 @@ export class ClientDetailComponent implements OnInit {
   @Input() client: Client2;
   @Input() comptecli: Compte[];
 
-  comptesDuClient: Observable<Compte[]>;
+  comptesDuClient: Compte[];
 
   selectedCompteClient: Compte;
 
@@ -25,7 +25,7 @@ export class ClientDetailComponent implements OnInit {
   constructor(private compteClientService: FakeServiceCompteService) {}
 
   getComptesClient(): void {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.clientId);
+  this.compteClientService.getComptesDuClient( this.client.clientId).subscribe((data) => {this.comptesDuClient=data});
   }
 
   // putting this.client.id instead of 1 doesn't work
