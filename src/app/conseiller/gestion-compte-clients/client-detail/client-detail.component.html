@@ -60,9 +60,9 @@
 [class.selected]="compteClient === selectedCompteClient"
 (click)="onSelect(compteClient)"
 class="list-group-item">
-   <span class="badge badge-secondary mr-auto">{{compteClient.numeroCompte}}</span> type: {{compteClient.typeCompte}},
+   <span class="badge badge-secondary mr-auto">{{compteClient.compteId}}</span> type: {{compteClient.compteType}},
 
-       solde: {{compteClient.solde | currency:'EUR':'symbol-narrow':'1.2-2'}}
+       solde: {{compteClient.compteSolde | currency:'EUR':'symbol-narrow':'1.2-2'}}
     </li>
   </ul>
 

@@ -26,7 +26,6 @@ export class ClientDetailComponent implements OnInit {
 
   getComptesClient(): void {
     this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.clientId);
-
   }
 
   // putting this.client.id instead of 1 doesn't work
