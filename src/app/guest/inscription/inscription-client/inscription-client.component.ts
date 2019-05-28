@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client2 } from 'src/model/client2';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-inscription-client',
@@ -10,6 +12,9 @@ export class InscriptionClientComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let client = new Client2();
+    
+    client.clientNom = "aaa"
   }
 
 }
