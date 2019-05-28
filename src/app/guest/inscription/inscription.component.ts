@@ -4,6 +4,7 @@ import {ClientService} from "src/model/client.service"
 import { Conseiller } from 'src/model/conseiller';
 import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
 import {Manager} from 'src/model/Manager';
+import { Compte } from 'src/model/compte';
 
 @Component({
   selector: 'app-inscription',
@@ -14,35 +15,31 @@ export class InscriptionComponent implements OnInit {
   newClient: Client2;
   myNewAdvisor: Conseiller;
   newAdmin: Manager;
-  constructor(private myClientService : ClientService, private myConseillerService : FakeServiceConseillerService) { 
-  this.newClient = new Client2();
 
-  this.newClient.clientAdresse = "";
-  this.newClient.clientCp = 12345;
-  this.newClient.clientEmail = "mail";
-  this.newClient.clientId = 0;
-  this.newClient.clientMdp = "pwd";
-  this.newClient.clientNom = "Lovelace";
-  this.newClient.clientPrenom = "Ada";
-  this.newClient.clientSituation = "e";
-  this.newClient.clientTel = "0123456789";
-  this.newClient.clientVille = "oui";
-  this.newClient.client_nbEnfant = 0;
-  this.newClient.conseiller = this.myNewAdvisor;
+  constructor(private myClientService : ClientService, private myConseillerService : FakeServiceConseillerService  ) { 
+  this.newClient = new Client2();
+  this.myNewAdvisor = new Conseiller("hier","Goodenought","David","aaa@gmail.com","0123456789","la bas",12345,"st-petou");
+
+  this.myNewAdvisor.consDateEmbauche =  "now";
+  this.myNewAdvisor.consAdresse = "default";
+  this.myNewAdvisor.consCp = 99999;
+  this.myNewAdvisor.consVille = "default";
+  this.myNewAdvisor.consTel = "0123456789";
   }
 
    
 
   ngOnInit() {
-    this.myClientService.addClient(this.newClient);
+
   }
 
   AddClient(){
-    this.myClientService.addClient(this.newClient);
+    this.myClientService.addClient(this.newClient).subscribe();
+  
   }
 
   addConseiller(){
-    this.myConseillerService.addCounselor(this.myNewAdvisor);
+    this.myConseillerService.addCounselor(this.myNewAdvisor).subscribe();
   }
   
 

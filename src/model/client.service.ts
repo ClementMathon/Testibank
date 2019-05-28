@@ -36,7 +36,7 @@ export class ClientService {
   addClient(clientToAdd: Client2) {
     const uri = this.webserviceRoot+'create';
     const jsonvari = JSON.parse(JSON.stringify(clientToAdd));
-    this.http.post(uri, jsonvari);
+   return this.http.post(uri, jsonvari);
   }
 
   getAll(): Observable<Client2[]> {

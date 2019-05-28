@@ -70,16 +70,16 @@
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="First Name *" value="" />
+                              <input type="text" class="form-control" [(ngModel)]="myNewAdvisor.consPrenom" placeholder="First Name *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                              <input type="text" class="form-control" [(ngModel)]="myNewAdvisor.consNom" placeholder="Last Name *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="email" class="form-control" placeholder="Email *" value="" />
+                              <input type="email" [(ngModel)]="myNewAdvisor.consEmail" class="form-control" placeholder="Email *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                              <input type="text" [(ngModel)]="myNewAdvisor.consTel" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
                           </div>
 
 
