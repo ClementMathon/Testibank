@@ -1,33 +1,33 @@
 <div class="container">
   <h1>Informations client</h1>
-  <form #clientForm="ngForm">
+  <form #clientForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required  [(ngModel)]="model.nom" name="nom">
+      <input type="text" class="form-control" id="name" required  [(ngModel)]="client.clientNom" name="nom">
     </div>
     <div class="form-group">
       <label for="prenom">Prenom</label>
-      <input type="text" class="form-control" id="Prenom" required  [(ngModel)]="model.prenom" name="prenom">
+      <input type="text" class="form-control" id="Prenom" required  [(ngModel)]="client.clientPrenom" name="prenom">
     </div>
     <div class="form-group">
       <label for="email">E-mail</label>
-      <input type="text" class="form-control" id="email" required  [(ngModel)]="model.email" name="email">
+      <input type="text" class="form-control" id="email" required  [(ngModel)]="client.clientEmail" name="email">
     </div>
     <div class="form-group">
         <label for="telephone">Telephone</label>
-        <input type="text" class="form-control" id="telephone" [(ngModel)]="model.telephone" name="telephone">
+        <input type="text" class="form-control" id="telephone" [(ngModel)]="client.clientTel" name="telephone">
     </div>
     <div class="form-group">
         <label for="adresse">Adresse</label>
-        <input type="text" class="form-control" id="adresse" required  [(ngModel)]="model.adresse" name="adresse">
+        <input type="text" class="form-control" id="adresse" required  [(ngModel)]="client.clientAdresse" name="adresse">
     </div>
     <div class="form-group">
         <label for="codePostal">Code postal</label>
-        <input type="number" class="form-control" id="codePostal" required  [(ngModel)]="model.codePostale" name="codePostale">
+        <input type="number" class="form-control" id="codePostal" required  [(ngModel)]="client.clientCp" name="codePostale">
     </div>
     <div class="form-group">
         <label for="ville">Ville</label>
-        <input type="text" class="form-control" id="ville" required  [(ngModel)]="model.ville" name="ville">
+        <input type="text" class="form-control" id="ville" required  [(ngModel)]="client.clientVille" name="ville">
     </div>
     <div class="form-group">
       <label for="situation">Situation familiale</label>
@@ -37,11 +37,11 @@
     </div>
     <div class="form-group">
         <label for="ville">Nombre enfants</label>
-        <input type="number" class="form-control" id="nombreEnfant" required  [(ngModel)]="model.nombreEnfant" name="nombreEnfant">
+        <input type="number" class="form-control" id="nombreEnfant" required  [(ngModel)]="client.client_nbEnfant" name="nombreEnfant">
     </div>
     <div class="form-group">
         <label for="motDePasse">Mot de passe</label>
-        <input type="text" class="form-control" id="motDePasse" required  [(ngModel)]="model.motDePasse" name="motDePasse">
+        <input type="text" class="form-control" id="motDePasse" required  [(ngModel)]="client.clientMdp" name="motDePasse">
       </div>
 
     <button type="submit" class="btn btn-success">Mettre a jour mes informations</button>

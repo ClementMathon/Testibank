@@ -1,6 +1,17 @@
-<h2>Veuillez sélectionner un compte</h2>
+
+<div class="dropdown show">
+    <a class="btn btn-success dropdown-toggle dropdown-toggle-split" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Veuillez sélectionner un compte
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <option *ngFor="let compte of comptes" [value]="compte"  (click)="onSelect(compte)">Compte numéro: {{compte.compteId}}</option>
+    </div>
+  </div>
 <ul class="comptes">
-        <option *ngFor="let compte of comptes" [value]="compte"  (click)="onSelect(compte)">{{compte.compteId}}</option>
+    
+  
+        
 </ul>
 
 <div *ngIf="selectedCompte" >
