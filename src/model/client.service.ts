@@ -72,13 +72,8 @@ export class ClientService {
     const uri = this.webserviceRoot+'findbyid/'+idClient;
     return this.http.get<Client2>(uri).pipe(retry(1), catchError(this.handleError));
   }
-  notifCommandeChequier (idClient) {
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    let options = { headers: headers };
-    let uri = this.webserviceRoot+'create';
-    return this.http.put<Client2>(uri, JSON.stringify(idClient), options);
-  }
-  }
+  
+  
 }
 /*  ================= Pas encore impléménté - utiliser le FakeService ============================
 setConseillerToClient(clientId: number, conseillerId: number) {
