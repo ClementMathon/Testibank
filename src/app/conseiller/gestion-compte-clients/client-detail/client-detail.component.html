@@ -48,7 +48,7 @@
             </div>
           </div>
 
-        <button mat-raised-button type="submit" class="btn btn-primary pull-right">Actualiser</button>
+        <button mat-raised-button type="submit" (click)="onClickActualiserClient(client)" class="btn btn-primary pull-right">Actualiser</button>
 
     </form>
 </div>
@@ -67,7 +67,7 @@ class="list-group-item">
   </ul>
 </div> <!-- fin colonne de gauche (enfin, du milieu, quoi) -->
 
-<div *ngIf="showCompte" class="col-6 mx-3">
+<div *ngIf="showCompteFlag" class="col-6 mx-3">
   <app-detail-compte-client [displayedCompte]="selectedCompteClient" > </app-detail-compte-client>
 </div>
 </div> <!-- fin row -->
