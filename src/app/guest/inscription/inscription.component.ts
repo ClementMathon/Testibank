@@ -18,7 +18,7 @@ export class InscriptionComponent implements OnInit {
 
   constructor(private myClientService : ClientService, private myConseillerService : FakeServiceConseillerService  ) { 
   this.newClient = new Client2();
-  this.myNewAdvisor = new Conseiller("hier","Goodenought","David","aaa@gmail.com","0123456789","la bas",12345,"st-petou");
+  this.myNewAdvisor = new Conseiller(0,"hier","Goodenought","David","aaa@gmail.com","0123456789","la bas",12345,"st-petou");
 
   this.myNewAdvisor.consDateEmbauche =  "now";
   this.myNewAdvisor.consAdresse = "default";
