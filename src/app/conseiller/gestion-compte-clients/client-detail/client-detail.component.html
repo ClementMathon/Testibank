@@ -1,7 +1,7 @@
 
 
-<div *ngIf="client" class="clientBox">
-
+<div *ngIf="client" class="row">
+<div  cclass="col-6 mx-3">
   <div class="card">
   <div class="card-header card-header-danger">
     <h5 class="card-title">{{client.clientPrenom}} {{client.clientNom| uppercase}}</h5>
@@ -16,7 +16,7 @@
               <input name="prenom" class="form-control" type="text" [(ngModel)]=client.clientPrenom>
             </div>
             <div class="col-xs-6 form-group">
-                <label for="nom">Nom</label>
+                <label for="nom">Nom2</label>
               <input name="nom" class="form-control" type="text" [(ngModel)]=client.clientNom>
             </div>
           </div>
@@ -65,5 +65,9 @@ class="list-group-item">
        solde: {{compteClient.compteSolde | currency:'EUR':'symbol-narrow':'1.2-2'}}
     </li>
   </ul>
+</div> <!-- fin colonne de gauche (enfin, du milieu, quoi) -->
 
+<div *ngIf="showCompte" class="col-6 mx-3">
+  <app-detail-compte-client [displayedCompte]="selectedCompteClient" > </app-detail-compte-client>
 </div>
+</div> <!-- fin row -->
