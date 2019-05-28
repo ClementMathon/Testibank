@@ -21,7 +21,17 @@ export class ClientDetailComponent implements OnInit {
 
   onSelect(compteClient: Compte): void {
     this.selectedCompteClient = compteClient;
-    this.showCompte = true;
+    this.showCompteFlag = true;
+  }
+
+  /*     ==================  essai: enlever l'affichage du coimpte client quand on recharge un nouveau client ==============
+  a
+resetView(): void {
+    this.selectedCompteClient = null;
+    this.showCompte = false;
+  }*/
+  onClickActualiserClient(client: Client2) {
+
   }
 
   constructor(private compteClientService: FakeServiceCompteService) {}

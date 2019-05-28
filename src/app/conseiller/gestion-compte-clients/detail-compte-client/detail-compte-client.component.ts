@@ -11,6 +11,9 @@ export class DetailCompteClientComponent implements OnInit {
   @Input() displayedCompte: Compte;
   constructor() { }
 
+  onClickActualiserClient(compte: Compte) {
+
+  }
   ngOnInit() {
   }
 

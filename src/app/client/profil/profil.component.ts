@@ -15,8 +15,6 @@ export class ProfilComponent implements OnInit {
   situations = ['Celibataire', 'Marie(e)',
   'Veuf/veuve', 'Divorce', 'En cours de Brexit', 'PACse', 'Marie a un raton laveur'];
 
-  //model = new Client(8, 'pwd', 'Trump', 'Donald', 'iLuvGoldenShower@potus.com', 706060656, '28 rue de GK', 69007, 'New York', this.situations[6], 0, 0 );
-
   submitted = false;
 
   
