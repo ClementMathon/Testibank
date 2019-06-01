@@ -1,42 +1,15 @@
 {
-<<<<<<< HEAD
     // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
     // Pointez pour afficher la description des attributs existants.
     // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
-=======
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
->>>>>>> 086d32addcc166627a7d6c6b13a44b989116b3af
     "version": "0.2.0",
     "configurations": [
         {
             "type": "chrome",
             "request": "launch",
-<<<<<<< HEAD
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}"
         }
     ]
 }
-=======
-            "name": "Launch Chrome",
-            "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}"
-        },
-        
-
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\serve",
-            "preLaunchTask": "tsc: build - tsconfig.json",
-            "outFiles": [
-                "${workspaceFolder}/dist/out-tsc/**/*.js"
-            ]
-        }
-    ]
-}
->>>>>>> 086d32addcc166627a7d6c6b13a44b989116b3af

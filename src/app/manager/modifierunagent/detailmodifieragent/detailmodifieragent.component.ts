@@ -1,17 +1,18 @@
 
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {FakeServiceConseillerService} from '../../../../model/fake-service-conseiller.service';
 import {Conseiller} from '../../../../model/conseiller';
-import { of, Observable } from 'rxjs';
+
 @Component({
   selector: 'app-detailmodifieragent',
   templateUrl: './detailmodifieragent.component.html',
   styleUrls: ['./detailmodifieragent.component.css'],
 })
 export class DetailmodifieragentComponent implements OnInit, OnDestroy {
-  agentselectionner: Observable<Conseiller>;
+  @Output() voted = new EventEmitter<boolean>();
+  agentselectionner: Conseiller;
   myAgentList: any = [];
   agent: Conseiller;
   constructor(
@@ -24,25 +25,36 @@ export class DetailmodifieragentComponent implements OnInit, OnDestroy {
       if (ev instanceof NavigationEnd) {
       }
     });
+    this.agentselectionner = new Conseiller(
+      0,
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      null,
+      ''
+    );
   }
+  ngOnInit(): void {
+    this.getAgent();
+  }
+
   getAgent(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.agentselectionner = this.myAgentListservice.GetCounselorByMle(id);
-  }
-  ngOnInit() {
-  this.getAgent();
-  return this.myAgentListservice.getAll().subscribe((data: {}) => {
-      this.myAgentList = data;
-
-    });
-
+    this.myAgentListservice.GetCounselorByMle(id).subscribe(data => {
+    this.agentselectionner = data;
+  });
   }
   ngOnDestroy(): void {}
   modifConsultant() {
-    this.agentselectionner.subscribe((agent) => this.agent = agent);
-    this.myAgentListservice.ModifCounselor(this.agent);
-    this.ngOnInit();
+
+    this.myAgentListservice.ModifCounselor(this.agentselectionner ).subscribe();
+    this.voted.emit(false);
+    
   }
+
 }
 
 

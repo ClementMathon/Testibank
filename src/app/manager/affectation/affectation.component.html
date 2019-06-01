@@ -58,20 +58,20 @@
                       (click)="clientsChoice(myclient)"
                     >
                       <td>
-                        {{ myclient.id }}
+                        {{ myclient.clientId }}
                       </td>
                       <td>
-                        {{ myclient.nom }}
+                        {{ myclient.clientNom }}
                       </td>
                       <td>
-                        {{ myclient.prenom }}
+                        {{ myclient.clientPrenom }}
                       </td>
                       <td>
-                        {{ myclient.adresse }} {{ myclient.codePostale }}
-                        {{ myclient.ville }}
+                        {{ myclient.clientAdresse }} {{ myclient.clientCp }}
+                        {{ myclient.clientVille }}
                       </td>
                       <td>
-                        {{ myclient.telephone }}
+                        {{ myclient.clientTel }}
                       </td>
                     </tr>
                   </tbody>
@@ -153,7 +153,7 @@
                         {{individu.consTel }}
                       </td>
                       <td>
-                        <h3><span class="badge badge-danger" title="Nombre de client">{{numberOfClientByConselor( individu.consId)}}</span></h3>
+                        <h3><span class="badge badge-danger" title="Nombre de client" [textContent]="numberOfClientByConselor( individu.consId)"></span></h3>
                       </td>
 
                     </tr>

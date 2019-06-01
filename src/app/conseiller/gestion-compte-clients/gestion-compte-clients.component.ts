@@ -21,7 +21,7 @@ export class GestionCompteClientsComponent implements OnInit {
   constructor(
   //  private clientService: FakeServiceClientService,
   private clientService: ClientService,
-    private compteClientService: FakeServiceCompteService
+  private compteClientService: FakeServiceCompteService
   ) {}
 
   onSelect(client: Client2): void {
@@ -31,10 +31,10 @@ export class GestionCompteClientsComponent implements OnInit {
   }
 
   getClients(): void {
-    this.clientService.getClientsDuConseiller(1).subscribe(
-(data:Client2[])=>{this.clients=data}, (error) => {console.log('error')}
+ /*   this.clientService.getClientsDuConseiller(1).subscribe(
+(data: Client2[]) => {this.clients = data; }, (error) => {console.log('error'); }
 
-    );
+    );*/
   }
   getComptesClient(selectedClient: Client2) {
      this.compteClientService.getComptesDuClient(

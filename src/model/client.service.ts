@@ -1,21 +1,19 @@
-import { Injectable } from '@angular/core';
-import { Client } from './client';
-import { CLIENTS } from 'src/model/mock-clients';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { Client2 } from './client2';
-import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  returnedClientList : Observable<Client2[]>;
-  taillebase = 0;
+  returnedClientList: Observable<Client2[]>;
+  numberofclientbyconselor: Observable<number>;
   returnedClient: Observable<Client2>;
   clientId: Observable<number>;
   i: number;
-  webserviceRoot: string = "http://localhost:8080/Testibank/clients/";  //=========================== recine du webservice, à changer si besoin =============================
+  webserviceRoot = 'http://localhost:8080/gestibankapp/clients/';  // =========================== recine du webservice, à changer si besoin =============================
 
   constructor(private http: HttpClient) { }
 
@@ -33,13 +31,13 @@ export class ClientService {
   }
 
   addClient(clientToAdd: Client2) {
-    const uri = this.webserviceRoot+'create';
+    const uri = this.webserviceRoot + 'create';
     const jsonvari = JSON.parse(JSON.stringify(clientToAdd));
     this.http.post(uri, jsonvari);
   }
 
   getAll(): Observable<Client2[]> {
-    const uri = this.webserviceRoot+'getAll';
+    const uri = this.webserviceRoot + 'getall';
     this.returnedClientList = this.http.get<Client2[]>(uri).pipe(
       retry(1),
       catchError(this.handleError)
@@ -47,23 +45,24 @@ export class ClientService {
     return this.returnedClientList;
   }
 
-  getClientsDuConseiller(targetConseillerID: number): Observable<Client2[]> {
-    const uri = this.webserviceRoot+'findbyconseillerid/'+targetConseillerID;
-    this.returnedClientList = this.http.get<Client2[]>(uri).pipe(
+  getClientsDuConseiller(targetConseillerID: number):  Observable<number> {
+    const uri = this.webserviceRoot + 'findNumberofClientbyconseillerid/' + targetConseillerID;
+    this.numberofclientbyconselor = this.http.get<number>(uri).pipe(
       retry(1),
       catchError(this.handleError)
     );
-    return this.returnedClientList;
+
+    return this.numberofclientbyconselor;
   }
 
   updateClient(clientToUpdate: Client2) {
-    const uri = this.webserviceRoot+'update';
+    const uri = this.webserviceRoot + 'update';
     const jsonvari = JSON.parse(JSON.stringify(clientToUpdate));
     this.http.post(uri, jsonvari);
   }
 
   deleteClient(IdClientToDelete: number) {
-    const uri = this.webserviceRoot+'deletebyid/'+IdClientToDelete;
+    const uri = this.webserviceRoot + 'deletebyid/' + IdClientToDelete;
     this.http.get(uri);
   }
 
@@ -88,3 +87,4 @@ const fakeClient = [
       new Client(7, 'pwd', 'DeGaulle', 'Général', 'vivelafrance@gmail.com', 706060606, '28 rue de GK', 69007, 'Lyon', 'celibataire', 0, 0 )
 		]
 		return fakeClient;*/
+

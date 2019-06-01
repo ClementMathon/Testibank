@@ -71,16 +71,10 @@ private extractData(res: Response) {
     return throwError(errorMessage);
   }
 
-  ModifCounselor(myNewAdvisor: Conseiller): Observable<Conseiller[]> {
-    const uri = 'http://localhost:3000/conseillersupdate';
-
+  ModifCounselor(myNewAdvisor: Conseiller): Observable<Conseiller> {
+    const uri = this.endpoint + 'conseiller/conseillersupdate';
     const jsonvari = JSON.parse(JSON.stringify(myNewAdvisor));
-
-    this.fakeConseiller = this.http.put<Conseiller[]>(uri, jsonvari).pipe(
-      retry(1),
-      catchError(this.handleError)
-    );
-    return this.fakeConseiller;
+    return this.http.post<Conseiller>(uri, jsonvari);
   }
   GetCounselorByMle(mle: number): Observable<Conseiller> {
     const uri = this.endpoint + 'conseiller/conseillers/' + mle;

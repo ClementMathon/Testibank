@@ -45,13 +45,13 @@
                       tel
                     </th>
                   </thead>
-                  <tbody>
+                  <tbody >
                     <tr
                       *ngFor="let individu of myAgentList | filter: searchText"
                       routerLink="/manager/modifierunagent/{{ individu.consId }}"
                       (click)="agentsChoice(individu)"
                     >
-                      <td>
+                      <td >
                         {{ individu.consId }}
                       </td>
                       <td>
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <app-detailmodifieragent *ngIf="displaycard"></app-detailmodifieragent>
+      <app-detailmodifieragent *ngIf="displaycard" (voted)="onVoted($event)"></app-detailmodifieragent>
     </div>
   </div>
 </div>

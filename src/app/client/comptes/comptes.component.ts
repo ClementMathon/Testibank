@@ -24,11 +24,11 @@ export class ComptesComponent implements OnInit {
   }
 
   getComptesList() {
-    this.compteService.getAll().subscribe((data : Compte[] )=> {
-      this.comptes = data;});
-  }  
-  getComptesByClientId (id : number) {
-    this.compteService.getComptesDuClient(id).subscribe((data : Compte[] )=> {
-      this.comptes = data;});
+    this.compteService.getAll().subscribe((data: Compte[] ) => {
+      this.comptes = data; });
+  }
+  getComptesByClientId(id: number) {
+    this.compteService.getComptesDuClient(id).subscribe((data: Compte[] ) => {
+      this.comptes = data; });
   }
 }
