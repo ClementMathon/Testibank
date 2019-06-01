@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Client} from 'src/model/client';
+
 import { Compte } from 'src/model/compte';
 import {FakeServiceCompteService} from '../../../../model/fake-service-compte.service';
 import { Client2 } from 'src/model/client2';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-client-detail',
@@ -13,25 +13,37 @@ import { Observable } from 'rxjs';
 export class ClientDetailComponent implements OnInit {
   @Input() client: Client2;
   @Input() comptecli: Compte[];
+  @Input() showCompteFlag: boolean;
 
-  comptesDuClient: Observable<Compte[]>;
-
-  selectedCompteClient: Compte;
+  comptesDuClient: Compte[];
+  showCompte = this.showCompteFlag;
+  selectedCompteClient: Compte = null;
 
   onSelect(compteClient: Compte): void {
     this.selectedCompteClient = compteClient;
+    this.showCompteFlag = true;
+  }
+
+  /*     ==================  essai: enlever l'affichage du coimpte client quand on recharge un nouveau client ==============
+  a
+resetView(): void {
+    this.selectedCompteClient = null;
+    this.showCompte = false;
+  }*/
+  onClickActualiserClient(client: Client2) {
+
   }
 
   constructor(private compteClientService: FakeServiceCompteService) {}
 
   getComptesClient(): void {
-    this.comptesDuClient = this.compteClientService.getComptesDuClient( this.client.clientId);
-
+  this.compteClientService.getComptesDuClient( this.client.clientId).subscribe((data) => {this.comptesDuClient=data});
   }
 
   // putting this.client.id instead of 1 doesn't work
   ngOnInit() {
     this.getComptesClient();
+
   }
   
 }

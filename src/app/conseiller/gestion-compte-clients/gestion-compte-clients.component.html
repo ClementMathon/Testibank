@@ -6,7 +6,7 @@
 </div>
 
 <div class="row" id="mainContainer">
-<div class="col-xs-2 mx-3">
+<div class="col-2 mx-3">
   <h3>Mes Clients</h3>
   <ul class="list-group">
     <li *ngFor="let client of clients"
@@ -19,12 +19,8 @@
   </ul>
 </div>
 
-<div  *ngIf="show" class="col-xs-5 mx-3">
-  <app-client-detail [client]="selectedClient" [comptecli]="comptesDuClient"></app-client-detail>
-</div>
-
-<div class="col-xs-5 mx-3">
-
+<div  *ngIf="show" class="col-8 mx-3">
+  <app-client-detail [client]="selectedClient" [comptecli]="comptesDuClient" [showCompteFlag]="showdetail" ></app-client-detail>
 </div>
 
 </div>

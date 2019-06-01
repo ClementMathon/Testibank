@@ -1,3 +1,37 @@
-<p>
-  detail-compte-client works!
-</p>
+
+<div *ngIf="displayedCompte" class="clientBox">
+
+  <div class="card">
+  <div class="card-header card-header-danger">
+    <h5 class="card-title">Compte id: {{displayedCompte.compteId}}</h5>
+    <p class="card-category"><span> </span></p>
+</div>
+<div class="card-body">
+    <form>
+
+            <div class="row">
+            <div class="col-xs-6 form-group">
+              <label for="solde">Solde</label>
+              <input name="solde" class="form-control" type="text" [(ngModel)]=displayedCompte.compteSolde>
+            </div>
+            <div class="col-xs-6 form-group">
+                <label for="type">Type de compte</label>
+              <input name="type" class="form-control" type="text" [(ngModel)]=displayedCompte.compteType>
+            </div>
+          </div>
+          <div class="row">
+          <div class="form-group col-xs-6 ">
+              <label for="decouvert">Découvert authorisé</label>
+            <input name="decouvert" class="form-control" type="email" [(ngModel)]=displayedCompte.compte_decouvertAutorise>
+          </div>
+          <div class="form-group col-xs-6 ">
+              <label for="plafond">Plafond authorisé</label>
+            <input name="plafond" class="form-control" type="text" [(ngModel)]=displayedCompte.compte_plafondAutorise>
+          </div>
+        </div>
+
+        <button mat-raised-button type="submit" (click)="onClickActualiserCompte(displayedCompte)" class="btn btn-primary pull-right">Actualiser</button>
+
+    </form>
+</div>
+</div> <!-- fin compte card -->

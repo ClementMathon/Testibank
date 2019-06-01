@@ -23,16 +23,17 @@
           <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <h3 class="register-heading">Client</h3>
+                  <h3 class="register-heading">{{newClient.clientNom}}</h3>
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="First Name *" value="" />
+                              <input [(ngModel)]="newClient.clientPrenom" type="text" class="form-control" placeholder="First Name *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                              <input [(ngModel)]="newClient.clientNom" type="text" class="form-control" placeholder="Last Name *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="password" class="form-control" placeholder="Password *" value="" />
+                              <input [(ngModel)]="newClient.clientMdp" type="password" class="form-control" placeholder="Password *" value="" />
                           </div>
                           <div class="form-group">
                               <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
@@ -40,10 +41,10 @@
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                              <input [(ngModel)]="newClient.clientEmail" type="email" class="form-control" placeholder="Your Email *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                              <input [(ngModel)]="newClient.clientTel" type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
                           </div>
                           <div class="form-group">
                               <div class="maxl">
@@ -57,11 +58,10 @@
                                   </label>
                                   <label class="radio inline"> 
                                     <input type="radio" name="gender" value="female">
-                                    <span>Attack Helicopter</span> 
                                 </label>
                               </div>
                           </div>
-                          <input type="submit" class="btnRegister"  value="Register" routerLink='/client'/>
+                          <input type="submit" class="btnRegister" (click)="AddClient()"  value="Register" routerLink='/client'/>
                       </div>
                   </div>
               </div>
@@ -70,16 +70,16 @@
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="First Name *" value="" />
+                              <input type="text" class="form-control" [(ngModel)]="myNewAdvisor.consPrenom" placeholder="First Name *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                              <input type="text" class="form-control" [(ngModel)]="myNewAdvisor.consNom" placeholder="Last Name *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="email" class="form-control" placeholder="Email *" value="" />
+                              <input type="email" [(ngModel)]="myNewAdvisor.consEmail" class="form-control" placeholder="Email *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                              <input type="text" [(ngModel)]="myNewAdvisor.consTel" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
                           </div>
 
 
@@ -92,7 +92,7 @@
                               <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
                           </div>
                           <br><br><br><br>
-                          <input type="submit" class="btnRegister"  value="Register" routerLink='/conseiller'/>
+                          <input type="submit" class="btnRegister" (click)="addConseiller()"  value="Register" routerLink='/conseiller'/>
                       </div>
                   </div>
               </div>

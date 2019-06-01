@@ -1,8 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Client } from './client';
+import { CLIENTS } from 'src/model/mock-clients';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Client2 } from './client2';
+
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +36,7 @@ export class ClientService {
   addClient(clientToAdd: Client2) {
     const uri = this.webserviceRoot + 'create';
     const jsonvari = JSON.parse(JSON.stringify(clientToAdd));
-    this.http.post(uri, jsonvari);
+   return this.http.post(uri, jsonvari);
   }
 
   getAll(): Observable<Client2[]> {
@@ -55,15 +58,20 @@ export class ClientService {
     return this.numberofclientbyconselor;
   }
 
-  updateClient(clientToUpdate: Client2) {
-    const uri = this.webserviceRoot + 'update';
-    const jsonvari = JSON.parse(JSON.stringify(clientToUpdate));
-    this.http.post(uri, jsonvari);
+  updateClient(clientToUpdate: Client2): Observable<Client2> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    let options = { headers: headers };
+    let uri = this.webserviceRoot+'update';
+    return this.http.put<Client2>(uri, JSON.stringify(clientToUpdate), options);
   }
 
   deleteClient(IdClientToDelete: number) {
     const uri = this.webserviceRoot + 'deletebyid/' + IdClientToDelete;
     this.http.get(uri);
+  }
+  getClientById(idClient) {
+    const uri = this.webserviceRoot+'findbyid/'+idClient;
+    return this.http.get<Client2>(uri).pipe(retry(1), catchError(this.handleError));
   }
 
 }

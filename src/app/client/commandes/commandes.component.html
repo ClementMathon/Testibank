@@ -1,3 +1,44 @@
-<p>
-  commandes works!
-</p>
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title ">Commander un chéquier</h4>
+              
+            </div>
+            <div ng-app="myApp" ng-controller="charactersCtrl" class="list-group">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <div class="input-group no-border">
+                    
+                    
+                  </div>
+  
+                  <table class="table">
+                    <thead class=" text-primary">
+                        <div>Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.</div>
+
+                        <div> Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei celebrari vilitatem intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad unum ni comes orientis tunc Honoratus fixa constantia restitisset.</div>
+                        
+                        <div>Latius iam disseminata licentia onerosus bonis omnibus Caesar nullum post haec adhibens modum orientis latera cuncta vexabat nec honoratis parcens nec urbium primatibus nec plebeiis.</div>
+                    </thead>
+                    <button                      
+                      mat-raised-button
+                      type="submit"
+                      class="btn btn-danger pull-right"
+                      (click)="commandeChequier()"
+                      [routerLink]="['/client/commandes']"
+                    >
+                      Confirmer la commande d'un chéquier
+                    </button>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

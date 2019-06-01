@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Compte } from 'src/model/compte';
+
 
 @Component({
   selector: 'app-detail-compte-client',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-compte-client.component.css']
 })
 export class DetailCompteClientComponent implements OnInit {
-
+  @Input() displayedCompte: Compte;
   constructor() { }
 
+  onClickActualiserClient(compte: Compte) {
+
+  }
   ngOnInit() {
   }
 
