@@ -1,13 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-
-import {Conseiller} from '../../../model/conseiller';
-
-import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
-
-import {Client} from '../../../model/client';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {ClientService} from 'src/model/client.service';
 import {Client2} from 'src/model/client2';
-import { error } from 'util';
+import {Conseiller} from '../../../model/conseiller';
+import {FakeServiceConseillerService} from '../../../model/fake-service-conseiller.service';
+
 class clientPerConselor {
   conseiller: number;
   Numberofclients: number;
@@ -52,15 +48,26 @@ export class AffectationComponent implements OnInit {
       ''
     );
     this.clientselectionner = new Client2();
-
-
+    this.clientselectionner.conseiller = new Conseiller(
+      0,
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      null,
+      ''
+    );
     this.myAgentListservice.getAll().subscribe(data => {
       this.myAgentList = data;
       this.getnumberofclient();
+
     });
 
     this.MyClientListservice.getAll().subscribe(data => {
       this.myClientList = data;
+
     });
   }
   agentsChoice(individu: Conseiller) {
@@ -75,18 +82,20 @@ export class AffectationComponent implements OnInit {
   }
 
   numberOfClientByConselor(conselorSelectedId: number): number {
-    if (this.mapOfClientOfConselor.length !== 0) {
-   let  mapOfClientOfConselorbyID = new clientPerConselor(0, 0);
-   if (
-     this.mapOfClientOfConselor.filter(
-       p => p.conseiller === conselorSelectedId
-     )[0] !== undefined
-   ) {
-     mapOfClientOfConselorbyID = this.mapOfClientOfConselor.filter(
-       p => p.conseiller === conselorSelectedId
-     )[0]; } else { return 0; }
+    let essai = 0;
+    if (
 
-   return mapOfClientOfConselorbyID.Numberofclients; } else { return 0; }
+      this.mapOfClientOfConselor.filter(
+        p => p.conseiller === conselorSelectedId
+      )[0] !== undefined
+    ) {
+      essai = this.mapOfClientOfConselor.filter(
+        p => p.conseiller === conselorSelectedId
+      )[0].Numberofclients;
+    }
+
+
+    return essai;
   }
   SortofconselorbynumberOfClient(obj1: number, obj2: number): number {
     const a = this.numberOfClientByConselor(obj1);
@@ -101,7 +110,7 @@ export class AffectationComponent implements OnInit {
     this.searchText = '';
     this.searchText1 = '';
   }
-  private getnumberofclient() {
+  getnumberofclient() {
     this.myAgentList.map(p =>
       this.MyClientListservice.getClientsDuConseiller(p.consId).subscribe(
         data => {
@@ -114,7 +123,7 @@ export class AffectationComponent implements OnInit {
   }
 
   getClientlist() {
-    this.MyClientListservice.getAll().subscribe(data => {
+    this.MyClientListservice.getClientsWithoutConseiller().subscribe(data => {
       this.myClientList = data;
     });
   }
@@ -123,13 +132,27 @@ export class AffectationComponent implements OnInit {
     this.myAgentListservice.getAll().subscribe(data => {
       this.myAgentList = data;
     });
-
-    return this.myAgentList.sort((obj1, obj2) =>
+    setTimeout(() => {
+      this.sortlist();
+  }, 1000);
+  }
+  sortlist() {
+    this.myAgentList.sort((obj1, obj2) =>
       this.SortofconselorbynumberOfClient(obj1.consId, obj2.consId)
     );
   }
   assigneclienttoconselor() {
-    //  this.MyClientListservice( this.clientselectionner.id,  this.agentselectionner.consId ).sub;
+    this.clientselectionner.conseiller = this.agentselectionner;
+    this.clientselectionner.comptes = null;
+
+    this.MyClientListservice.updateClient(this.clientselectionner).subscribe(
+      data => {
+        console.log('data' + data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
     this.ngOnInit();
   }
 }

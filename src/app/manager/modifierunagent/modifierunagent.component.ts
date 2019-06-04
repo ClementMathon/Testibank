@@ -49,8 +49,10 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
           this.myAgentList = data;
           });
          this.effacechoix();
-         return this.myAgentList.sort((obj1, obj2) =>
-          this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
+         if (this.myAgentList!==undefined){
+           this.myAgentList.sort((obj1, obj2) =>
+             this.SortconselorbynumberOfid(obj1.consId, obj2.consId)
+           );}
 
 
 
@@ -60,10 +62,12 @@ export class ModifierunagentComponent implements OnInit, OnDestroy {
       }
   onVoted(agreed: boolean) {
 
-    this.effacechoix();
+
+    setTimeout(() => {
+      this.effacechoix();
     this.getAgentlist();
     this.ngOnInit();
-    document.location.reload(true);
+  }, 1000);
   }
   ngOnDestroy() {}
 }

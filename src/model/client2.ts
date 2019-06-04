@@ -1,7 +1,8 @@
 import { Conseiller } from './conseiller';
+import { Compte } from './compte';
 
 export class Client2 {
-	/*id: number;
+         /*id: number;
 	motDePasse: string;
 	nom: string;
 	prenom: string;
@@ -13,24 +14,21 @@ export class Client2 {
 	situation: string;
 	nombreEnfant: number;
 	conseiller: Conseiller;*/
-	clientId: number;
-	clientMdp: string;
-	clientNom: string;
-	clientPrenom: string;
-	clientEmail: string;
-	clientTel: string;
-	clientAdresse: string;
-	clientCp: number;
-	clientVille: string;
-	clientSituation: string;
-	client_nbEnfant: number;
-	conseiller: Conseiller;
-
-	
-
-
-/*	constructor(
-clientId,		
+         clientId: number;
+         clientMdp: string;
+         clientNom: string;
+         clientPrenom: string;
+         clientEmail: string;
+         clientTel: string;
+         clientAdresse: string;
+         clientCp: number;
+         clientVille: string;
+         clientSituation: string;
+         client_nbEnfant: number;
+         conseiller: Conseiller;
+           comptes:Compte[];
+         /*	constructor(
+clientId,
 clientAdresse,
 clientCp,
 clientEmail,
@@ -57,8 +55,8 @@ conseiller
 	  this.conseiller = conseiller;
 	}
   }*/
-  
-  /* [{"clientId":1,
+
+         /* [{"clientId":1,
 "clientAdresse":"8 Rue des Shleux",
 "clientCp":66800,
 "clientEmail":"gdg@gmail.com",
@@ -69,4 +67,4 @@ conseiller
 "clientSituation":"Mort",
 "clientTel":"0662885569",
 "clientVille":"Colombey"*/
-}
+       }

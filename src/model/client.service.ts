@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Client } from './client';
-import { CLIENTS } from 'src/model/mock-clients';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { Client2 } from './client2';
-
+import {Injectable} from '@angular/core';
+import {Client} from './client';
+import {CLIENTS} from 'src/model/mock-clients';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError, retry} from 'rxjs/operators';
+import {Client2} from './client2';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientService {
   returnedClientList: Observable<Client2[]>;
@@ -16,9 +15,14 @@ export class ClientService {
   returnedClient: Observable<Client2>;
   clientId: Observable<number>;
   i: number;
-  webserviceRoot = 'http://localhost:8080/gestibankapp/clients/';  // =========================== recine du webservice, à changer si besoin =============================
-
-  constructor(private http: HttpClient) { }
+  essai: "string";
+  webserviceRoot = 'http://localhost:8080/gestibankapp/clients/'; // =========================== recine du webservice, à changer si besoin =============================
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  constructor(private http: HttpClient) {}
 
   handleError(error) {
     let errorMessage = '';
@@ -36,7 +40,7 @@ export class ClientService {
   addClient(clientToAdd: Client2) {
     const uri = this.webserviceRoot + 'create';
     const jsonvari = JSON.parse(JSON.stringify(clientToAdd));
-   return this.http.post(uri, jsonvari);
+    return this.http.post(uri, jsonvari);
   }
 
   getAll(): Observable<Client2[]> {
@@ -47,9 +51,20 @@ export class ClientService {
     );
     return this.returnedClientList;
   }
+  getClientsWithoutConseiller(): Observable<Client2[]> {
+    const uri = this.webserviceRoot + 'getallclientwithoutconseiller';
+    this.returnedClientList = this.http.get<Client2[]>(uri).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+    return this.returnedClientList;
+  }
 
-  getClientsDuConseiller(targetConseillerID: number):  Observable<number> {
-    const uri = this.webserviceRoot + 'findNumberofClientbyconseillerid/' + targetConseillerID;
+  getClientsDuConseiller(targetConseillerID: number): Observable<number> {
+    const uri =
+      this.webserviceRoot +
+      'findNumberofClientbyconseillerid/' +
+      targetConseillerID;
     this.numberofclientbyconselor = this.http.get<number>(uri).pipe(
       retry(1),
       catchError(this.handleError)
@@ -58,11 +73,13 @@ export class ClientService {
     return this.numberofclientbyconselor;
   }
 
-  updateClient(clientToUpdate: Client2): Observable<Client2> {
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    let options = { headers: headers };
-    let uri = this.webserviceRoot+'update';
-    return this.http.put<Client2>(uri, JSON.stringify(clientToUpdate), options);
+  updateClient(clientToUpdate: Client2): Observable<Client2>{
+    // const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    // const options = {headers};
+    const uri = this.webserviceRoot + 'updateclient';
+    const jsonvari = JSON.parse(JSON.stringify(clientToUpdate));
+
+    return this.http.post<Client2>(uri, jsonvari);
   }
 
   deleteClient(IdClientToDelete: number) {
@@ -70,17 +87,13 @@ export class ClientService {
     this.http.get(uri);
   }
   getClientById(idClient) {
-    const uri = this.webserviceRoot+'findbyid/'+idClient;
-    return this.http.get<Client2>(uri).pipe(retry(1), catchError(this.handleError));
+    const uri = this.webserviceRoot + 'findbyid/' + idClient;
+    return this.http.get<Client2>(uri).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
-
 }
-/*  ================= Pas encore impléménté - utiliser le FakeService ============================
-setConseillerToClient(clientId: number, conseillerId: number) {
-CLIENTS.filter(myclient => myclient.id === clientId)[0].conseiller = conseillerId;
-}
-  }
-*/
 
 /* ==========================   ancienne méthode d'instanciation, maintenant dans mock-clients ==============================================
 
@@ -95,4 +108,3 @@ const fakeClient = [
       new Client(7, 'pwd', 'DeGaulle', 'Général', 'vivelafrance@gmail.com', 706060606, '28 rue de GK', 69007, 'Lyon', 'celibataire', 0, 0 )
 		]
 		return fakeClient;*/
-

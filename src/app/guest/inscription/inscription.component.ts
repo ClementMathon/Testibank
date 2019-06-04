@@ -3,7 +3,7 @@ import { Client2 } from 'src/model/client2';
 import {ClientService} from "src/model/client.service"
 import { Conseiller } from 'src/model/conseiller';
 import { FakeServiceConseillerService } from 'src/model/fake-service-conseiller.service';
-import {Manager} from 'src/model/Manager';
+
 import { Compte } from 'src/model/compte';
 
 
@@ -15,9 +15,9 @@ import { Compte } from 'src/model/compte';
 export class InscriptionComponent implements OnInit {
   newClient: Client2;
   myNewAdvisor: Conseiller;
-  newAdmin: Manager;
+  
 
-  constructor(private myClientService : ClientService, private myConseillerService : FakeServiceConseillerService  ) { 
+  constructor(private myClientService : ClientService, private myConseillerService : FakeServiceConseillerService  ) {
   this.newClient = new Client2();
   this.myNewAdvisor = new Conseiller(0,"hier","Goodenought","David","aaa@gmail.com","0123456789","la bas",12345,"st-petou");
 
@@ -28,7 +28,7 @@ export class InscriptionComponent implements OnInit {
   this.myNewAdvisor.consTel = "0123456789";
   }
 
-   
+
 
   ngOnInit() {
 
@@ -36,12 +36,12 @@ export class InscriptionComponent implements OnInit {
 
   AddClient(){
     this.myClientService.addClient(this.newClient).subscribe();
-  
+
   }
 
   addConseiller(){
     this.myConseillerService.addCounselor(this.myNewAdvisor).subscribe();
   }
-  
+
 
 }

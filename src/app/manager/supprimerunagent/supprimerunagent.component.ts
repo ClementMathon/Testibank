@@ -78,7 +78,10 @@ export class SupprimerunagentComponent implements OnInit, OnDestroy {
     this.searchText = '';
     this.myAgentList.sort((obj1, obj2) =>
     this.SortconselorbynumberOfid(obj1.consId, obj2.consId));
-    this.ngOnInit();
-    this.affichelist();
+    setTimeout(() => {
+      this.ngOnInit();
+      this.affichelist();
+  }, 1000);
+
   }
 }

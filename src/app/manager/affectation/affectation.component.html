@@ -111,7 +111,7 @@
                 </div>
 
                 <table class="table">
-                  <thead *ngIf="showconseiller" class=" text-primary">
+                  <thead *ngIf="showconseiller" class=" text-primary" >
                     <th>
                       MLE
                     </th>
@@ -153,7 +153,7 @@
                         {{individu.consTel }}
                       </td>
                       <td>
-                        <h3><span class="badge badge-danger" title="Nombre de client" [textContent]="numberOfClientByConselor( individu.consId)"></span></h3>
+                        <h3><span class="badge badge-danger" title="Nombre de client" [textContent]="numberOfClientByConselor( individu.consId)" ></span></h3>
                       </td>
 
                     </tr>
@@ -166,7 +166,7 @@
 
         </div>
          <button mat-raised-button  type="submit" class="btn btn-success pull-right" (click)="assigneclienttoconselor()"
-        [routerLink]="['/manager/affectation']">Assigner {{agentselectionner.consNom}} à {{clientselectionner.nom}}</button>
+        [routerLink]="['/manager/affectation']">Assigner {{agentselectionner.consNom}} à {{clientselectionner.clientNom}}</button>
 
       </div>
     </div>
